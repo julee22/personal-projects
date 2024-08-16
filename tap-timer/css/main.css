@@ -1,0 +1,20 @@
+/*wow css*/
+
+body {
+	margin: 0px auto;
+	padding: 0px;
+	box-sizing: border-box;
+	font-size: 1em;
+	font-family: 'Manjari', Verdana, sans-serif;
+	background: url("../images/background.png") repeat-y;
+	background-size: cover;
+}
+
+
+header {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 10;
+}
+
