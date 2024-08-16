@@ -12,9 +12,29 @@ body {
 
 
 header {
-	position: fixed;
+	/* position: fixed;
 	top: 0px;
 	width: 100%;
-	z-index: 10;
+	z-index: 10; */
 }
 
+#letters-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	justify-content: center;
+	align-items: center;
+}
+
+#letters-list .letter {
+	text-align: center;
+	text-transform: uppercase;
+	min-width: 1.2em;
+	min-height: 1.2em;
+	padding: 15px;
+	border: 1px solid blue;
+}
+
+#letters-list .letter.selected {
+	background-color: lightgrey;
+}
