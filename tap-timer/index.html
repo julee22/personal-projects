@@ -13,25 +13,38 @@
 
 </head>
 <body>
-	<header>
+	<header >
 		<h1>Tapple Timer</h1>
 		<p>Use with tablet or touchscreen device</p>
 
 		<button onclick="openGameSettings()">Game settings</button>
 	</header>
 	<section id="game">
-		<div id="category"></div>
 		<div id="letters-list"></div>
+		<div id="category"></div>
+
 		<div id="timer"></div>
-		<div id="lose-screen" class="hide">
-			<h2>YOU LOSE</h2>
-			<button onclick="resetGame()">NEXT CATEGORY</button>
+		<div id="lose-screen" class="popup-wrapper hide">
+			<!-- <h2>{{ showPlayers ? currentPlayer.name : 'YOU'}} LOSE</h2> -->
+			 <h2>YOU LOSE</h2>
+			<button onclick="newGame()">NEXT CATEGORY</button>
 		</div>
 	</section>
 
-	<section id="settings">
-		<form action="">
-
+	<section id="settings-wrapper" class="popup-wrapper hide">
+		<form action="" id="settings">
+			<fieldset>
+				<input type="checkbox" id="player-setting" for="player-setting" value="false">
+				<label for="player-setting">Show players</label>
+				<input type="checkbox" id="category-setting" for="category-setting" value="true" checked>
+				<label for="category-setting">Show categories</label>
+			</fieldset>
+			<fieldset>
+				<label for="timer-setting">Seconds per player :</label>
+				<input type="number" id="timer-setting" name="timer" min="3" max="15">
+			</fieldset>
+			<button onclick="saveSettings()">Save and close</button>
+			<button onclick="closeSettings()">Cancel</button>
 		</form>
 	</section>
 
