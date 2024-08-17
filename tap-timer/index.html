@@ -20,8 +20,13 @@
 		<button onclick="openGameSettings()">Game settings</button>
 	</header>
 	<section id="game">
+		<div id="category"></div>
 		<div id="letters-list"></div>
 		<div id="timer"></div>
+		<div id="lose-screen" class="hide">
+			<h2>YOU LOSE</h2>
+			<button onclick="resetGame()">NEXT CATEGORY</button>
+		</div>
 	</section>
 
 	<section id="settings">
@@ -32,6 +37,7 @@
 
 
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/categories.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
 </body>
