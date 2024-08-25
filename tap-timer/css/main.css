@@ -17,6 +17,18 @@ body {
 	display: none !important;
 }
 
+.sr-only {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	white-space: nowrap;
+	border: 0;
+}
+
 section {
 	padding: 30px;
 }
@@ -45,32 +57,90 @@ header {
 
 }
 
-#letters-list {
+#game {
+	position: relative;
+}
+
+.circular .details-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+}
+
+.circular .category-wrapper {
 	display: flex;
-	flex-wrap: wrap;
-	gap: 15px;
+	flex-direction: column;
+	align-items: center;
+}
+
+.grid .category-wrapper {
+	display: flex;
+}
+
+
+
+.category-wrapper button {
+	background-image: url("../images/icon-restart.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 1em;
+	width: 1em;
+}
+
+#timer {
+	font-size: 3em;
+	font-weight: bold;
+}
+
+.circular #timer {
+	text-align: center;
+}
+
+
+#letters-list {
+	position: relative;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
+.grid #letters-list {
+	flex-wrap: wrap;
+	gap: 15px;
+}
+.circular #letters-list{
+	min-height: 90vh;
+	max-height: 750px;
+}
+
+.circular #letters-list .letter-wrapper {
+	position: absolute;
+	transform-origin: center;
+	transition: transform 0.5s ease;
+	transform: translateY(0) rotate(0);
+}
+
 #letters-list .letter {
+	font-size: 3rem;
 	text-align: center;
 	text-transform: uppercase;
 	min-width: 1.2em;
 	min-height: 1.2em;
 	padding: 15px;
 	border: 1px solid blue;
+	
+	--offset-neg: calc((6rem + 30px) * 2); /* use double font size + padding*/
+}
+
+.circular #letters-list .letter{
+	transform-origin: center;
+	transform: translateY(calc(var(--offset-neg) + 4px));
 }
 
 #letters-list .letter.selected {
 	background-color: lightgrey;
-}
-
-#timer {
-	font-size: 3em;
-	font-weight: bold;
-	text-align: center;
-	position: fixed;
 }
 
 #lose-screen h2 {

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tapple Timer</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
     <style>
@@ -13,31 +14,52 @@
 
 </head>
 <body>
-	<header >
-		<h1>Tapple Timer</h1>
-		<p>Use with tablet or touchscreen device</p>
-
-		<button onclick="openGameSettings()">Game settings</button>
-	</header>
-	<section id="game">
-		<div id="letters-list"></div>
-		<div id="category"></div>
-
-		<div id="timer"></div>
-		<div id="lose-screen" class="popup-wrapper hide">
-			<!-- <h2>{{ showPlayers ? currentPlayer.name : 'YOU'}} LOSE</h2> -->
-			 <h2>YOU LOSE</h2>
-			<button onclick="newGame()">NEXT CATEGORY</button>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="sol-12 col-lg-1">
+				<header >
+					<h1>Tapple Timer</h1>
+					<p>Use with tablet or touchscreen device</p>
+			
+					<button onclick="openGameSettings()">Game settings</button>
+				</header></div>
+			<div class="col">
+				<section id="game" class="circular">
+					
+					<div class="details-wrapper">
+						<p class="category-wrapper">
+							<button onclick="newGame()">
+								<span class="sr-only">New category</span>
+							</button>
+							<span id="category"></span>
+						</p>
+						<p id="timer"></p>
+					</div>
+					<div id="letters-list"></div>
+					<div id="lose-screen" class="popup-wrapper hide">
+						<!-- <h2>{{ showPlayers ? currentPlayer.name : 'YOU'}} LOSE</h2> -->
+						 <h2>YOU LOSE</h2>
+						<button onclick="newGame()">NEXT CATEGORY</button>
+					</div>
+				</section>
+			</div>
 		</div>
-	</section>
+	</div>
 
 	<section id="settings-wrapper" class="popup-wrapper hide">
 		<form action="" id="settings">
 			<fieldset>
 				<input type="checkbox" id="player-setting" for="player-setting" value="false">
-				<label for="player-setting">Show players</label>
+				<label for="player-setting">Show player scores</label>
 				<input type="checkbox" id="category-setting" for="category-setting" value="true" checked>
 				<label for="category-setting">Show categories</label>
+			</fieldset>
+			<fieldset>
+				<label for="layout-setting">Choose a letter arrangment</label>
+				<select id="layout-setting" for="layout-setting">
+					<option value="circle">Circular</option>
+					<option value="grid">Grid</option>
+				</select>
 			</fieldset>
 			<fieldset>
 				<label for="timer-setting">Seconds per player :</label>
