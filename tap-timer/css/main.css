@@ -34,14 +34,135 @@ section {
 }
 
 button {
-	background-color: none;
+	background-color: white;
 	padding: .75em 1em;
+	border: 1px solid black;
 }
+
+.small-copy {
+	font-size: .8em;
+	font-style: oblique;
+}
+
+/* Fields */
+fieldset {
+	display: flex;
+	align-items: first baseline;
+	justify-content: space-between;
+	gap: 1em;
+}
+
+select, input[type="number"], input {
+	padding: .5em .75em;
+}
+
+/* Header section */
 
 header {
-	padding: 30px;
+	padding: 15px;
 }
 
+
+/* Game */
+#game {
+	position: relative;
+}
+
+.circular .details-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+}
+
+.grid .category-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.circular .category-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.category-wrapper #refresh-category {
+	background-image: url("../images/icon-restart.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	height: 1em;
+	width: 1em;
+	border: none;
+}
+
+#category {
+	font-size: 1.7rem;
+}
+
+#timer {
+	font-size: 3em;
+	font-weight: bold;
+}
+
+.circular #timer {
+	text-align: center;
+}
+
+/* Letters */
+#letters-list {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.circular #letters-list{
+	min-height: 90vh;
+	max-height: 750px;
+}
+
+.grid #letters-list {
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.circular #letters-list .letter-wrapper {
+	position: absolute;
+	transform-origin: center;
+	transition: transform 0.5s ease;
+	transform: translateY(0) rotate(0);
+}
+
+.grid #letters-list .letter-wrapper {
+	width: calc((100% / 7) - 15px);
+}
+
+
+#letters-list .letter {
+	font-size: 3rem;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+	min-width: 1.2em;
+	min-height: 1.2em;
+	padding: 15px;
+	border: 1px solid blue;
+	
+	--offset-neg: calc((6rem + 35px) * 2); /* use double font size + padding*/
+}
+
+#letters-list .letter.selected {
+	background-color: lightgrey;
+}
+
+.circular #letters-list .letter{
+	transform-origin: center;
+	transform: translateY(calc(var(--offset-neg) + 4px));
+}
+
+/* Pop-ups */
 .popup-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -57,97 +178,20 @@ header {
 
 }
 
-#game {
-	position: relative;
-}
-
-.circular .details-wrapper {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 1;
-}
-
-.circular .category-wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.grid .category-wrapper {
-	display: flex;
-}
-
-
-
-.category-wrapper button {
-	background-image: url("../images/icon-restart.svg");
-	background-repeat: no-repeat;
-	background-size: contain;
-	height: 1em;
-	width: 1em;
-}
-
-#timer {
-	font-size: 3em;
-	font-weight: bold;
-}
-
-.circular #timer {
-	text-align: center;
-}
-
-
-#letters-list {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.grid #letters-list {
-	flex-wrap: wrap;
-	gap: 15px;
-}
-.circular #letters-list{
-	min-height: 90vh;
-	max-height: 750px;
-}
-
-.circular #letters-list .letter-wrapper {
-	position: absolute;
-	transform-origin: center;
-	transition: transform 0.5s ease;
-	transform: translateY(0) rotate(0);
-}
-
-#letters-list .letter {
-	font-size: 3rem;
-	text-align: center;
-	text-transform: uppercase;
-	min-width: 1.2em;
-	min-height: 1.2em;
-	padding: 15px;
-	border: 1px solid blue;
-	
-	--offset-neg: calc((6rem + 30px) * 2); /* use double font size + padding*/
-}
-
-.circular #letters-list .letter{
-	transform-origin: center;
-	transform: translateY(calc(var(--offset-neg) + 4px));
-}
-
-#letters-list .letter.selected {
-	background-color: lightgrey;
-}
-
 #lose-screen h2 {
 	color: white;
 }
 
 #settings-wrapper #settings {
+	width: 50%;
 	padding: 30px;
 	background-color: white;
+}
+
+#settings-wrapper #settings .small-copy {
+	display: block;
+}
+
+#settings #players-list {
+	flex-wrap: wrap;
 }

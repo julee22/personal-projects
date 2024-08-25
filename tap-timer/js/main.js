@@ -10,6 +10,7 @@ const gameSettings = document.getElementById("settings-wrapper");
 
 const letterList = document.getElementById("letters-list");
 const layoutSetting = document.getElementById("layout-setting");
+var letterArrangement = "";
 
 const selectedCategory = document.getElementById("category");
 const categoriesSetting = document.getElementById("category-setting");
@@ -20,35 +21,49 @@ const timer = document.getElementById("timer");
 var timerRef;
 var maxTime = 5;
 
-const playerSetting = document.getElementById("player-setting");
-var showPlayer = false;
+const trackPlayers = document.getElementById("track-players");
+const playerSetting = document.getElementById("players-setting");
+const numOfPlayers = document.getElementById("number-players");
+const playerList = document.getElementById("players-list");
+const players = document.getElementById("players");
+var showPlayers = false;
 var currentPlayer;
-const playerList = [{
-  "name": String,
-  "score": 0,
-}];
-
+var listOfPlayers = [{}];
 
 // DOCUMENT SETUP
 $(document).ready(function(){
   
   timerSetting.defaultValue = 10;
+  trackPlayers.checked = showPlayers;
+  categoriesSetting.checked = showCategories;
 
   generateCategory();
   generateGame();
-  
-  // console.log("on page load", maxTime);
+
+  trackPlayers.addEventListener("click", function (e) {
+    showPlayers = trackPlayers.checked;
+    numOfPlayers.value = 2;
+    upatePlayers();
+    for (let index = 1; index <= numOfPlayers.value; index++) {
+      generatePlayerInput(index);
+    }
+  });
+
+  numOfPlayers.addEventListener("click", function (e) {
+    upatePlayers();
+    playerList.innerHTML = "";
+    for (let index = 1; index <= numOfPlayers.value; index++) {
+      generatePlayerInput(index);
+    }
+  });
   
 });
 
 // Game functions
 function generateGame() {
   let n = 0;
-  // console.log("generate time", maxTime);
 
   layout = layoutSetting.value;
-  
-  console.log("layout is ", layout);
 
   if (layout == 'circle') {
     game.classList = "circular";
@@ -84,8 +99,6 @@ function resetGame() {
   letterList.innerText = "";
   gameEnding.classList.add('hide');
   
-  // console.log("Reset time", maxTime);
-  
   generateGame();
 }
 
@@ -96,6 +109,16 @@ function newGame() {
     generateCategory();
   } else {
     selectedCategory.innerHTML = "";
+  }
+
+  if (showPlayers) {
+    upatePlayers();
+      
+    players.innerHTML = "";
+    
+    for (let index = 1; index < listOfPlayers.length; index++) {
+      generatePlayers(listOfPlayers[index].name , index);
+    }
   }
 }
 
@@ -137,7 +160,6 @@ function rearrangeLetters(layout, index) {
 
 function calculateAngle(index) {
   var angle = 360 / classicLetters.length * index;
-  console.log("calculate", angle);
   return "transform: rotate(" + angle + "deg)";
 }
 
@@ -152,11 +174,86 @@ function startTimer() {
       timer.innerHTML = "0";
       clearInterval(timerRef);
     } else {
-      // console.log(index, ' vs ', maxTime);
       timer.innerHTML = maxTime - index;
       index++;
     }
   }, 1000);
+}
+
+// Players
+function generatePlayerInput(playerNum) {
+  const playerLabel = document.createElement("label");
+  const playerInput = document.createElement("input");
+
+  playerLabel.setAttribute('for','player-'+ playerNum);
+  playerLabel.innerHTML = 'Player ' + playerNum;
+
+  playerInput.setAttribute('id','player-'+ playerNum);
+  playerInput.setAttribute('type','text');
+  playerInput.setAttribute('name', 'player-'+ playerNum);
+  playerInput.setAttribute('required', true);
+  playerInput.setAttribute('minlength',"1");
+  if (playerNum < listOfPlayers.length) {
+    playerInput.setAttribute('value', listOfPlayers[playerNum].name)
+  } else {
+    playerInput.setAttribute('value','')
+  }
+  
+  playerList.appendChild(playerLabel);
+  playerList.appendChild(playerInput);
+  console.log("generating player input",playerNum,"of", listOfPlayers.length);
+}
+
+function upatePlayers() {
+  console.log("tracking players?", showPlayers, numOfPlayers.value);
+
+  if (showPlayers) {
+    playerSetting.classList.remove('hide');
+    var tmpObject = {};
+
+    for (let index = 0; index < numOfPlayers.value; index++) {
+      var playerNum = index + 1;
+      if (listOfPlayers.length <= numOfPlayers.value) {
+        const tempObject = {};
+        tempObject['name'] = 'Player ' + playerNum;
+        tempObject['score'] = '0';
+        listOfPlayers.push(tempObject);
+      } else if (listOfPlayers.length > numOfPlayers.value){
+        listOfPlayers.pop();
+      }
+    }
+
+  } else {
+    // Resetting player list
+    playerSetting.classList.add('hide');
+    numOfPlayers.value = numOfPlayers.min;
+    listOfPlayers.length = 0;
+  }
+
+}
+
+function generatePlayers(name, ind) {
+  const tempRow = document.createElement("tr");
+  const tempName = document.createElement("th");
+  const tempScore = document.createElement("td");
+
+  tempName.setAttribute('id','player-'+ ind + '-input')
+  tempName.innerHTML = name;
+  tempScore.innerHTML = 0;
+
+  tempRow.appendChild(tempName);
+  tempRow.appendChild(tempScore);
+
+  players.appendChild(tempRow);
+
+}
+
+function storeScores() {
+
+}
+
+function updateScores() {
+  
 }
 
 // Game Settings
@@ -167,7 +264,15 @@ function openGameSettings() {
 function closeSettings() {
   gameSettings.classList.toggle('hide');
   var form = document.getElementById("settings");
+  
+
   form.addEventListener('submit', handleForm);
+
+  // Maintain last saved values
+  timerSetting.value = maxTime;
+  categoriesSetting.checked = showCategories;
+  trackPlayers.checked = showPlayers;
+  layoutSetting.value = letterArrangement;
 }
 
 function handleForm(event) { event.preventDefault(); } 
@@ -181,16 +286,15 @@ function saveSettings() {
 function updateGameSettings() {
   maxTime = timerSetting.value;
   showCategories = categoriesSetting.checked;
-  showPlayer = playerSetting.checked;
+  showPlayers = trackPlayers.checked;
   letterArrangement = layoutSetting.value;
 
-  if (maxTime) {
-    console.log("Time", maxTime);
-  }
-  if (showPlayer) {
-    console.log("show players");
-  }
-  if (showCategories) {
-    console.log("show categories");
-  }
+
+  // for (let index = 0; index < listOfPlayers.length; index++) {
+  //   var playerNum = index + 1;
+  //   var namePlayer = document.getElementById('player-'+ playerNum + '-input');
+  //   listOfPlayers[index].name = namePlayer.value;
+    
+  //   console.log(listOfPlayers);
+  // }
 }
