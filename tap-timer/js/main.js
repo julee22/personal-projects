@@ -28,7 +28,8 @@ const playerList = document.getElementById("players-list");
 const players = document.getElementById("players");
 var showPlayers = false;
 var currentPlayer;
-var listOfPlayers = [{}];
+var listOfPlayers = [];
+var tempListOfPlayers = [];
 
 // DOCUMENT SETUP
 $(document).ready(function(){
@@ -43,18 +44,14 @@ $(document).ready(function(){
   trackPlayers.addEventListener("click", function (e) {
     showPlayers = trackPlayers.checked;
     numOfPlayers.value = 2;
-    upatePlayers();
+    updateListOfPlayers();
     for (let index = 1; index <= numOfPlayers.value; index++) {
       generatePlayerInput(index);
     }
   });
 
   numOfPlayers.addEventListener("click", function (e) {
-    upatePlayers();
-    playerList.innerHTML = "";
-    for (let index = 1; index <= numOfPlayers.value; index++) {
-      generatePlayerInput(index);
-    }
+    updateListOfPlayers();
   });
   
 });
@@ -112,13 +109,8 @@ function newGame() {
   }
 
   if (showPlayers) {
-    upatePlayers();
-      
     players.innerHTML = "";
-    
-    for (let index = 1; index < listOfPlayers.length; index++) {
-      generatePlayers(listOfPlayers[index].name , index);
-    }
+    generatePlayers();
   }
 }
 
@@ -181,30 +173,30 @@ function startTimer() {
 }
 
 // Players
-function generatePlayerInput(playerNum) {
-  const playerLabel = document.createElement("label");
-  const playerInput = document.createElement("input");
-
-  playerLabel.setAttribute('for','player-'+ playerNum);
-  playerLabel.innerHTML = 'Player ' + playerNum;
-
-  playerInput.setAttribute('id','player-'+ playerNum);
-  playerInput.setAttribute('type','text');
-  playerInput.setAttribute('name', 'player-'+ playerNum);
-  playerInput.setAttribute('required', true);
-  playerInput.setAttribute('minlength',"1");
-  if (playerNum < listOfPlayers.length) {
-    playerInput.setAttribute('value', listOfPlayers[playerNum].name)
-  } else {
-    playerInput.setAttribute('value','')
-  }
+function generatePlayerInput() {
+  playerList.innerHTML = "";
   
-  playerList.appendChild(playerLabel);
-  playerList.appendChild(playerInput);
-  console.log("generating player input",playerNum,"of", listOfPlayers.length);
+  for (let index = 0; index < tempListOfPlayers.length; index++) {
+    const playerLabel = document.createElement("label");
+    const playerInput = document.createElement("input");
+
+    playerLabel.setAttribute('for','player-'+ index);
+    playerLabel.innerHTML = 'Player ' + index;
+
+    playerInput.setAttribute('id','player-'+ index);
+    playerInput.setAttribute('class','player-input');
+    playerInput.setAttribute('type','text');
+    playerInput.setAttribute('name', 'player-'+ index);
+    playerInput.setAttribute('required', true);
+    playerInput.setAttribute('minlength',"1");
+    playerInput.setAttribute('value', tempListOfPlayers[index].name)
+    
+    playerList.appendChild(playerLabel);
+    playerList.appendChild(playerInput);
+  }
 }
 
-function upatePlayers() {
+function updateListOfPlayers() {
   console.log("tracking players?", showPlayers, numOfPlayers.value);
 
   if (showPlayers) {
@@ -212,40 +204,52 @@ function upatePlayers() {
     var tmpObject = {};
 
     for (let index = 0; index < numOfPlayers.value; index++) {
-      var playerNum = index + 1;
-      if (listOfPlayers.length <= numOfPlayers.value) {
+      if (tempListOfPlayers[index] && tempListOfPlayers[index].name != "") {
+        updatePlayerNames(index);
+      } else if (tempListOfPlayers.length < numOfPlayers.value) {
         const tempObject = {};
-        tempObject['name'] = 'Player ' + playerNum;
+        tempObject['name'] = 'Player ' + index;
         tempObject['score'] = '0';
-        listOfPlayers.push(tempObject);
-      } else if (listOfPlayers.length > numOfPlayers.value){
-        listOfPlayers.pop();
+        tempListOfPlayers.push(tempObject);
+      } 
+      
+      if (tempListOfPlayers.length > numOfPlayers.value){
+        tempListOfPlayers.pop();
       }
     }
-
   } else {
     // Resetting player list
     playerSetting.classList.add('hide');
     numOfPlayers.value = numOfPlayers.min;
-    listOfPlayers.length = 0;
+    tempListOfPlayers.length = 0;
   }
-
+  
+  console.log(tempListOfPlayers);
+  generatePlayerInput();
 }
 
-function generatePlayers(name, ind) {
-  const tempRow = document.createElement("tr");
-  const tempName = document.createElement("th");
-  const tempScore = document.createElement("td");
+function updatePlayerNames(ind) {
+  const tempPlayerInput = document.getElementById("player-" + ind);
+  if (tempPlayerInput != null) {
+    tempListOfPlayers[ind].name = tempPlayerInput.value;
+  }
+}
 
-  tempName.setAttribute('id','player-'+ ind + '-input')
-  tempName.innerHTML = name;
-  tempScore.innerHTML = 0;
+function generatePlayers() {
+  for (let index = 0; index < listOfPlayers.length; index++) {
+    const tempRow = document.createElement("tr");
+    const tempName = document.createElement("th");
+    const tempScore = document.createElement("td");
 
-  tempRow.appendChild(tempName);
-  tempRow.appendChild(tempScore);
+    tempName.setAttribute('id','player-'+ index + '-input')
+    tempName.innerHTML = listOfPlayers[index].name;
+    tempScore.innerHTML = listOfPlayers[index].score;
 
-  players.appendChild(tempRow);
+    tempRow.appendChild(tempName);
+    tempRow.appendChild(tempScore);
 
+    players.appendChild(tempRow);
+  }
 }
 
 function storeScores() {
@@ -259,6 +263,7 @@ function updateScores() {
 // Game Settings
 function openGameSettings() {
   gameSettings.classList.toggle('hide');
+  tempListOfPlayers = listOfPlayers;
 }
 
 function closeSettings() {
@@ -288,13 +293,5 @@ function updateGameSettings() {
   showCategories = categoriesSetting.checked;
   showPlayers = trackPlayers.checked;
   letterArrangement = layoutSetting.value;
-
-
-  // for (let index = 0; index < listOfPlayers.length; index++) {
-  //   var playerNum = index + 1;
-  //   var namePlayer = document.getElementById('player-'+ playerNum + '-input');
-  //   listOfPlayers[index].name = namePlayer.value;
-    
-  //   console.log(listOfPlayers);
-  // }
+  listOfPlayers = tempListOfPlayers;
 }
