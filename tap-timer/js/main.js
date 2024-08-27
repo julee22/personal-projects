@@ -10,7 +10,7 @@ const gameSettings = document.getElementById("settings-popup");
 
 const letterList = document.getElementById("letters-list");
 const layoutSetting = document.getElementById("layout-setting");
-var letterArrangement = "circle";
+var letterArrangement = "grid";
 
 const selectedCategory = document.getElementById("category");
 const categoriesSetting = document.getElementById("category-setting");
