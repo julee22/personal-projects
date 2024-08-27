@@ -220,7 +220,7 @@ header {
 }
 
 #letters-list .letter.selected {
-	opacity: .3;
+	opacity: .2;
 	scale: 1.05;
 }
 

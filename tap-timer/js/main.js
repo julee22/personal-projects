@@ -113,7 +113,6 @@ function resetGame() {
 
 function newGame() {
   resetGame();
-  console.log("new game", listOfPlayers);
 
   if (showCategories) {
     generateCategory();
@@ -146,8 +145,11 @@ function selectLetter(elem, letter) {
     resetGame();
   }
   
+  if (showPlayers) {
+    updateTurn(currentPlayer);
+  }
+
   clearInterval(timerRef);
-  updateTurn(currentPlayer);
   startTimer();
 }
 
@@ -291,8 +293,7 @@ function generatePlayers() {
 }
 
 function updateTurn(currPlayer) {
-  
-  console.log("current player?", currPlayer);
+
   var currPlayerIndex = listOfPlayers.map(e => e.name).indexOf(currPlayer);
   var nextPlayerIndex;
 
@@ -303,7 +304,6 @@ function updateTurn(currPlayer) {
   }
 
   nextPlayer = listOfPlayers[nextPlayerIndex].name;
-  console.log("current player index?", currPlayerIndex);
 
   // Find current player and remove class
   var currPlayerElem = document.getElementById('player-'+ currPlayerIndex);
@@ -314,7 +314,6 @@ function updateTurn(currPlayer) {
 
   // Change current player
   currentPlayer = nextPlayer;
-  console.log("new current player?", currentPlayer);
 }
 
 function updateScores() {
