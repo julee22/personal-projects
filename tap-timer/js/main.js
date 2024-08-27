@@ -6,7 +6,7 @@ let leftoverLetters;
 
 const game = document.getElementById("game");
 const gameEnding = document.getElementById("lose-screen");
-const gameSettings = document.getElementById("settings-wrapper");
+const gameSettings = document.getElementById("settings-popup");
 
 const letterList = document.getElementById("letters-list");
 const layoutSetting = document.getElementById("layout-setting");
@@ -38,6 +38,10 @@ $(document).ready(function(){
   timerSetting.defaultValue = 10;
   trackPlayers.checked = showPlayers;
   categoriesSetting.checked = showCategories;
+  
+  if (window.innerWidth < 767) {
+    letterArrangement = 'grid';
+  }
   layoutSetting.value = letterArrangement;
 
   generateCategory();
@@ -384,4 +388,12 @@ function updateGameSettings() {
     listOfPlayers.length = 0;
     players.innerHTML = "";
   }
+}
+
+function openPopup(elem) {
+  document.getElementById(elem).classList.toggle('hide');
+}
+
+function closePopup(elem) {
+  document.getElementById(elem).classList.toggle('hide');
 }
