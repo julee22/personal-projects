@@ -62,6 +62,14 @@ header {
 	padding: 15px;
 }
 
+#players .current-player::before {
+	content: '>';
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-color: red;
+}
+
 
 /* Game */
 #game {
