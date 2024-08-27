@@ -271,7 +271,7 @@ header {
 /* Mobile styling */
 @media screen and (max-width: 768px) {
 	section {
-		padding: 15px;
+		padding: 5px;
 	}
 
 	.player-table {
@@ -290,7 +290,15 @@ header {
 	}
 
 	#letters-list .letter {
-		font-size: 2rem;
+		font-size: 1.5rem;
+	}
+	
+	#category {
+		font-size: 1.3rem;
+	}
+
+	#timer {
+		font-size: 2em;
 	}
 }
 
