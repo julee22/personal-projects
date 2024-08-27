@@ -5,8 +5,6 @@ body {
 	box-sizing: border-box;
 	font-size: 16px;
 	font-family: 'Manjari', Verdana, sans-serif;
-	background: url("../images/background.png") repeat-y;
-	background-size: cover;
 }
 
 .show {
@@ -35,8 +33,9 @@ section {
 
 button {
 	background-color: white;
-	padding: .75em 1em;
+	padding: 0.5em 1em;
 	border: 1px solid black;
+	margin-bottom: 7.5px;
 }
 
 .small-copy {
@@ -46,10 +45,10 @@ button {
 
 /* Fields */
 fieldset {
-	display: flex;
+	display: grid;
 	align-items: first baseline;
-	justify-content: space-between;
 	gap: 1em;
+	grid-template-columns: 1fr 50%;
 }
 
 select, input[type="number"], input {
@@ -58,22 +57,70 @@ select, input[type="number"], input {
 
 /* Header section */
 
-header {
+header, .player-table {
 	padding: 15px;
 }
 
+/* Players */
+.player-table {
+	position: absolute;
+	bottom: 0;
+	max-height: 60vh;
+	overflow-y: auto;
+}
+
+#players {
+	padding-left: 1.5em;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+#players td, #players th {
+	padding: .5em;
+	font-weight: normal;
+}
+
+#players th.player-names {
+	width: 50%;
+	text-wrap: wrap;
+	hyphens: auto;
+	hyphenate-limit-chars: 15 12 2;
+}
+
+#players td:last-child {
+	text-align: right;
+}
+
+#players .table-header {
+	border-bottom: 1px solid grey;
+}
+
+#players .current-player {
+	position: relative;
+	font-weight: bold;
+}
+
 #players .current-player::before {
-	content: '>';
+	content: '';
 	display: inline-block;
-	width: 1em;
-	height: 1em;
-	background-color: red;
+	border: 0.5em solid red;
+	border-right: none;
+	border-top-color: white;
+	border-bottom-color: white;
+	position: absolute;
+	left: -0.5em;
 }
 
 
 /* Game */
 #game {
 	position: relative;
+}
+
+.grid .details-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
 }
 
 .circular .details-wrapper {
@@ -87,6 +134,7 @@ header {
 .grid .category-wrapper {
 	display: flex;
 	align-items: center;
+	gap: 7.5px;
 }
 
 .circular .category-wrapper {
@@ -103,6 +151,7 @@ header {
 	height: 1em;
 	width: 1em;
 	border: none;
+	padding: 0px !important;
 }
 
 #category {
@@ -147,14 +196,13 @@ header {
 	width: calc((100% / 7) - 15px);
 }
 
-
 #letters-list .letter {
-	font-size: 3rem;
+	font-size: 2.75rem;
 	text-align: center;
 	text-transform: uppercase;
 	width: 100%;
-	min-width: 1.2em;
-	min-height: 1.2em;
+	min-width: 1.2rem;
+	min-height: 1.2rem;
 	padding: 15px;
 	border: 1px solid blue;
 	
@@ -191,15 +239,46 @@ header {
 }
 
 #settings-wrapper #settings {
-	width: 50%;
+	max-height: 80vh;
+	width: 90%;
+	max-width: 768px;
 	padding: 30px;
 	background-color: white;
+	overflow-y: auto;
 }
 
 #settings-wrapper #settings .small-copy {
 	display: block;
 }
 
-#settings #players-list {
-	flex-wrap: wrap;
+#settings fieldset input[type="checkbox"] {
+	justify-self: end;
+}
+
+
+/* Mobile styling */
+@media screen and (max-width: 768px) {
+	section {
+		padding: 15px;
+	}
+
+	.player-table {
+		position: relative;
+		bottom: 0;
+		max-height: 60vh;
+		overflow-y: auto;
+	}
+
+	.grid #letters-list {
+		gap: 7.5px;
+	}
+
+	.grid #letters-list .letter-wrapper {
+		width: calc((100% / 3) - 15px);
+	}
+
+	#letters-list .letter {
+		font-size: 2rem;
+		padding: 5px;
+	}
 }

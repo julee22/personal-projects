@@ -10,7 +10,7 @@ const gameSettings = document.getElementById("settings-wrapper");
 
 const letterList = document.getElementById("letters-list");
 const layoutSetting = document.getElementById("layout-setting");
-var letterArrangement = "";
+var letterArrangement = "circle";
 
 const selectedCategory = document.getElementById("category");
 const categoriesSetting = document.getElementById("category-setting");
@@ -26,6 +26,7 @@ const playerSetting = document.getElementById("players-setting");
 const numOfPlayers = document.getElementById("number-players");
 const playerList = document.getElementById("players-list");
 const players = document.getElementById("players");
+const playerTable = document.getElementsByClassName("player-table")[0];
 var showPlayers = false;
 var currentPlayer, nextPlayer;
 var listOfPlayers = [];
@@ -37,6 +38,7 @@ $(document).ready(function(){
   timerSetting.defaultValue = 10;
   trackPlayers.checked = showPlayers;
   categoriesSetting.checked = showCategories;
+  layoutSetting.value = letterArrangement;
 
   generateCategory();
   generateGame();
@@ -66,6 +68,12 @@ function generateGame() {
     game.classList = "circular";
   } else {
     game.classList = "grid";
+  }
+  
+  if (showPlayers && playerTable) {
+    playerTable.classList.remove('hide');
+  } else {
+    playerTable.classList.add('hide');
   }
 
 
@@ -165,6 +173,11 @@ function startTimer() {
 
     if (index == maxTime) {
       gameEnding.classList.remove('hide');
+      if (showPlayers) {
+        updateScores();
+      } else {
+        document.getElementById("loser").innerHTML = "YOU";
+      }
       timer.innerHTML = "0";
       clearInterval(timerRef);
     } else {
@@ -174,7 +187,7 @@ function startTimer() {
   }, 1000);
 }
 
-// Players
+// Player Settings
 function generatePlayerInputs() {
   playerList.innerHTML = "";
   
@@ -189,7 +202,7 @@ function generatePlayerInputs() {
     playerInput.setAttribute('class','player-input');
     playerInput.setAttribute('type','text');
     playerInput.setAttribute('name', 'player-'+ index);
-    playerInput.setAttribute('required', true);
+    // playerInput.setAttribute('required', true);
     playerInput.setAttribute('minlength',"1");
     playerInput.setAttribute('value', tempListOfPlayers[index].name)
     
@@ -199,7 +212,6 @@ function generatePlayerInputs() {
 }
 
 function updateListOfPlayers() {
-
   if (showPlayers) {
     playerSetting.classList.remove('hide');
     var tmpObject = {};
@@ -210,7 +222,7 @@ function updateListOfPlayers() {
       } else if (tempListOfPlayers.length < numOfPlayers.value) {
         const tempObject = {};
         tempObject['name'] = 'Player ' + index;
-        tempObject['score'] = '0';
+        tempObject['score'] = 0;
         tempListOfPlayers.push(tempObject);
       } 
       
@@ -235,13 +247,31 @@ function updatePlayerNames(ind) {
   }
 }
 
+// Players in game
 function generatePlayers() {
+  const rowHeader = document.createElement("tr");
+  const nameHeader = document.createElement("th");
+  const scoreHeader = document.createElement("td");
+
+  rowHeader.classList.add("table-header");
+  nameHeader.innerHTML = "Players";
+  nameHeader.setAttribute('scope','col');
+  scoreHeader.innerHTML = "Losses";
+  scoreHeader.setAttribute('scope','col');
+
+  rowHeader.appendChild(nameHeader);
+  rowHeader.appendChild(scoreHeader);
+
+  players.appendChild(rowHeader);
+
   for (let index = 0; index < listOfPlayers.length; index++) {
     const tempRow = document.createElement("tr");
     const tempName = document.createElement("th");
     const tempScore = document.createElement("td");
 
     tempName.setAttribute('id','player-'+ index)
+    tempName.setAttribute('scope','row');
+    tempName.setAttribute('class','player-names');
     tempName.innerHTML = listOfPlayers[index].name;
     if (index == 0) {
       currentPlayer = listOfPlayers[index].name;
@@ -283,12 +313,17 @@ function updateTurn(currPlayer) {
   console.log("new current player?", currentPlayer);
 }
 
-function storeScores() {
-
+function updateScores() {
+  document.getElementById("loser").innerHTML = currentPlayer;
+  const losingPlayer = listOfPlayers.find(({ name }) => name === currentPlayer);
+  losingPlayer.score++;
 }
 
-function updateScores() {
-  
+function resetScores() {
+  for (let index = 0; index < listOfPlayers.length; index++) {
+    listOfPlayers[index].score = 0;
+  }
+  newGame();
 }
 
 // Game Settings
@@ -296,7 +331,14 @@ function openGameSettings() {
   gameSettings.classList.toggle('hide');
   numOfPlayers.value = listOfPlayers.length;
   
-  
+  if (window.innerWidth < 767) {
+    layoutSetting.value = 'grid';
+    layoutSetting.options[0].disabled = true;
+  } else {
+    layoutSetting.value = letterArrangement;
+  }
+
+
   if (showPlayers) {
     tempListOfPlayers.length = 0;
     tempListOfPlayers = structuredClone(listOfPlayers);
@@ -331,13 +373,15 @@ function updateGameSettings() {
   showPlayers = trackPlayers.checked;
   letterArrangement = layoutSetting.value;
 
-  
-  for (let index = 0; index < numOfPlayers.value; index++) {
-    updatePlayerNames(index);
-  }
+  if (showPlayers) {
+    for (let index = 0; index < numOfPlayers.value; index++) {
+      updatePlayerNames(index);
+    }
+    listOfPlayers.length = 0;
+    listOfPlayers = structuredClone(tempListOfPlayers);
 
-  listOfPlayers.length = 0;
-  listOfPlayers = structuredClone(tempListOfPlayers);
-  console.log("temp list", tempListOfPlayers);
-  console.log("update game", listOfPlayers);
+  } else {
+    listOfPlayers.length = 0;
+    players.innerHTML = "";
+  }
 }
