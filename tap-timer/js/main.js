@@ -20,7 +20,6 @@ const timerSetting = document.getElementById("timer-setting");
 const timer = document.getElementById("timer");
 var timerRef;
 var maxTime = 10;
-var timerStarted = false;
 
 const trackPlayers = document.getElementById("track-players");
 const playerSetting = document.getElementById("players-setting");
@@ -107,16 +106,14 @@ function generateGame() {
 }
 
 function resetGame() {
-  if (!timerStarted) {
-    letterList.innerText = "";
-    gameEnding.classList.add('hide');
-    
-    if (showCategories) {
-      generateCategory();
-    }
+  letterList.innerText = "";
+  gameEnding.classList.add('hide');
   
-    generateGame();
+  if (showCategories) {
+    generateCategory();
   }
+
+  generateGame();
 }
 
 function newGame() {
@@ -185,7 +182,14 @@ function calculateAngle(index) {
 function startTimer() {
   timer.innerHTML = maxTime;
   index = 1;
-  timerStarted = true;
+
+  // disabled all other buttons 
+  const allButtons = document.querySelectorAll('button:not(.letter)');
+  allButtons.forEach(element => {
+    element.disabled = true;
+  });
+
+
   timerRef = setInterval(function() {
 
     if (index == maxTime) {
@@ -198,13 +202,20 @@ function startTimer() {
         document.getElementById("loser").innerHTML = "YOU";
       }
       timer.innerHTML = "0";
-      timerStarted = false;
       clearInterval(timerRef);
+      
+      // renable buttons
+      allButtons.forEach(element => {
+        element.disabled = false;
+      });
+      timer.classList.remove("pulse");
     } else {
       timer.innerHTML = maxTime - index;
       index++;
+      timer.classList.add("pulse");
     }
   }, 1000);
+  timer.classList.remove("pulse");
 }
 
 // Player Settings
@@ -350,7 +361,6 @@ function resetScores() {
 
 // Game Settings
 function openGameSettings() {
-  if (!timerStarted) { // stops user from opening settings when game already started
     gameSettings.classList.toggle('hide');
     numOfPlayers.value = listOfPlayers.length;
     
@@ -368,7 +378,6 @@ function openGameSettings() {
 
     settingsShowPlayers = showPlayers;
     updateListOfPlayers();
-  }
 }
 
 function closeSettings() {
