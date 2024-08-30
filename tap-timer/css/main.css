@@ -34,10 +34,69 @@ section {
 }
 
 button {
-	background-color: white;
 	padding: 0.5em 1em;
-	border: 1px solid black;
 	margin-bottom: 7.5px;
+	transition: all .3s ease;
+}
+
+button:disabled {
+	border: 1px solid gray;
+	color: grey;
+	background: transparent;
+}
+
+
+button.blue-btn {
+	background-color: white;
+	border: 1px solid darkblue;
+	color: #091242;
+}
+
+button.blue-btn:hover {
+	background-color: lightgray;
+}
+
+button.white-btn:not(:disabled) {
+	color: white;
+	background-color: #091242;
+	border: 1px solid white;
+}
+
+
+button.white-btn:not(:disabled):hover {
+	background-color: darkblue;
+	transform: translateY(-5px);
+}
+
+button.icon-btn {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	height: 1em;
+	width: 1em;
+	border: none;
+	padding: 0px !important;  
+	background-color: transparent;
+}
+
+button.icon-btn:disabled {
+	opacity: 0.2;
+}
+
+button.icon-btn:not(:disabled):hover {
+	animation-duration: 0.5s;
+	animation-name: pulse;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes pulse {
+	10%  {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.1);
+	}
 }
 
 .small-copy {
@@ -101,6 +160,10 @@ header {
 	font-weight: bold;
 }
 
+#players .current-player, .current-player ~ td {
+	background-color: darkblue;
+}
+
 #players .current-player::before {
 	content: '';
 	display: inline-block;
@@ -146,14 +209,6 @@ header {
 
 .category-wrapper #refresh-category {
 	background-image: url("../images/icon-restart.svg");
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
-	height: 1em;
-	width: 1em;
-	border: none;
-	padding: 0px !important;  
-	background-color: transparent;
 }
 
 #category {
@@ -164,6 +219,15 @@ header {
 	font-size: 3em;
 	font-weight: bold;
 	margin-bottom: 0;
+}
+
+#timer.pulse {
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-name: pulse;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	transform-origin: bottom center;
 }
 
 .circular #timer {
@@ -191,7 +255,7 @@ header {
 .circular #letters-list .letter-wrapper {
 	position: absolute;
 	transform-origin: center;
-	transition: transform 0.5s ease;
+	transition: transform 0.3s ease;
 	transform: translateY(0) rotate(0);
 }
 
@@ -217,11 +281,13 @@ header {
 
 #letters-list .letter:hover{
 	scale: 1.05;
+	transform: translateY(-5px);
 }
 
 #letters-list .letter.selected {
 	opacity: .2;
 	scale: 1.05;
+	transform: translateY(0px);
 }
 
 .circular #letters-list .letter{

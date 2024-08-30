@@ -23,15 +23,15 @@
 					<p>Best played on tablet or touchscreen device.</p>
 					<p>Recommend layout for desktop users is grid.</p>
 			
-					<button type="button" id="settings-button" onclick="openGameSettings()">Settings</button>
-					<button type="button" id="howTo-button" onclick="openPopup('howTo-popup')">How to</button>
+					<button class="white-btn" type="button" id="settings-button" onclick="openGameSettings()">Settings</button>
+					<button class="white-btn" type="button" id="howTo-button" onclick="openPopup('howTo-popup')">How to</button>
 				</header>
 			</div>
 			<div class="col">
 				<section id="game" class="circular">
 					<div class="details-wrapper">
 						<h2 class="category-wrapper">
-							<button type="button" id="refresh-category" onclick="resetGame()">
+							<button class="icon-btn" type="button" id="refresh-category" onclick="resetGame()">
 								<span class="sr-only">New category</span>
 							</button>
 							<span id="category"></span>
@@ -43,14 +43,14 @@
 					</div>
 					<div id="lose-screen" class="popup-wrapper hide">
 						 <h2><span id="loser">YOU</span> LOSE</h2>
-						<button type="reset" onclick="resetGame()">NEXT CATEGORY</button>
+						<button class="white-btn" type="reset" onclick="resetGame()">NEXT CATEGORY</button>
 					</div>
 				</section>
 				<div class="player-table hide">
 					<table id="players">
 	
 					</table>
-					<button  type="button" onclick="resetScores()" style="float: right;">Reset scores</button>
+					<button class="white-btn" type="button" onclick="resetScores()" style="float: right;">Reset scores</button>
 				</div>
 			</div>
 		</div>
@@ -88,8 +88,8 @@
 				<fieldset id="players-list"></fieldset>
 			</div>
 			<hr class="divider"/>
-			<button type="submit" onclick="saveSettings()">Save and close</button>
-			<button onclick="closeSettings()">Cancel</button>
+			<button class="blue-btn" type="submit" onclick="saveSettings()">Save and close</button>
+			<button class="blue-btn" onclick="closeSettings()">Cancel</button>
 		</form>
 	</section>
 
@@ -97,7 +97,7 @@
 		<div class="popup">
 			<h2>How to play</h2>
 			<p>Players take turns stating a word within the category. The word must not have been stated previously and start with a letter that is unselected on the board. Players have a set number of seconds to state the word and select the corresponding letter. If all letters have been used, the game will deselect all letters and players must continue until someone loses.</p>
-			<button onclick="closePopup('howTo-popup')">Close</button>
+			<button class="blue-btn" onclick="closePopup('howTo-popup')">Close</button>
 		</div>
 	</section>
 
