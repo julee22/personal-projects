@@ -57,7 +57,6 @@
 	</div>
 
 	<section id="settings-popup" class="popup-wrapper hide">
-		<p class="small-copy"><em>Note: making changes to settings marked with * will reset the game scores.</em></p>
 		<form action="" id="settings" class="popup">
 			<fieldset>
 				<label for="category-setting">Show categories*</label>
@@ -76,7 +75,8 @@
 			</fieldset>
 			<hr class="divider"/>
 			<fieldset>
-				<label for="track-players">Track player scores*</label>
+				<label for="track-players">Track player scores
+					<em class="d-block small-copy">Note: changing this will reset game scores.</em></label>
 				<input type="checkbox" id="track-players" name="track-players" value="false" checked="false">
 			</fieldset>
 			<div id="players-setting" class="hide">

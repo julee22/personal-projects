@@ -105,6 +105,7 @@ function generateGame() {
   return ;
 }
 
+// Reset letter list + show another category.
 function resetGame() {
   letterList.innerText = "";
   gameEnding.classList.add('hide');
@@ -116,8 +117,11 @@ function resetGame() {
   generateGame();
 }
 
+// Reset entire game with new players.
 function newGame() {
-  resetGame();
+  letterList.innerText = "";
+  gameEnding.classList.add('hide');
+  generateGame();
 
   if (showCategories) {
     generateCategory();
@@ -149,7 +153,8 @@ function selectLetter(elem, letter) {
   }
 
   if (leftoverLetters.length == 0) {
-    resetGame();
+    letterList.innerText = "";
+    generateGame();
   }
   
   if (showPlayers) {
