@@ -5,7 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tap a Timer</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="shortcut icon" href="../images/Genice-Designs-Logo-Square-Favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 
     <style>
     	@import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
@@ -22,15 +23,15 @@
 					<p>Best played on tablet or touchscreen device.</p>
 					<p>Recommend layout for desktop users is grid.</p>
 			
-					<button  type="button" id="settings-button" onclick="openGameSettings()">Settings</button>
-					<button  type="button" id="howTo-button" onclick="openPopup('howTo-popup')">How to</button>
+					<button type="button" id="settings-button" onclick="openGameSettings()">Settings</button>
+					<button type="button" id="howTo-button" onclick="openPopup('howTo-popup')">How to</button>
 				</header>
 			</div>
 			<div class="col">
 				<section id="game" class="circular">
 					<div class="details-wrapper">
 						<h2 class="category-wrapper">
-							<button type="button" id="refresh-category" onclick="newGame()">
+							<button type="button" id="refresh-category" onclick="resetGame()">
 								<span class="sr-only">New category</span>
 							</button>
 							<span id="category"></span>
@@ -42,7 +43,7 @@
 					</div>
 					<div id="lose-screen" class="popup-wrapper hide">
 						 <h2><span id="loser">YOU</span> LOSE</h2>
-						<button type="reset" onclick="newGame()">NEXT CATEGORY</button>
+						<button type="reset" onclick="resetGame()">NEXT CATEGORY</button>
 					</div>
 				</section>
 				<div class="player-table hide">
@@ -56,9 +57,10 @@
 	</div>
 
 	<section id="settings-popup" class="popup-wrapper hide">
+		<p class="small-copy"><em>Note: making changes to settings marked with * will reset the game scores.</em></p>
 		<form action="" id="settings" class="popup">
 			<fieldset>
-				<label for="category-setting">Show categories</label>
+				<label for="category-setting">Show categories*</label>
 				<input type="checkbox" id="category-setting" name="category-setting" value="true" checked>
 			</fieldset>
 			<fieldset>
@@ -74,8 +76,8 @@
 			</fieldset>
 			<hr class="divider"/>
 			<fieldset>
-				<label for="track-players">Track player scores</label>
-				<input type="checkbox" id="track-players" name="track-players" value="false">
+				<label for="track-players">Track player scores*</label>
+				<input type="checkbox" id="track-players" name="track-players" value="false" checked="false">
 			</fieldset>
 			<div id="players-setting" class="hide">
 				<fieldset>

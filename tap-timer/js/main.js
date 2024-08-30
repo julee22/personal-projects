@@ -19,7 +19,8 @@ var showCategories = true;
 const timerSetting = document.getElementById("timer-setting");
 const timer = document.getElementById("timer");
 var timerRef;
-var maxTime = 5;
+var maxTime = 10;
+var timerStarted = false;
 
 const trackPlayers = document.getElementById("track-players");
 const playerSetting = document.getElementById("players-setting");
@@ -28,6 +29,7 @@ const playerList = document.getElementById("players-list");
 const players = document.getElementById("players");
 const playerTable = document.getElementsByClassName("player-table")[0];
 var showPlayers = false;
+var settingsShowPlayers = showPlayers;
 var currentPlayer, nextPlayer;
 var listOfPlayers = [];
 var tempListOfPlayers = [];
@@ -48,11 +50,11 @@ $(document).ready(function(){
   generateGame();
 
   trackPlayers.addEventListener("click", function (e) {
-    showPlayers = trackPlayers.checked;
+    settingsShowPlayers =  trackPlayers.checked;
     numOfPlayers.value = 2;
     updateListOfPlayers();
     for (let index = 1; index <= numOfPlayers.value; index++) {
-      generatePlayerInputs(index);
+      generatePlayerInputs();
     }
   });
 
@@ -105,10 +107,16 @@ function generateGame() {
 }
 
 function resetGame() {
-  letterList.innerText = "";
-  gameEnding.classList.add('hide');
+  if (!timerStarted) {
+    letterList.innerText = "";
+    gameEnding.classList.add('hide');
+    
+    if (showCategories) {
+      generateCategory();
+    }
   
-  generateGame();
+    generateGame();
+  }
 }
 
 function newGame() {
@@ -116,8 +124,10 @@ function newGame() {
 
   if (showCategories) {
     generateCategory();
+    document.getElementById("refresh-category").classList.remove("hide");
   } else {
     selectedCategory.innerHTML = "";
+    document.getElementById("refresh-category").classList.add("hide");
   }
 
   if (showPlayers) {
@@ -175,16 +185,20 @@ function calculateAngle(index) {
 function startTimer() {
   timer.innerHTML = maxTime;
   index = 1;
+  timerStarted = true;
   timerRef = setInterval(function() {
 
     if (index == maxTime) {
       gameEnding.classList.remove('hide');
       if (showPlayers) {
         updateScores();
+        // Uncomment if you want the next player to go after a loss
+        // updateTurn(currentPlayer); 
       } else {
         document.getElementById("loser").innerHTML = "YOU";
       }
       timer.innerHTML = "0";
+      timerStarted = false;
       clearInterval(timerRef);
     } else {
       timer.innerHTML = maxTime - index;
@@ -218,7 +232,7 @@ function generatePlayerInputs() {
 }
 
 function updateListOfPlayers() {
-  if (showPlayers) {
+  if (settingsShowPlayers) {
     playerSetting.classList.remove('hide');
     var tmpObject = {};
 
@@ -283,6 +297,7 @@ function generatePlayers() {
       currentPlayer = listOfPlayers[index].name;
       tempName.classList.add("current-player");
     }
+    tempScore.setAttribute('id','player-'+ index+ '-score');
     tempScore.innerHTML = listOfPlayers[index].score;
 
     tempRow.appendChild(tempName);
@@ -293,7 +308,6 @@ function generatePlayers() {
 }
 
 function updateTurn(currPlayer) {
-
   var currPlayerIndex = listOfPlayers.map(e => e.name).indexOf(currPlayer);
   var nextPlayerIndex;
 
@@ -317,9 +331,14 @@ function updateTurn(currPlayer) {
 }
 
 function updateScores() {
+  // displays losing name
   document.getElementById("loser").innerHTML = currentPlayer;
-  const losingPlayer = listOfPlayers.find(({ name }) => name === currentPlayer);
+  // stores score
+  var losingPlayer = listOfPlayers.find(({ name }) => name === currentPlayer);
   losingPlayer.score++;
+  // displays score
+  var losingPlayerIndex = listOfPlayers.map(e => e.name).indexOf(currentPlayer);
+  document.getElementById('player-'+ losingPlayerIndex + '-score').innerHTML = losingPlayer.score;
 }
 
 function resetScores() {
@@ -331,20 +350,23 @@ function resetScores() {
 
 // Game Settings
 function openGameSettings() {
-  gameSettings.classList.toggle('hide');
-  numOfPlayers.value = listOfPlayers.length;
-  
-  if (window.innerWidth < 767) {
-    layoutSetting.value = 'grid';
-    layoutSetting.options[0].disabled = true;
-  } else {
-    layoutSetting.value = letterArrangement;
-  }
+  if (!timerStarted) { // stops user from opening settings when game already started
+    gameSettings.classList.toggle('hide');
+    numOfPlayers.value = listOfPlayers.length;
+    
+    if (window.innerWidth < 767) {
+      layoutSetting.value = 'grid';
+      layoutSetting.options[0].disabled = true;
+    } else {
+      layoutSetting.value = letterArrangement;
+    }
 
+    if (showPlayers) {
+      tempListOfPlayers.length = 0;
+      tempListOfPlayers = structuredClone(listOfPlayers);
+    }
 
-  if (showPlayers) {
-    tempListOfPlayers.length = 0;
-    tempListOfPlayers = structuredClone(listOfPlayers);
+    settingsShowPlayers = showPlayers;
     updateListOfPlayers();
   }
 }
@@ -367,13 +389,16 @@ function handleForm(event) { event.preventDefault(); }
 function saveSettings() {
   updateGameSettings();
   newGame();
-  return closeSettings();
+  gameSettings.classList.toggle('hide');
+
+  var form = document.getElementById("settings");
+  form.addEventListener('submit', handleForm);
 }
 
 function updateGameSettings() {
   maxTime = timerSetting.value;
   showCategories = categoriesSetting.checked;
-  showPlayers = trackPlayers.checked;
+  showPlayers = settingsShowPlayers;
   letterArrangement = layoutSetting.value;
 
   if (showPlayers) {
