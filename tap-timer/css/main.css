@@ -72,8 +72,8 @@ button.icon-btn {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	height: 1em;
-	width: 1em;
+	height: 30px;
+	width: 30px;
 	border: none;
 	padding: 0px !important;  
 	background-color: transparent;
@@ -88,6 +88,13 @@ button.icon-btn:not(:disabled):hover {
 	animation-name: pulse;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
+}
+
+.icon-btn#refresh-category {
+	background-image: url("../images/icon-restart.svg");
+}
+.icon-btn#pause-game {
+	background-image: url("../images/icon-pause.svg");
 }
 
 @keyframes pulse {
@@ -207,8 +214,16 @@ header {
 	align-items: center;
 }
 
-.category-wrapper #refresh-category {
-	background-image: url("../images/icon-restart.svg");
+.grid .timer-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 7.5px;
+}
+
+.circular .timer-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 #category {

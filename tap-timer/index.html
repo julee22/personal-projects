@@ -36,14 +36,13 @@
 							</button>
 							<span id="category"></span>
 						</h2>
-						<p id="timer"></p>
+						<div class="timer-wrapper">
+							<p id="timer"></p>
+							<button class="icon-btn no-disable" type="button" id="pause-game" onclick="pauseTimer()"></button>
+						</div>
 					</div>
 					<div id="letters-list">
 
-					</div>
-					<div id="lose-screen" class="popup-wrapper hide">
-						 <h2><span id="loser">YOU</span> LOSE</h2>
-						<button class="white-btn" type="reset" onclick="resetGame()">NEXT CATEGORY</button>
 					</div>
 				</section>
 				<div class="player-table hide">
@@ -55,6 +54,11 @@
 			</div>
 		</div>
 	</div>
+
+	<section id="lose-screen" class="popup-wrapper hide">
+		<h2><span id="loser">YOU</span> LOSE</h2>
+		<button class="white-btn" type="reset" onclick="resetGame()">NEXT CATEGORY</button>
+	</section>
 
 	<section id="settings-popup" class="popup-wrapper hide">
 		<form action="" id="settings" class="popup">
@@ -99,6 +103,11 @@
 			<p>Players take turns stating a word within the category. The word must not have been stated previously and start with a letter that is unselected on the board. Players have a set number of seconds to state the word and select the corresponding letter. If all letters have been used, the game will deselect all letters and players must continue until someone loses.</p>
 			<button class="blue-btn" onclick="closePopup('howTo-popup')">Close</button>
 		</div>
+	</section>
+
+	<section id="pauseGame-popup" class="popup-wrapper hide">
+		<h2>PAUSED</h2>
+		<button class="white-btn no-disable" onclick="resumeTimer()">Resume game</button>
 	</section>
 
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>

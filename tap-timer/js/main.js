@@ -20,6 +20,8 @@ const timerSetting = document.getElementById("timer-setting");
 const timer = document.getElementById("timer");
 var timerRef;
 var maxTime = 10;
+var isPaused = false;
+var currTime = 10;
 
 const trackPlayers = document.getElementById("track-players");
 const playerSetting = document.getElementById("players-setting");
@@ -191,7 +193,9 @@ function startTimer() {
   // disabled all other buttons 
   const allButtons = document.querySelectorAll('button:not(.letter)');
   allButtons.forEach(element => {
-    element.disabled = true;
+    if(!element.classList.contains("no-disable")) {
+      element.disabled = true;
+    }
   });
 
 
@@ -214,13 +218,27 @@ function startTimer() {
         element.disabled = false;
       });
       timer.classList.remove("pulse");
-    } else {
+    } else if (!isPaused) {
       timer.innerHTML = maxTime - index;
       index++;
       timer.classList.add("pulse");
+    } else {
+      timer.innerHTML = currTime;
+      timer.classList.remove("pulse");
     }
   }, 1000);
   timer.classList.remove("pulse");
+}
+
+function pauseTimer() {
+  currTime = timer.innerHTML;
+  isPaused = true;
+  openPopup('pauseGame-popup');
+}
+
+function resumeTimer() {
+  isPaused = false;
+  closePopup('pauseGame-popup');
 }
 
 // Player Settings
