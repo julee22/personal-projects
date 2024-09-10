@@ -383,8 +383,8 @@ header {
 	}
 }
 
-@media screen and (max-width: 1040px) {
-	header {
+@media screen and (max-width: 991.99px) {
+	header,  header ~ .small-copy{
 		text-align: center;
 	}
 }
