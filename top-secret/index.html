@@ -16,12 +16,12 @@
 </head>
 <body>
 	<div class="container" id="bg">
-		<section>
+		<section id="main">
 			<div class="countdown-wrapper">
 				<p id="countdown">15 : 00</p>
 			</div>
-			<h1>A Top Secret Mission has been found!</h1>
-			<p>You have 15 minutes and 3 chances to find the TOP SECRET code and disarm the countdown.<br/>Should you fail, Santa will not be coming to town this year.</p>
+			<h1>Someone has found a bomb in Santa Clause's workshop!</h1>
+			<p>Agents, you have 15 minutes to find the <strong>TOP SECRET</strong> clues to crack the code. <br/>You only have 3 chances to stop the countdown.</p><p>Should your team fail, Santa Clause will not be coming to town this year.  Good luck agents.</p>
 			<div class="guess-wrapper">
 				<span class="default" id="guess-1"></span>
 				<span class="default" id="guess-2"></span>
@@ -35,16 +35,19 @@
 			</div>
 			<button class="red-btn" type="button" id="submit-button" onclick="checkAnswer()">SUBMIT</button>
 		</section>
+
+		<section id="win-screen" class="popup-wrapper hide">
+			<h1>CONGRATULATIONS! You've saved Christmas!</h1>
+			<p>Santa thanks you all! You have all proven yourselves capable of joining the 007 team.</p>
+		</section>
+	
+		<section id="lose-screen" class="popup-wrapper hide">
+			<h1>Are you really secret agents?</h1>
+			<p>You've failed to crack the code and now Santa can't give out his gifts. Are you sure you found all of the Top Secret clues?</p>
+			<p>Headquarters can buy you 5 minutes of time and 1 last chance to save the day. Good luck agents.</p>
+			<button class="red-btn" type="button" id="refresh-button" onclick="refresh()">Give me a second chance</button>
+		</section>
 	</div>
-
-	<section id="win-screen" class="popup-wrapper hide">
-		<h2><span id="winner">YOU</span> win</h2>
-	</section>
-
-	<section id="pauseGame-popup" class="popup-wrapper hide">
-		<h2>PAUSED</h2>
-		<button class="white-btn no-disable" onclick="resumeCountdown()">Resume game</button>
-	</section>
 
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="js/categories.js"></script>

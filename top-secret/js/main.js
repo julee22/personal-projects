@@ -1,21 +1,48 @@
 
 // VARIABLES
 const code = [7,1,8,6];
+var inputAnswers = document.getElementsByClassName("number-field");
+var guessCount = 1;
 
 const countdown = document.getElementById("countdown");
 var countdownRef;
 var minVal = 14;
-var secVal = 59;
+var secVal = 59;  
+var tempMinVal, tempSecVal;
 
 // DOCUMENT SETUP
 $(document).ready(function(){
+  clearCode();
   startCountdown();
-
   codeInput();
 });
 
 // Tests answer submitted
 function checkAnswer() {
+  var answer1 = document.getElementById("first").value;
+  var answer2 = document.getElementById("second").value;
+  var answer3 = document.getElementById("third").value;
+  var answer4 = document.getElementById("fourth").value;
+
+  console.log(answer1, answer2, answer3, answer4);
+  console.log(code);
+
+  if (answer1 == code[0] &&
+    answer2 == code[1] && 
+    answer3 == code[2] &&
+    answer4 == code[3]
+  ) {
+    closePopup("main");
+    openPopup("win-screen");
+  } else if (guessCount == 3) {
+    closePopup("main");
+    openPopup("lose-screen");
+  } else {
+    var currGuess = document.getElementById("guess-"+guessCount);
+    currGuess.classList.add("wrong");
+    guessCount++;
+    clearCode();
+  }
 }
 
 // Code number fields
@@ -46,12 +73,18 @@ function codeInput() {
   }
 }
 
+function clearCode() {
+  for (let index = 0; index < inputAnswers.length; index++) {
+    const answer = inputAnswers[index];
+    answer.value = "";
+    
+  }
+}
+
 // Countdown
-function startCountdown() {  
-  var tempMinVal, tempSecVal;
+function startCountdown() {
   tempMinVal = minVal;
   tempSecVal = secVal;
-
 
   countdownRef = setInterval(function() {
     if (tempMinVal == 0 && tempSecVal == 0) {
@@ -62,8 +95,19 @@ function startCountdown() {
       tempSecVal = secVal;
     }
 
-    countdown.innerHTML = tempMinVal + " : " + prependZero(tempSecVal--);
+    countdown.innerHTML = prependZero(tempMinVal) + " : " + prependZero(tempSecVal--);
   }, 1000);
+}
+
+function refresh() {
+  minVal = 4;
+  countdown.innerHTML = "05 : 00";
+  
+  closePopup("lose-screen");
+  openPopup("main");
+
+  clearInterval(countdownRef);
+  startCountdown();
 }
 
 function prependZero(input) {
@@ -79,6 +123,6 @@ function openPopup(elem) {
   document.getElementById(elem).classList.toggle('hide');
 }
 
-function cwinPopup(elem) {
+function closePopup(elem) {
   document.getElementById(elem).classList.toggle('hide');
 }
