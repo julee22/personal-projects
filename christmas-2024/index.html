@@ -16,43 +16,20 @@
 </head>
 <body>
 	<div class="container" id="bg">
-		<section id="main">
-			<h1>Someone has found a bomb in Santa Clause's workshop!</h1>
-			<p>Agents, you have 15 minutes to find the <strong>TOP SECRET</strong> clues to crack the code. <br/>You only have 3 chances to stop the countdown.</p><p>Should your team fail, Santa Clause will not be coming to town this year.  Good luck agents.</p>
-			<div class="countdown-wrapper">
-				<p id="countdown">15 : 00</p>
-			</div>
-			<div id="code" class="number-wrapper">
-				<input class="number-field" type="text" id="first" maxlength="1" placeholder="0"/>
-				<input class="number-field" type="text" id="second" maxlength="1" placeholder="0"/>
-				<input class="number-field" type="text" id="third" maxlength="1" placeholder="0"/>
-				<input class="number-field" type="text" id="fourth" maxlength="1" placeholder="0"/>
-			</div>
-			<div class="guess-wrapper">
-				<span class="default" id="guess-1"></span>
-				<span class="default" id="guess-2"></span>
-				<span class="default" id="guess-3"></span>
-			</div>
-			<button class="red-btn" type="button" id="submit-button" onclick="checkAnswer()">SUBMIT</button>
-		</section>
+	<section id="main">
+		<h1 id="mission-heading"></h1>
+		<p id="mission-brief"></p>
+		<p id="mission-details-location"></p>
+		<p id="mission-details-date"></p>
+		<p id="mission-details-time"></p>
+	</section>
 
-		<section id="win-screen" class="popup-wrapper hide">
-			<h1>CONGRATULATIONS! You've saved Christmas!</h1>
-			<p>Santa thanks you all! You have all proven yourselves capable of joining the 007 team.</p>
-		</section>
-	
-		<section id="lose-screen" class="popup-wrapper hide">
-			<h1>Are you really secret agents?</h1>
-			<p>You've failed to crack the code and now Santa can't give out his gifts. Are you sure you found all of the Top Secret clues?</p>
-			<p>Headquarters can buy you 5 minutes of time and 1 last chance to save the day. Good luck agents.</p>
-			<button class="red-btn" type="button" id="refresh-button" onclick="refresh()">Give me a second chance</button>
-		</section>
+	<button class="red-btn" type="button" id="submit-button" onclick="checkAnswer()">SUBMIT</button>
+
 	</div>
 
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="js/categories.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/confetti.js"></script>
 
 </body>
 </html>
