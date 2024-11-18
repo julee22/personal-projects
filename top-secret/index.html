@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tap a Timer</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="shortcut icon" href="../images/Genice-Designs-Logo-Square-Favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <style>
+    	@import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
+    </style>
+
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 col-lg-2">
+				<header >
+					<h1>Tap a Timer</h1>
+					<p>Best played on tablet or touchscreen device.</p>
+					<p>Recommend layout for desktop users is grid.</p>
+			
+					<button class="white-btn" type="button" id="settings-button" onclick="openGameSettings()">Settings</button>
+					<button class="white-btn" type="button" id="howTo-button" onclick="openPopup('howTo-popup')">How to</button>
+				</header>
+				<p class="small-copy">Made by <a href="https://genicedesigns.art/" target="_blank">GeniceDesigns</a></p>
+			</div>
+			<div class="col">
+				<section id="game" class="circular">
+					<div class="details-wrapper">
+						<h2 class="category-wrapper">
+							<button class="icon-btn" type="button" id="refresh-category" onclick="resetGame()">
+								<span class="sr-only">New category</span>
+							</button>
+							<span id="category"></span>
+						</h2>
+						<div class="timer-wrapper">
+							<p id="timer"></p>
+							<button class="icon-btn no-disable" type="button" id="pause-game" onclick="pauseTimer()"></button>
+						</div>
+					</div>
+					<div id="letters-list">
+
+					</div>
+				</section>
+				<div class="player-table hide">
+					<table id="players">
+	
+					</table>
+					<button class="white-btn" type="button" onclick="resetScores()" style="float: right;">Reset scores</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section id="lose-screen" class="popup-wrapper hide">
+		<h2><span id="loser">YOU</span> LOSE</h2>
+		<button class="white-btn" type="reset" onclick="resetGame()">NEXT CATEGORY</button>
+	</section>
+
+	<section id="settings-popup" class="popup-wrapper hide">
+		<form action="" id="settings" class="popup">
+			<fieldset>
+				<label for="category-setting">Show categories*</label>
+				<input type="checkbox" id="category-setting" name="category-setting" value="true" checked>
+			</fieldset>
+			<fieldset>
+				<label for="layout-setting">Choose a letter arrangment: <span class="small-copy">(Grid is recommended for desktop and mobile users)</span></label>
+				<select id="layout-setting" for="layout-setting">
+					<option value="circle">Circular</option>
+					<option value="grid">Grid</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<label for="timer-setting">Seconds per player :</label>
+				<input type="number" id="timer-setting" name="timer" min="3" max="15">
+			</fieldset>
+			<hr class="divider"/>
+			<fieldset>
+				<label for="track-players">Track player scores
+					<em class="d-block small-copy">Note: changing this will reset game scores.</em></label>
+				<input type="checkbox" id="track-players" name="track-players" value="false" checked="false">
+			</fieldset>
+			<div id="players-setting" class="hide">
+				<fieldset>
+					<label for="number-players">Number of players :</label>
+					<input type="number" id="number-players" name="num-player" min="2" max="6">
+				</fieldset>
+				<hr class="divider"/>
+				<fieldset id="players-list"></fieldset>
+			</div>
+			<hr class="divider"/>
+			<button class="blue-btn" type="submit" onclick="saveSettings()">Save and close</button>
+			<button class="blue-btn" onclick="closeSettings()">Cancel</button>
+		</form>
+	</section>
+
+	<section id="howTo-popup" class="popup-wrapper hide">
+		<div class="popup">
+			<h2>How to play</h2>
+			<p>Players take turns stating a word within the category. The word must not have been stated previously and start with a letter that is unselected on the board. Players have a set number of seconds to state the word and select the corresponding letter. If all letters have been used, the game will deselect all letters and players must continue until someone loses.</p>
+			<button class="blue-btn" onclick="closePopup('howTo-popup')">Close</button>
+		</div>
+	</section>
+
+	<section id="pauseGame-popup" class="popup-wrapper hide">
+		<h2>PAUSED</h2>
+		<button class="white-btn no-disable" onclick="resumeTimer()">Resume game</button>
+	</section>
+
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/categories.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
