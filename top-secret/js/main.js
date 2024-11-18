@@ -34,6 +34,7 @@ function checkAnswer() {
   ) {
     closePopup("main");
     openPopup("win-screen");
+    startConfettiEffect();
   } else if (guessCount == 3) {
     closePopup("main");
     openPopup("lose-screen");
@@ -126,3 +127,18 @@ function openPopup(elem) {
 function closePopup(elem) {
   document.getElementById(elem).classList.toggle('hide');
 }
+
+// for starting the confetti 
+const startConfettiEffect = () => {
+  setTimeout(function() {
+      confetti.start()
+  }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+};
+
+//  for stopping the confetti 
+
+const stopConfettiEffect = () => {
+  setTimeout(function() {
+      confetti.stop()
+  }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+};
