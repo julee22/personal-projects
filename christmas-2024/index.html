@@ -9,25 +9,58 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
     <style>
-		@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Doto:wght@100..900&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 	</style>
 
 
 </head>
 <body>
-	<div class="container" id="bg">
-	<section id="main">
-		<h1 id="mission-heading"></h1>
-		<p id="mission-brief"></p>
-		<p id="mission-details-location"></p>
-		<p id="mission-details-date"></p>
-		<p id="mission-details-time"></p>
+	<section class="container">
+		<form id="my-form"
+			method="POST"
+			action="https://script.google.com/macros/s/AKfycbzLYJ72mWloVm0wrimBPvhdl9fp_swknxUT5LrpEoIRzcNHP1HK2GUTGrIYhqkU9GQf2A/exec"
+		>
+			<div id="landing" class="show">
+				<fieldset>
+					<label for="Name" class="input-field-label"><strong>Welcome, Agent</strong></label>
+					<input type="text" class="input-field" maxlength="256" name="Name" placeholder="Enter name" id="name" required="">
+				</fieldset>
+				<div class="btn-wrapper">
+					<button class="green-btn" style="opacity: 0;" type="button" onclick="nameEntered()" id="goBtn">Enter</button>
+				</div>
+			</div>
+
+			<div id="mission" class="hide">
+				<img src="../" alt="">
+				<h1 id="mission-heading"></h1>
+				<p style="margin-bottom: 2em;" id="mission-brief"></p>
+				<p><span class="detail-label" id="mission-loc"></span> <span id="mission-loc-details"></span></p>
+				<p><span class="detail-label" id="mission-date"></span> <span id="mission-date-details"></span></p>
+				<p><span class="detail-label" id="mission-time"></span> <span id="mission-time-details"></span></p>
+				<p style="margin-top: 2em;" id="mission-accept"></p>
+			</div>
+			<div id="question" class="hide">
+				<fieldset class="btn-wrapper">
+					<input class="radio-field" name="Attendance" type="radio" value="yes" id="accept" required="">
+					<label for="accept" class="radio-label green-btn btn">
+						<strong>Accept</strong>
+					</label>
+
+					<input class="radio-field" name="Attendance" type="radio" value="no" id="reject" required="" >
+					<label for="reject" class="radio-label red-btn btn">
+						<strong>Reject</strong>
+					</label>
+					
+					<button type="submit" id="submit">Submit ></button>
+				</fieldset>
+			</div>
+		</form>
+		
+		<div id="success-msg" class="success-message hide" tabindex="-1" role="region" aria-label="RSVP Form success">
+			<h2 class="">Thank you.</h2>
+			<p> This transmission will self-destruct in <span id="timer"></span>.</p>
+		</div>
 	</section>
-
-	<button class="red-btn" type="button" id="submit-button" onclick="checkAnswer()">SUBMIT</button>
-
-	</div>
-
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
