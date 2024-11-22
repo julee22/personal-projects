@@ -11,7 +11,7 @@ var allCopy = [{
   copy: 'Location:'
 }, {
   id: 'mission-loc-details',
-  copy: '32 St James Ave'
+  copy: '32 St James Ave, Woodbridge, ON'
 },{
   id: 'mission-date',
   copy: 'Date:'
@@ -32,7 +32,7 @@ var allCopy = [{
 
 var copyIndex = 0;
 var i = 0;
-var speed = 5;
+var speed = 20;
 
 var showMission = false;
 var showForm = false;
@@ -47,6 +47,9 @@ const timer = document.getElementById("timer");
 var timerRef;
 var currTime = 10;
 var maxTime = 10;
+
+const imageMap = document.getElementById("map");
+var imageTimer;
 
 // DOCUMENT SETUP
 $(document).ready(function() {
@@ -113,10 +116,11 @@ function nameEntered() {
     typeWriter(allCopy[0].id, allCopy[0].copy);
     mission.classList.toggle("hide");
     landing.classList.toggle("hide");
+    imageLoad();
   }
 }
 
-
+// Timer
 function startTimer() {
   timer.innerHTML = maxTime;
   index = 1;
@@ -133,4 +137,25 @@ function startTimer() {
       index++;
     }
   }, 1000);
+}
+
+// image loading
+function imageLoad() {
+  var totalTime, intervalTime;
+  var imageLoadAmount = 0;
+
+  allCopy.forEach(element => {
+    const copyLength = element.copy.length;
+    totalTime = copyLength * speed;
+    intervalTime = totalTime;
+  });
+
+  imageTimer = setInterval(function() {
+    if (imageLoadAmount <= 100) {
+      $(imageMap).css("clip-path", "polygon(0 0, 100% 0, 100% "+imageLoadAmount+"%, 0% "+imageLoadAmount+"%)" )
+      imageLoadAmount += 10;
+    } else {
+      clearInterval(imageTimer);
+    }
+  }, intervalTime);
 }

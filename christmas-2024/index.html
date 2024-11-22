@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Secret Christmas Mission</title>
+    <title>2024 Christmas Mission</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="shortcut icon" href="../images/Genice-Designs-Logo-Square-Favicon.ico">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -30,29 +30,40 @@
 				</div>
 			</div>
 
-			<div id="mission" class="hide">
-				<img src="../" alt="">
-				<h1 id="mission-heading"></h1>
-				<p style="margin-bottom: 2em;" id="mission-brief"></p>
-				<p><span class="detail-label" id="mission-loc"></span> <span id="mission-loc-details"></span></p>
-				<p><span class="detail-label" id="mission-date"></span> <span id="mission-date-details"></span></p>
-				<p><span class="detail-label" id="mission-time"></span> <span id="mission-time-details"></span></p>
-				<p style="margin-top: 2em;" id="mission-accept"></p>
-			</div>
-			<div id="question" class="hide">
-				<fieldset class="btn-wrapper">
-					<input class="radio-field" name="Attendance" type="radio" value="yes" id="accept" required="">
-					<label for="accept" class="radio-label green-btn btn">
-						<strong>Accept</strong>
-					</label>
+			<div id="mission" class="row hide">
+				<div class="col-12 col-lg-8 order-lg-2">
+					<h1 id="mission-heading"></h1>
+					<p style="margin-bottom: 2em;" id="mission-brief"></p>
+					<div id="mission-details">
+						<p><span class="detail-label" id="mission-loc"></span> <span id="mission-loc-details"></span></p>
+						<p><span class="detail-label" id="mission-date"></span> <span id="mission-date-details"></span></p>
+						<p><span class="detail-label" id="mission-time"></span> <span id="mission-time-details"></span></p>
+						<p style="margin-top: 2em;" id="mission-accept"></p>
+					</div>
+					<div id="question" class="hide">
+						<fieldset class="btn-wrapper">
+							<input class="radio-field" name="Attendance" type="radio" value="yes" id="accept" required="">
+							<label for="accept" class="radio-label green-btn btn">
+								<strong>Accept</strong>
+							</label>
 
-					<input class="radio-field" name="Attendance" type="radio" value="no" id="reject" required="" >
-					<label for="reject" class="radio-label red-btn btn">
-						<strong>Reject</strong>
-					</label>
-					
-					<button type="submit" id="submit">Submit ></button>
-				</fieldset>
+							<input class="radio-field" name="Attendance" type="radio" value="no" id="reject" required="" >
+							<label for="reject" class="radio-label red-btn btn">
+								<strong>Reject</strong>
+							</label>
+							
+							<button type="submit" id="submit">Submit ></button>
+						</fieldset>
+					</div>
+				</div>
+				<div class="col-12 col-lg-4 order-lg-1">
+					<div class="img-wrapper" id="map">
+						<span class="dot pulse"></span>
+						<a href="https://maps.app.goo.gl/PxsnkDokNKaKWGnQ7" target="_blank">
+							<img src="images/address.png" alt="" width="100%"/>
+						</a>
+					</div>
+				</div>
 			</div>
 		</form>
 		

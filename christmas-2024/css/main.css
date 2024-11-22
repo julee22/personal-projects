@@ -7,6 +7,7 @@ body {
 	font-family: 'Orbitron', Verdana, sans-serif;
 	background-color: black;
 	color: white;
+	letter-spacing: 1.5px;
 }
 
 .show {
@@ -50,17 +51,58 @@ section {
 	margin-right: auto;
 }
 
-#mission {
+/* Map */
+#mission .img-wrapper {
+	transition: clip-path 1s ease;
+	clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+	border: 1px solid gray;
+	position: relative;
+}
+
+#mission .img-wrapper .dot {
+	width: 10px;
+	height: 10px;
+	background-color: red;
+	border: 3px solid transparent;
+	border-radius: 50%;
+	position: absolute;
+	top: 32%;
+	left: 20%;
+	box-sizing: border-box;
+}
+
+.pulse {
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-name: pulse;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	transform-origin: center center;
+}
+
+@keyframes pulse {
+	10%  {
+		transform: scale(1);
+		border-color: transparent;
+	}
+	100% {
+		transform: scale(1.1);
+		border-color: lightcoral;
+	}
+}
+
+/* Details */
+#mission-details {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 }
 
-#mission p {
+#mission-details p {
 	display: flex;
 }
 
-#mission p:last-child {
+#mission-details p:last-child {
 	border-right: .15em solid red;
 	animation: 
     typing 3.5s steps(40, end),
@@ -68,7 +110,7 @@ section {
 }
 
 .detail-label {
-	min-width: 100px;
+	min-width: 120px;
 }
 
 
@@ -100,13 +142,13 @@ section {
 }
 
 .radio-field:checked + .radio-label.green-btn {
-	background-color: darkgreen;
-	color: white;
+	background-color: #66FF00;
+	color: black;
 }
 
 .radio-field:checked + .radio-label.red-btn {
-	background-color: darkred;
-	color: white;
+	background-color: red;
+	color: black;
 }
 
 /* Buttons */
@@ -152,10 +194,10 @@ button:disabled {
 	color: red;
 }
 .red-btn:hover {
-	-webkit-box-shadow:inset 0px 0px 0px 2px red;
-	-moz-box-shadow:inset 0px 0px 0px 2px red;
-	box-shadow:inset 0px 0px 0px 2px red;
-	color: darkred;
+	-webkit-box-shadow:inset 0px 0px 0px 2px #ff2323;
+	-moz-box-shadow:inset 0px 0px 0px 2px #ff2323;
+	box-shadow:inset 0px 0px 0px 2px #ff2323;
+	color: #ff2323;
 }
 
 .green-btn {
@@ -166,11 +208,14 @@ button:disabled {
 }
 
 .green-btn:hover {
-	-webkit-box-shadow:inset 0px 0px 0px 2px green;
-	-moz-box-shadow:inset 0px 0px 0px 2px green;
-	box-shadow:inset 0px 0px 0px 2px green;
-	color: darkgreen;
+	-webkit-box-shadow:inset 0px 0px 0px 2px #66FF00;
+	-moz-box-shadow:inset 0px 0px 0px 2px #66FF00;
+	box-shadow:inset 0px 0px 0px 2px #66FF00;
+	color: #66FF00;
 }
+
+
+
 
 @media (max-width: 468px) {
 	#mission-accept {
