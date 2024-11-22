@@ -102,8 +102,8 @@ section {
 	display: flex;
 }
 
-#mission-details p:last-child {
-	border-right: .15em solid red;
+.blink-line{
+	border-right: .15em solid white;
 	animation: 
     typing 3.5s steps(40, end),
     blink-caret .75s step-end infinite;
@@ -116,8 +116,8 @@ section {
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-	from, to { border-color: transparent }
-	50% { border-color: red; }
+	from, to { border-right-color: transparent }
+	50% { border-right-color: white; }
   }
 
 /* Fields */

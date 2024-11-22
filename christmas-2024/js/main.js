@@ -32,7 +32,7 @@ var allCopy = [{
 
 var copyIndex = 0;
 var i = 0;
-var speed = 20;
+var speed = 25;
 
 var showMission = false;
 var showForm = false;
