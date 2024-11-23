@@ -60,7 +60,11 @@ var imageTimer;
 
 // DOCUMENT SETUP
 $(document).ready(function() {
-  playAudio("sound/welcome.m4a");
+  
+
+  setTimeout(() => {
+    playAudio("sound/welcome.m4a");
+  }, 100);
 
   typeWriter(allCopy[0].id, allCopy[0].copy);
 
@@ -71,7 +75,6 @@ $(document).ready(function() {
   });
 
   form.reset();
-
   // form submission to Google Sheets
   form.addEventListener("submit", function(e) {
     document.getElementById('submit').innerHTML = "Sending...";
