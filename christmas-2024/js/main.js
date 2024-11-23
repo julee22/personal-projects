@@ -60,15 +60,12 @@ var imageTimer;
 
 // DOCUMENT SETUP
 $(document).ready(function() {
-  
-
-  setTimeout(() => {
-    playAudio("sound/welcome.m4a");
-  }, 100);
 
   typeWriter(allCopy[0].id, allCopy[0].copy);
 
   agentName.addEventListener("input", function(e) {
+    playAudio("sound/welcome.m4a");
+    
     if (agentName.value != '') {
       document.getElementById('goBtn').classList.add("show");
     }
