@@ -63,7 +63,7 @@ $(document).ready(function() {
 
   // plays welcome agent audio on page interaction
   window.addEventListener("click", () => {
-    playAudio("sound/welcome.m4a");
+    playAudio("sound/welcome.mp3");
   }, { once: true });
 
   // Type writer welcome agent
@@ -132,14 +132,14 @@ function nameEntered() {
     typeWriter(allCopy[1].id, allCopy[1].copy);
     mission.classList.remove("hide");
     welome.classList.add("hide");
-    playAudio("sound/mission.m4a");
+    playAudio("sound/mission.mp3");
     imageLoad();
   }
 }
 
 function ending() {
   // what to show after submission
-  playAudio("sound/thankyou.m4a");
+  playAudio("sound/thankyou.mp3");
   endingScreen.classList.toggle('hide');
   mission.classList.add('hide');
   form.style.display = "none";
@@ -169,7 +169,7 @@ function startTimer() {
 // image loading
 function imageLoad() {
   var totalTime, intervalTime;
-  var imageLoadAmount = 0;
+  var imageLoadAmount = 10;
 
   allCopy.forEach(element => {
     const copyLength = element.copy.length;
