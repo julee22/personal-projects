@@ -123,7 +123,7 @@ function nextCopy() {
     typeWriter(allCopy[copyIndex].id, allCopy[copyIndex].copy);
   } else {
     showForm = true;
-    question.classList.toggle("hide");
+    question.classList.remove("hide");
   }
 }
 
