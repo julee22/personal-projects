@@ -61,11 +61,16 @@ var imageTimer;
 // DOCUMENT SETUP
 $(document).ready(function() {
 
+  // plays welcome agent audio on page interaction
+  window.addEventListener("click", () => {
+    playAudio("sound/welcome.m4a");
+  }, { once: true });
+
+  // Type writer welcome agent
   typeWriter(allCopy[0].id, allCopy[0].copy);
 
+  // show button
   agentName.addEventListener("input", function(e) {
-    playAudio("sound/welcome.m4a");
-    
     if (agentName.value != '') {
       document.getElementById('goBtn').classList.add("show");
     }
