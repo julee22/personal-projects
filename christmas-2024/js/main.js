@@ -1,6 +1,9 @@
 
 // Copy
 var allCopy = [{
+  id: 'welcome',
+  copy: 'Welcome, Agent'
+}, {
   id: 'mission-heading',
   copy: 'Mission Details'
 }, {
@@ -38,22 +41,22 @@ var showMission = false;
 var showForm = false;
 
 const agentName = document.getElementById('name');
-const landing = document.getElementById("landing");
+const welome = document.getElementById("welome");
 const mission = document.getElementById("mission");
 const question = document.getElementById("question");
 const successMessage = document.getElementById("success-msg");
 
 const timer = document.getElementById("timer");
 var timerRef;
-var currTime = 10;
-var maxTime = 10;
+var maxTime = 5;
 
 const imageMap = document.getElementById("map");
 var imageTimer;
 
 // DOCUMENT SETUP
 $(document).ready(function() {
-  
+  typeWriter(allCopy[0].id, allCopy[0].copy);
+
   agentName.addEventListener("input", function(e) {
     if (agentName.value != '') {
       document.getElementById('goBtn').classList.add("show");
@@ -97,7 +100,11 @@ function typeWriter(missionId, missionCopy) {
     document.getElementById(missionId).innerHTML = currCopy.replace(/.$/, '');
     i = 0;
     copyIndex++;
-    nextCopy();
+    if (missionId != "welcome") {
+      nextCopy();
+    } else {
+      agentName.classList.remove("hide");
+    }
   }
 }
 
@@ -113,9 +120,9 @@ function nextCopy() {
 
 function nameEntered() {
   if (agentName.value != '') {
-    typeWriter(allCopy[0].id, allCopy[0].copy);
+    typeWriter(allCopy[1].id, allCopy[1].copy);
     mission.classList.toggle("hide");
-    landing.classList.toggle("hide");
+    welome.classList.toggle("hide");
     imageLoad();
   }
 }

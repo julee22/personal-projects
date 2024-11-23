@@ -11,11 +11,16 @@ body {
 }
 
 .show {
-	display: block;
+	/* display: block; */
+	opacity: 1;
+	position: relative;
 }
 
 .hide {
-	display: none;
+	/* display: none; */
+	opacity: 0;
+	position: absolute;
+	top: -10000px;
 }
 
 .sr-only {
@@ -30,6 +35,11 @@ body {
 	border: 0;
 }
 
+* {
+	opacity: 1;
+	transition: opacity 1s ease;
+}
+
 section {
 	padding: 30px;
 	display: flex;
@@ -38,13 +48,15 @@ section {
 	min-height: 100vh;
 }
 
-#landing {
+
+
+#welome {
 	min-height: 125px;
 	text-align: center;
 	transition: opacity .5s ease;
 }
 
-#landing button.show {
+#welome button.show {
 	opacity: 1 !important;
 	margin-top: 15px;
 	margin-left: auto;
@@ -123,8 +135,10 @@ section {
 /* Fields */
 .input-field-label {
 	margin-right: .5em;
+	display: block;
 }
 .input-field {
+	text-align: center;
 	min-height: 42px;
 	max-width: 250px;
 	padding: .25em .5em;
