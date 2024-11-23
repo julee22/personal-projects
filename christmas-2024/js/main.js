@@ -28,6 +28,9 @@ var allCopy = [{
   id: 'mission-time-details',
   copy: '19H00'
 }, {
+  id: 'mission-dress',
+  copy: 'Dress in your best semi-formal disguise (masks will be provided)'
+}, {
   id: 'mission-accept',
   copy: 'Do you accept?'
 }
@@ -40,21 +43,25 @@ var speed = 25;
 var showMission = false;
 var showForm = false;
 
+  
+const form = document.getElementById('my-form');
 const agentName = document.getElementById('name');
 const welome = document.getElementById("welome");
 const mission = document.getElementById("mission");
 const question = document.getElementById("question");
-const successMessage = document.getElementById("success-msg");
+const endingScreen = document.getElementById('success-msg');
 
 const timer = document.getElementById("timer");
 var timerRef;
-var maxTime = 5;
+var maxTime = 8;
 
 const imageMap = document.getElementById("map");
 var imageTimer;
 
 // DOCUMENT SETUP
 $(document).ready(function() {
+  playAudio("sound/welcome.m4a");
+
   typeWriter(allCopy[0].id, allCopy[0].copy);
 
   agentName.addEventListener("input", function(e) {
@@ -62,26 +69,23 @@ $(document).ready(function() {
       document.getElementById('goBtn').classList.add("show");
     }
   });
-  
-  const form = document.getElementById('my-form');
-  const success_msg = document.getElementById('success-msg');
 
   form.reset();
 
   // form submission to Google Sheets
   form.addEventListener("submit", function(e) {
+    document.getElementById('submit').innerHTML = "Sending...";
+
     e.preventDefault();
     const data = new FormData(form);
     const action = e.target.action;
+
     fetch(action, {
       method: 'POST',
       body: data,
     })
     .then(() => {
-      // what to show after submission
-      success_msg.classList.toggle('hide');
-      form.style.display = "none";
-      startTimer();
+      ending();
     })
   });
 });
@@ -121,10 +125,21 @@ function nextCopy() {
 function nameEntered() {
   if (agentName.value != '') {
     typeWriter(allCopy[1].id, allCopy[1].copy);
-    mission.classList.toggle("hide");
-    welome.classList.toggle("hide");
+    mission.classList.remove("hide");
+    welome.classList.add("hide");
+    playAudio("sound/mission.m4a");
     imageLoad();
   }
+}
+
+function ending() {
+  // what to show after submission
+  playAudio("sound/thankyou.m4a");
+  endingScreen.classList.toggle('hide');
+  mission.classList.add('hide');
+  form.style.display = "none";
+  startTimer();
+
 }
 
 // Timer
@@ -165,4 +180,12 @@ function imageLoad() {
       clearInterval(imageTimer);
     }
   }, intervalTime);
+}
+
+// Play audio
+function playAudio(file) {
+  const audioPlayer = document.getElementById('audioPlayer');
+  audioPlayer.src = file; // Set the source to the selected file
+  audioPlayer.style.display = 'block'; // Display the audio controls if hidden
+  audioPlayer.play(); // Play the audio
 }
