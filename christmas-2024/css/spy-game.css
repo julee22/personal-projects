@@ -134,3 +134,30 @@ h1, h2, h3 {
 .tab.active, .tab:hover {
 	opacity: 1;
 }
+
+
+/* Suspects List */
+#results {
+	display: flex;
+	gap: 30px;
+	font-family: 'Orbitron', Verdana, sans-serif;
+	letter-spacing: 1.5px;
+	flex-wrap: wrap;
+}
+
+.results {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px dashed white;
+	width: 30%;
+}
+
+.results ol li {
+	font-family: Verdana, sans-serif;
+	letter-spacing: initial;
+}
+
+.results *:last-child {
+	margin-top: auto;
+	
+}

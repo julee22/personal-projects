@@ -35,7 +35,7 @@ function showSuspects(array, round) {
   newDiv.classList = "results";
   const newHeading = document.createElement('p');
 
-  newHeading.innerHTML = 'Round ' + round + ' Suspects List';
+  newHeading.innerHTML = 'Round ' + round + ' Suspects';
 
   const newList = document.createElement('ol');
   newList.id = 'round-'+ round + '-suspects';
@@ -47,7 +47,7 @@ function showSuspects(array, round) {
   });
   
   const newResult = document.createElement('p');
-  newResult.innerHTML = "Results: " + numOfSpies(array) + " of " + array.length;
+  newResult.innerHTML = numOfSpies(array) + " of " + array.length + " are Spies";
 
   newDiv.appendChild(newHeading);
   newDiv.appendChild(newList);
