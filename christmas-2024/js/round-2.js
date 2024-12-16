@@ -1,0 +1,1 @@
+var suspectsRound2 = ['James','Genice','Joshua','Otto'];

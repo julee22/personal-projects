@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:image" content="https://lh3.googleusercontent.com/d/1cd5MgPUJbFwE_bGVKC_vyzSyxGcfGXzS">
+    <title>2024 Spy Game Investigation</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="shortcut icon" href="../images/Genice-Designs-Logo-Square-Favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+
+    <style>
+		@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+	</style>
+
+</head>
+<body>
+    <section class="container" id="round-1">
+        <div>
+            <h1>Find the Spy - Round 2 Investigation</h1>
+            <p>Select the agents you'd like to investigate.</p>
+            
+            <form class="row" id="investigationForm">
+                <div class="col">
+                    <select class="suspect-list" id="suspectList-0">
+                    </select>
+                </div>
+                <div class="col">
+                    <select class="suspect-list" id="suspectList-1">
+                    </select>
+                </div>
+                <div class="col">
+                    <select class="suspect-list" id="suspectList-2">
+                    </select>
+                </div>
+                <div class="col">
+                    <select class="suspect-list" id="suspectList-3">
+                    </select>
+                </div>
+                <button type="submit" id="submit" class="btn" onclick="investigate(2)">Submit ></button>
+            </form>
+        </div>
+    </section>
+</body>
+<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../js/spy-game-investigation.js"></script>
+<script type="text/javascript" src="../js/spy-game-setup.js"></script>
+</html>
