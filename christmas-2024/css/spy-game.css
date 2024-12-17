@@ -50,6 +50,14 @@ h1, h2, h3 {
 	letter-spacing: 1.5px;
 }
 
+.green-text {
+	color: #66FF00;
+}
+
+.red-text {
+	color: red;
+}
+
 /* Fields */
 .input-field-label {
 	margin-right: .5em;
@@ -81,6 +89,31 @@ h1, h2, h3 {
 .radio-field:checked + .radio-label.red-btn {
 	background-color: red;
 	color: black;
+}
+
+.indicator {
+	display: inline-flex;
+	border-radius: 50%;
+	background-color: #ccc;
+	color: black;
+	width: 2em;
+	height: 2em;
+	justify-content: center;
+	align-items: center;
+}
+
+.suspect-list {
+	padding: .25em .5em;
+	border: none;  
+	background-color: transparent;
+	color: white;
+	border-bottom: 1px solid white;
+	margin-bottom: 30px;
+}
+
+.suspect-list option {
+	background-color: black;
+	color: white !important;
 }
 
 /* Buttons */
@@ -135,6 +168,19 @@ h1, h2, h3 {
 	opacity: 1;
 }
 
+/* Rules */
+#rules h3 {
+	color: black;
+	padding: 2px;
+}
+
+#rules p, #rules li {
+	font-size: .9em;
+}
+
+#rules p {
+	height: 125px;
+}
 
 /* Suspects List */
 #results {

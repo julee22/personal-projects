@@ -37,7 +37,7 @@ function showSuspects(array, round) {
 
   newHeading.innerHTML = 'Round ' + round + ' Suspects';
 
-  const newList = document.createElement('ol');
+  const newList = document.createElement('ul');
   newList.id = 'round-'+ round + '-suspects';
 
   array.forEach(element => {
@@ -47,6 +47,11 @@ function showSuspects(array, round) {
   });
   
   const newResult = document.createElement('p');
+  if (numOfSpies(array) > 0) {
+    newResult.classList.add('red-text');
+  } else {
+    newResult.classList.add('green-text');
+  }
   newResult.innerHTML = numOfSpies(array) + " of " + array.length + " are Spies";
 
   newDiv.appendChild(newHeading);
