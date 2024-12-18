@@ -1,6 +1,4 @@
 
-var suspectsRound1,suspectsRound2,suspectsRound3,suspectsRound4,suspectsRound5,suspectsRound6;
-
 const investigators = ["Genice"]
 
 const spies = ["Joshua"]

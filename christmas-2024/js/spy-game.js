@@ -3,30 +3,29 @@ var maxRounds = 6;
 const results = document.getElementById('results');
 const agentName = document.getElementById('name');
 
+var investigationResults = {};
+
 
 // DOCUMENT SETUP
 $(document).ready(function() {
-  // game results functions
-  
-  if (suspectsRound1) {
-    showSuspects(suspectsRound1, 1);
-  }
-  if (suspectsRound2) {
-    showSuspects(suspectsRound2, 2);
-  }
-  if (suspectsRound3) {
-    showSuspects(suspectsRound3, 3);
-  }
-  if (suspectsRound4) {
-    showSuspects(suspectsRound4, 4);
-  }
-  if (suspectsRound5) {
-    showSuspects(suspectsRound5, 5);
-  }
-  if (suspectsRound6) {
-    showSuspects(suspectsRound6, 6);
-  }
+  // reads data
+  fetch("https://server-api-zn92.onrender.com/data", {
+    method: "GET"
+  })
+  .then(response => response.json())
+  .then(data => {
+    investigationResults = data.data;
+    
+    for (let index = 0; index < Object.keys(investigationResults).length; index++) {
+      showSuspects(investigationResults[index], index);
+      console.log(investigationResults[index], index);
+    }
 
+    console.log("Server Response:", data);
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
 });
 
 
@@ -35,10 +34,10 @@ function showSuspects(array, round) {
   newDiv.classList = "results";
   const newHeading = document.createElement('p');
 
-  newHeading.innerHTML = 'Round ' + round + ' Suspects';
+  newHeading.innerHTML = 'Round ' + round+1 + ' Suspects';
 
   const newList = document.createElement('ul');
-  newList.id = 'round-'+ round + '-suspects';
+  newList.id = 'round-'+ round+1 + '-suspects';
 
   array.forEach(element => {
     const newListItem = document.createElement('li');
@@ -47,6 +46,7 @@ function showSuspects(array, round) {
   });
   
   const newResult = document.createElement('p');
+
   if (numOfSpies(array) > 0) {
     newResult.classList.add('red-text');
   } else {

@@ -1,6 +1,10 @@
 const investigationForm = document.getElementById('investigationForm');
 const suspectList = document.getElementsByClassName('suspect-list');
 const suspectListArray = Array.from(suspectList);
+const suspectListObject = {};
+
+var motherRound = {};
+var round = 0;
 
 
 // DOCUMENT SETUP
@@ -14,7 +18,7 @@ $(document).ready(function() {
 });
 
 function listOfAgents() {
-
+  // Create dropdown of every agent
   suspectListArray.forEach(list => {
     const placeholder = document.createElement('option');
     placeholder.disabled;
@@ -22,7 +26,7 @@ function listOfAgents() {
     list.appendChild(placeholder);
 
     guests.forEach(guest => {
-      if (!investigators.includes(guest)) {
+      if (!investigators.includes(guest)) { //if not an investigator
         const opt = document.createElement('option');
         opt.value = guest; // Set the value
         opt.textContent = guest; // Set the visible text
@@ -32,29 +36,66 @@ function listOfAgents() {
   });
 }
 
-function investigate(round) {
+function investigate(roundCounter) {
+  // Go to https://server-api-zn92.onrender.com to clear the database
+
+  // Reads data
+  fetch("https://server-api-zn92.onrender.com/data", {
+    method: "GET"
+  })
+  .then(response => response.json())
+  .then(data => {
+    motherRound = data.data;  
+    console.log("old Round", motherRound);
 
     // Get the values from the form
-    var listOfSuspects = [];
-
     for (let n = 0; n < suspectListArray.length; n++) {
-      listOfSuspects[n] = "'" + document.getElementById('suspectList-'+n).value + "'";
+      suspectListArray[n] = document.getElementById('suspectList-'+n).value;
     }
+
+    // set key and value variables
+    let key = roundCounter;
+    let value = suspectListArray;
     
-    // Create JavaScript content
-    const jsContent = `var suspectsRound${round} = [${listOfSuspects}];`;
+    motherRound[key] = value;
 
-    // Create a Blob with the JavaScript content
-    const blob = new Blob([jsContent], { type: 'text/javascript' });
+    // Sends data
+    fetch("https://server-api-zn92.onrender.com/update", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(motherRound) //dataToSend must be json obj ex: {"test":{"hi", "banana"}}
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Server Response:", data);
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
 
-    // Create a link to download the file
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = `round-${round}.js`;
-    link.style.display = 'none';
+    console.log("Server Response:", data);
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
+}
 
-    // Append link to body and trigger download
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+function resetData() {
+  // Sends data
+  fetch("https://server-api-zn92.onrender.com/update", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({}) //dataToSend must be json obj ex: {"test":{"hi", "banana"}}
+  })
+  .then(response => response.json())
+  .then(data => {
+      console.log("Server Response:", data);
+  })
+  .catch(error => {
+      console.error("Error:", error);
+  });
 }
