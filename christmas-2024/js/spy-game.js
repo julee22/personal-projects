@@ -16,13 +16,14 @@ $(document).ready(function() {
   .then(data => {
     investigationResults = data.data;
     
-    for (let index = 0; index < Object.keys(investigationResults).length; index++) {
-      showSuspects(investigationResults[index], index);
-      console.log(investigationResults[index], index);
+    for (let index = 1; index <= Object.keys(investigationResults).length; index++) {
 
       if (numOfSpies(investigationResults[index]) == spies.length) {
         window.open('https://server-api-zn92.onrender.com/dance', '_blank').focus();
       }
+      
+      console.log(investigationResults[index], index);
+      showSuspects(investigationResults[index], index);
     }
     
 
@@ -39,7 +40,7 @@ function showSuspects(array, round) {
   newDiv.classList = "results";
   const newHeading = document.createElement('p');
 
-  newHeading.innerHTML = 'Round ' + round+1 + ' Suspects';
+  newHeading.innerHTML = 'Round ' + round + ' Suspects';
 
   const newList = document.createElement('ul');
   newList.id = 'round-'+ round+1 + '-suspects';

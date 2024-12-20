@@ -1,1 +1,0 @@
-var suspectsRound1 = ['Genice','Felice','Louis'];
