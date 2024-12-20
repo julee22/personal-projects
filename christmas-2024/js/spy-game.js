@@ -19,7 +19,12 @@ $(document).ready(function() {
     for (let index = 0; index < Object.keys(investigationResults).length; index++) {
       showSuspects(investigationResults[index], index);
       console.log(investigationResults[index], index);
+
+      if (numOfSpies(investigationResults[index]) == spies.length) {
+        window.open('https://server-api-zn92.onrender.com/dance', '_blank').focus();
+      }
     }
+    
 
     console.log("Server Response:", data);
   })
