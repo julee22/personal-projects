@@ -1,4 +1,6 @@
 var maxRounds = 6;
+const sabotage = true;
+const sabotageRound = 0;
 
 const results = document.getElementById('results');
 const agentName = document.getElementById('name');
@@ -58,7 +60,17 @@ function showSuspects(array, round) {
   } else {
     newResult.classList.add('green-text');
   }
-  newResult.innerHTML = numOfSpies(array) + " of " + array.length + " are Spies";
+
+// Sabotage option
+  if (sabotage && sabotageRound == round) {
+    var alteredResults = numOfSpies(array);
+    if (numOfSpies(array) > 0) {
+      alteredResults = numOfSpies(array) - 1;
+    }
+    newResult.innerHTML = alteredResults + " of " + array.length - 1 + " are Spies. One result has been hidden";
+  } else {
+    newResult.innerHTML = numOfSpies(array) + " of " + array.length + " are Spies";
+  }
 
   newDiv.appendChild(newHeading);
   newDiv.appendChild(newList);

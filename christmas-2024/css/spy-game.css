@@ -169,6 +169,14 @@ h1, h2, h3 {
 }
 
 /* Rules */
+#rules table {
+	width: 100%;
+}
+
+#rules table td {
+	padding-right: 30px;
+}
+
 #rules h3 {
 	color: black;
 	padding: 2px;
@@ -179,7 +187,7 @@ h1, h2, h3 {
 }
 
 #rules p {
-	height: 125px;
+	height: 110px;
 }
 
 /* Suspects List */
