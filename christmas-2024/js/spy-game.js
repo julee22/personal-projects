@@ -1,6 +1,6 @@
 var maxRounds = 6;
 const sabotage = true;
-const sabotageRound = 1;
+var sabotageRound = 1;
 
 const results = document.getElementById('results');
 const agentName = document.getElementById('name');
@@ -64,6 +64,7 @@ function showSuspects(array, round) {
 // Sabotage option
   if (sabotage && sabotageRound == round) {
     var alteredResults = numOfSpies(array);
+    sabotageRound++;
     if (numOfSpies(array) > 0) {
       alteredResults = numOfSpies(array) - 1;
     }
