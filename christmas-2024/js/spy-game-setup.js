@@ -1,9 +1,9 @@
 
-const investigators = []
+const investigators = ["Candice", "Kelly", "Monica", "Louis", "Felice", "Jessica"]
 
-const spies = []
+const spies = ["Otto","Dave","Louis J", "Henry", "Nadine"]
 
-const agents = []
+const agents = ["Stefany", "Yongky", "Nathan","Fernando","Adrian","Randy", "James","Yudi", "Michael", "Fiobella", "Hera", "Lisandra", "Joshua"]
 
 
 const guests = [
@@ -33,4 +33,5 @@ const guests = [
   "Yudi",
   "Hera",
   "Randy",
+  "Louis J"
 ]
