@@ -67,7 +67,8 @@ function showSuspects(array, round) {
     if (numOfSpies(array) > 0) {
       alteredResults = numOfSpies(array) - 1;
     }
-    newResult.innerHTML = alteredResults + " of " + array.length - 1 + " are Spies. One result has been hidden";
+    console.log(alteredResults);
+    newResult.innerHTML = alteredResults + " of " + (array.length - 1) + " are Spies. One result has been hidden";
   } else {
     newResult.innerHTML = numOfSpies(array) + " of " + array.length + " are Spies";
   }
