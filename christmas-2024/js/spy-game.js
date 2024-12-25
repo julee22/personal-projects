@@ -1,6 +1,6 @@
 var maxRounds = 6;
 const sabotage = true;
-const sabotageRound = 0;
+const sabotageRound = 1;
 
 const results = document.getElementById('results');
 const agentName = document.getElementById('name');

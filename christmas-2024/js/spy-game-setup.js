@@ -33,5 +33,6 @@ const guests = [
   "Yudi",
   "Hera",
   "Randy",
+  "Louis",
   "Louis J"
 ]
