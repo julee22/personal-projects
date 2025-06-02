@@ -203,6 +203,7 @@ function startTimer() {
 
     if (index == maxTime) {
       gameEnding.classList.remove('hide');
+      playAudio("sound/error.mp3");
       if (showPlayers) {
         updateScores();
         // Uncomment if you want the next player to go after a loss
@@ -220,6 +221,7 @@ function startTimer() {
       timer.classList.remove("pulse");
     } else if (!isPaused) {
       timer.innerHTML = maxTime - index;
+      playAudio("sound/thunk.mp3");
       index++;
       timer.classList.add("pulse");
     } else {
@@ -239,6 +241,14 @@ function pauseTimer() {
 function resumeTimer() {
   isPaused = false;
   closePopup('pauseGame-popup');
+}
+
+// Timer sound
+function playAudio(file) {
+  const audioPlayer = document.getElementById('audioPlayer');
+  audioPlayer.src = file; // Set the source to the selected file
+  audioPlayer.style.display = 'block'; // Display the audio controls if hidden
+  audioPlayer.play(); // Play the audio
 }
 
 // Player Settings
