@@ -189,6 +189,7 @@ function calculateAngle(index) {
 function startTimer() {
   timer.innerHTML = maxTime;
   index = 1;
+  playAudio("sound/success.mp3");
 
   // disabled all other buttons 
   const allButtons = document.querySelectorAll('button:not(.letter)');
@@ -201,7 +202,7 @@ function startTimer() {
 
   timerRef = setInterval(function() {
 
-    if (index == maxTime) {
+    if (index == maxTime) { // Game ending
       gameEnding.classList.remove('hide');
       playAudio("sound/error.mp3");
       if (showPlayers) {
@@ -219,12 +220,12 @@ function startTimer() {
         element.disabled = false;
       });
       timer.classList.remove("pulse");
-    } else if (!isPaused) {
+    } else if (!isPaused) { // Game running
       timer.innerHTML = maxTime - index;
       playAudio("sound/thunk.mp3");
       index++;
       timer.classList.add("pulse");
-    } else {
+    } else { // Pausing Game
       timer.innerHTML = currTime;
       timer.classList.remove("pulse");
     }
