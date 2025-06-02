@@ -231,9 +231,11 @@ header {
 }
 
 #timer {
+	width: 1.1em;
 	font-size: 3em;
 	font-weight: bold;
 	margin-bottom: 0;
+	text-align: right;
 }
 
 #timer.pulse {
