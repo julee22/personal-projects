@@ -244,6 +244,26 @@ function resumeTimer() {
   closePopup('pauseGame-popup');
 }
 
+// Resets round but does not reset scores/players
+function endRound() {
+  isPaused = false;
+  closePopup('pauseGame-popup');
+  letterList.innerText = "";
+  clearInterval(timerRef);
+  
+  if (showCategories) {
+    generateCategory();
+  }
+
+  generateGame();
+  currTime = timer.innerHTML;
+
+  // Enables all buttons
+  allButtons.forEach(element => {
+    element.disabled = false;
+  });
+}
+
 // Timer sound
 function playAudio(file) {
   const audioPlayer = document.getElementById('audioPlayer');
