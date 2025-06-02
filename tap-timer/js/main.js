@@ -245,7 +245,7 @@ function resumeTimer() {
 }
 
 // Resets round but does not reset scores/players
-function endRound() {
+function skipRound() {
   isPaused = false;
   closePopup('pauseGame-popup');
   letterList.innerText = "";
