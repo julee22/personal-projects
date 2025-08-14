@@ -3,7 +3,7 @@
 body {
 	margin: 0px auto;
 	box-sizing: border-box;
-	font-size: 18px;
+	font-size: 1rem;
 	font-family: 'Inter', Verdana, sans-serif;
 	background-color: black;
 	color: white;
@@ -133,6 +133,10 @@ button:disabled {
 
 .tab {
 	flex: 1 0 auto;
+}
+
+.tab-content {
+	min-height: 50vh;
 }
 
 /* Tables */
