@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:image" content="https://lh3.googleusercontent.com/d/1cd5MgPUJbFwE_bGVKC_vyzSyxGcfGXzS">
+    <title>202 Murder Mystery</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="../images/Genice-Designs-Logo-Square-Favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <style>
+		@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+	</style>
+
+
+</head>
+
+<body>
+	<form id="characterForm">
+		<div>
+			<label for="characterList">Select your List</label>
+			<select id="characterList">
+				<option value="">- Select your character -</option>
+				<option value="A">Allison</option>
+				<option value="B">Brady</option>
+				<option value="C">Carl</option>
+				<option value="D">Doug</option>
+				<option value="E">Evelyn</option>
+				<option value="F">Faye</option>
+			</select>
+		</div>
+		<div>
+			<label for="password">Enter password</label>
+			<input id="password" type="text" placeholder="4 numbers" />
+			<p class="error" id="pass-error">! Incorrect password</p>
+		</div>
+		<button id="check-pass" type="button" onclick="checkPassword()">Submit</button>
+	</form>
+	<main class="" id="main">
+		<h1 class="sticky" id="name"></h1>
+		<section id="charProfile">
+			<table>
+				<tbody>
+					<tr>
+						<th width="25%" scope="col">Gender</th>
+						<th width="25%" scope="col">Date of Birth</th>
+					</tr>
+					<tr>
+						<td id="gender"></td>
+						<td><span id="birthDate"></span> (<span id="age"></span>)</td>
+					</tr>
+				</tbody>
+			</table>
+			<table>
+				<tbody>
+					<tr>
+						<th>Family/Dating Relations</th>
+					</tr>
+					<tr>
+						<td id="relStatus"></td>
+					</tr>
+					<tr>
+						<th width="100%" scope="col">Personality</th>
+					</tr>
+					<tr>
+						<td id="personality"></td>
+					</tr>
+					<tr>
+						<th scope="col">Work</th>
+					</tr>
+					<tr>
+						<td id="work"></td>
+					</tr>
+					<tr>
+						<th scope="col">Other Details</th>
+					</tr>
+					<tr>
+						<td>
+							<ul id="other"></ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section id="tab-container">
+			<div class="tab-nav-wrapper sticky" style="top: 50px">
+				<button class="tab" onclick="switchTab('charBackground')">Background</button>
+				<button class="tab" onclick="switchTab('charKnowledge')">What you know</button>
+				<button class="tab" onclick="switchTab('charRelationships')">Relationships</button>
+				<button class="tab" onclick="switchTab('charTimeline')">Timeline</button>
+			</div>
+			<div class="tab-content show" id="charBackground">
+				<div id="history">
+
+				</div>
+				<h2>Why you're here</h2>
+				<p id="whyYouHere"></p>
+			</div>
+			<div class="tab-content hide" id="charKnowledge">
+				<p>What you know</p>
+			</div>
+			<div class="tab-content hide" id="charRelationships">
+				<label for="relationList">View info on</label>
+				<select id="relationList" onchange="generateRelationship(this)">
+					<option value="G" default>Host Gen</option>
+					<option value="A">Allison</option>
+					<option value="B">Brady</option>
+					<option value="C">Carl</option>
+					<option value="D">Doug</option>
+					<option value="E">Evelyn</option>
+					<option value="F">Faye</option>
+				</select>
+
+				<div class="">
+					<h2 id="other-name"></h2>
+					<table id="otherChar">
+						<tbody>
+							<tr>
+								<th scope="row">Gender</th>
+								<td id="other-gender"></td>
+							</tr>
+							<tr>
+								<th>Date of Birth</th>
+								<td><span id="other-birthDate"></span> (<span id="other-age"></span>)</td>
+							</tr>
+							<tr>
+								<th>Family/Dating Relations</th>
+								<td id="other-relStatus"></td>
+							</tr>
+							<tr>
+								<th>Work</th>
+								<td id="other-work"></td>
+							</tr>
+							<tr>
+								<th>Other Details</th>
+								<td id="other-other"></td>
+							</tr>
+							<tr>
+								<th>Impression</th>
+								<td id="other-impression"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="tab-content hide" id="charTimeline">
+				<p>Timeline</p>
+			</div>
+		</section>
+	</main>
+
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="module" src="js/index.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>
