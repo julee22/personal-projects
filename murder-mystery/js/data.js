@@ -9,7 +9,7 @@ const characters = {
       relStatus: ["Dating Doug for 7 years."],
     },
     personality: ["Prideful", "Spoiled", "Lavish lifestyle"],
-    work: "Future heiress to a car manufacturer business. Currently unemployed.",
+    work: "Heiress to a car manufacturer business. Currently unemployed.",
     other: ["Grew up in Rich Town","Likes street racing. Was once part of a street racing club.","Receives a $5,000 monthly allowance"],
     history: [
       {
@@ -17,15 +17,18 @@ const characters = {
         description: `On December 8, 2017, after your parents took your car keys to stop you from street racing, you snuck out to borrow Host Gen’s car. While racing through the mountains, a text from your parents warning they’d cut off your allowance distracted you — you nearly hit a girl in a blue dress, but a boy jumped in front, taking the hit and tumbling off a cliff. The girl was knocked unconscious. Shaken, you returned the car to Host Gen, who spotted the damage and demanded the truth. She agreed to keep quiet in exchange for $4,000 a month and told you to scrap the car. You’ve never raced since.`,
       },
     ],
-    whyYouHere: `Recently, your parents have threatened to cut you off from your inheritance if you don’t prove you can handle more responsibility. They’ve also repeatedly warned you not to cause any scandals. You decided to visit Lover’s Retreat to enjoy a free vacation and talk to Host Gen about ending the $4,000 payments.`,
-    importantEvents: [
-      "Parents discovered that you have been sending money to someone and are demanding an explanation",
-      "Found out that Host Gen kept the black box recording of the Accident.",
+    whyYouHere: `Recently, your parents are cracking down on your spending and want you to prove you can handle more responsibility. They told you to learn from your manager friend, Host Gen. You decided to visit Lover’s Retreat with your boyfriend and potentially talk to Host Gen about ending the $4,000 payments.`,
+    dayOfTheMurder: [
+      "Parents threatened to cut you off if you cause any problems.",
+      "Parents discovered that you have been sending money to someone.",
+      "Confronted Host Gen about $4,000 but was rejected.",
+      "Blackmailed by Host Gen with a black box recording of the Accident.",
       "Snuck into Host Gen's room to steal black box recording."
     ],
     motives: [
       "Is getting blackmailed by G.",
-      "Since you cannot pay Host Gen any more, Host Gen will report the Accident to the police. Your parents may actually disown you."
+      "If you stop paying, Host Gen will report the Accident to the police.",
+      "Your parents may disinherit you."
     ],
     relationships: {
       G: {
@@ -34,15 +37,25 @@ const characters = {
           gender: "Female",
           birthDate: "1996-07-02",
           age: 29,
-          relStatus: ["Older sister of Sick Harry (in a coma)","Long time friends with Heiress Allison"],
+          relStatus: ["Longtime friends","Older sister of Sick Harry"],
         },
         other: ["Grew up in Mid Village"],
-        work: "Spokesperson and manager for Lover’s Retreat",
-        impression: `Stuck up and stuffy. Friends of necessity and convenience. While long time friends, since Host Gen is not of the same social class, your lifestyles and values often clash. Host Gen is willing to do what it takes to support her younger brother, Sick Harry.`,
-        history: `Involved with the Accident. Currently being paid $4,000 monthly to keep the secret. Host Gen uses the money to pay for Sick Harry's hospital bills. Due to the blackmail, you have not been living comfortably. Additionally, Host Gen always cockily brings up the Accident whenever they argue even though it’s been 8 years.`,
+        work: "Manager for Lover’s Retreat",
+        impression: `Stuck-up and stuffy. Lifestyle differences cause friction. Fiercely devoted to Sick Harry. Used to be easier to deal with`,
+        history: [
+          {
+            title: `Harry's Coma`,
+            description: `Host Gen's brother, Sick Harry, has been in a coma for 8 years due to unknown reasons. Host Gen claims to use the money to pay for his hospital bills.`
+          },
+          {
+            title: 'The Accident',
+            description: `Host Gen helped cover up the accident and is the only person who knows. Currently being paid $4,000 monthly to keep the secret. Because of this, you have not been living comfortably and are worried that your parents will find out. Caused Host Gen to become more arrogant.`
+          }
+        ],
         dayOfTheMurder: [
-          "Found out that Host Gen kept the black box recording of the accident.",
-          "Host Gen threatened to go to the cops if the $4,000 payments are stopped."
+          "Is actively investigating Sick Harry's accident.",
+          "Discovered that Host Gen kept the black box recording of the accident.",
+          "Threatened to go to the cops if the $4,000 payments are stopped."
         ]
       },
 
@@ -56,11 +69,11 @@ const characters = {
         },
         other: ["Has a tattoo."],
         work: "Owner of CGG (Cars Gotta Go), a scrapyard business",
-        impression: "An alpha male. The rugged beast to your beauty. Treats you like a princess. Potentially only dating her due to her position. Parents only mildly approve of him.",
+        impression: "An alpha male. The rugged beast to your beauty. Treats you like a princess. ",
         history: [
           {
-            title: 'The Accident',
-            description: `Met when you were disposing of Host Gen's car from the Accident and immediately hit it off. Never told him about The Accident nor your past street racing hobby.`}
+            title: 'Love at first sight',
+            description: `Met when you were disposing of Host Gen's car from the Accident and immediately hit it off. Never told him about The Accident nor your past street racing hobby. Parents only mildly approve of him.`}
         ],
         dayOfTheMurder: [
           "Seemed a little stressed.",
@@ -122,8 +135,7 @@ const characters = {
         work: "N/A",
         impression: `Timid and quiet. A little airheaded. Seems not quite right in the head.`,
         dayOfTheMurder: [
-          "Free Faye was upset at G.",
-          "Strange, you didn’t know they knew each other."
+          "Free Faye was upset at G. You didn’t know they knew each other."
         ]
       }
     },
@@ -133,7 +145,7 @@ const characters = {
         events: [
           "You and Dealer Doug went out to have lunch.",
           "Your parents warn you to learn the value of money if you want to inherit the business, and to avoid street racing or scandals.",
-          "You notice Dealer Doug is stressed after reading a text message."
+          "Dealer Doug is stressed after reading a text message."
         ]
       },
       {
@@ -147,12 +159,7 @@ const characters = {
       {
         time: "2:30 PM",
         events: [
-          "You go to Host Gen's room to confront Host Gen about the blackmail.",
-          `“I know you don’t need the money. How could you tell me to stop?”`,
-          `“It’s my money to begin with! I'll decide whether I need it or not!”`,
-          `“I helped you and this is how you repay me? We had a deal!”`,
-          `“Ugh, it was your car 8 years ago!"`,
-          `“You had better not stop the payments. I still have proof of what happened!”`
+          "You go to Host Gen's room and confront her about the monthly $4,000 payment.",
         ]
       },
       {
