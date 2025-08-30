@@ -47,7 +47,7 @@ window.switchTab = function(tab, tabContent) {
         if (tabContent == element.id) {
             element.classList.add("show");
             element.classList.remove("hide");
-            tab.scrollIntoView();
+            tab.scrollIntoView({ behavior: 'smooth' });
         } else {
             element.classList.remove("show");
             element.classList.add("hide");
