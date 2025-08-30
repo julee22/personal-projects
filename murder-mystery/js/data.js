@@ -236,20 +236,20 @@ const characters = {
         description: `On December 8, 2017, you fought with Cadie, and she ran away from home. You assumed she was at her friend Evelyn’s, but when neither could be reached, you reported them missing. The next day, police said Evelyn was in a suspected hit-and-run. At the hospital, Evelyn could only recall someone yelling “watch out” and seeing a red Mercedes before blacking out. Your sister wasn’t found, and her case was closed as a runaway due to lack of evidence. However, you always believed Cadie actually died in the hit-and-run accident. You spent over a year searching for your sister with Pharmacist Evelyn in vain.`,
       },
     ],
-    whyYouHere: `Recently, Pharmacist Evelyn has been depressed after hearing about an alumni gathering of their former surgeon friends. You booked this Lover’s Retreat to help Pharmacist Evelyn relax.Additionally, the anniversary of the day Cadie went missing is coming up and both you and Evelyn get more sensitive around this time.`,
+    whyYouHere: `Recently, Pharmacist Evelyn has been depressed after hearing about an alumni gathering of their former surgeon friends.Additionally, the anniversary of Cadie’s disappearance is approaching, making you and Evelyn more sensitive. You booked this Lover’s Retreat to help both of you relax. `,
     dayOfTheMurder: [
       "Discovered Host Gen used to own a red Mercedes.",
-      "Pharmacist Evelyn overheard Host Gen being involved in some sort of accident 8 years ago.",
-      "Snuck into Host Gen's room and saw blackbox recording proving Cadie was hit by her car",
+      "Pharmacist Evelyn told you Host Gen was involved in the hit-and-run.",
+      "Snuck into Host Gen's room and saw evidence proving Cadie was hit by Host Gen's car",
       "Saw that Host Gen has Cadie's cloud keychain",
-      "Checked Host Gen's schedule and stole Pharmacist Evelyn's muscle relaxant medicine",
+      "Stole Pharmacist Evelyn's muscle relaxant medicine",
       "Murdered Host Gen - Waited for Host Gen in garage, knocked out Host Gen using the muscle relaxant, unlocked her car, put her in the backseat, turned the engine on, and locked the keys inside the car.",
-      "Stole back Cadie's cloud keychain and hid it in your luggage."
+      "Retrieved Cadie's cloud keychain and hid it in your luggage."
     ],
     motives: [
-      "Feared you may never cross paths again",
       "Revenge for your dead younger sister, Cadie.",
-      "Revenge for girlfriend, Pharmacist Evelyn, who had to give up their dreams because of the hit-and-run."
+      "Revenge for girlfriend, Pharmacist Evelyn, who had to give up their dreams because of the hit-and-run.",
+      "Feared you may never cross paths again"
     ],
     relationships: {
       G: {
@@ -258,11 +258,11 @@ const characters = {
           gender: "Female",
           birthDate: "1996-07-02",
           age: 29,
-          relStatus: ["First time meeting at Lover's Retreat"],
+          relStatus: ["First time meeting at Lover's Retreat", "Murdered Cadie"],
         },
         other: [],
         work: "Manager for Lover’s Retreat",
-        impression: `Originally, a normal rule-abiding woman. Now, How dare this murderer live normally when they caused so much pain to my loved ones.`,
+        impression: `Originally, a normal rule-abiding woman. After, angry this murderer is living normally when they caused so much pain to my loved ones.`,
         history: [
           {
             title: `Missing Sister - Hit-and-Run`,
@@ -270,8 +270,8 @@ const characters = {
           },
         ],
         dayOfTheMurder: [
-          "Pharmacist Evelyn overheard Host Gen being involved in some sort of accident 8 years ago.",
-          "Found multiple clues (red Mercedes, blackbox reocrding, cloud keychain) that point to Host Gen being the driver from the hit-and-run.",
+          "Pharmacist Evelyn overheard and recorded Host Gen being involved in some accident 8 years ago.",
+          "Found multiple clues (red Mercedes, blackbox recording, cloud keychain) that point to Host Gen being the driver in the hit-and-run.",
           "Killed Host Gen and reclaimed the cloud keychain."
         ]
       },
@@ -285,7 +285,7 @@ const characters = {
         },
         other: ["Grew up in Mid Village", "Attends physiotherapy sessions for hand tremors and takes muscle relaxing medicine", "Dreamt of becoming a surgeon"],
         work: "Pharmacist",
-        impression: `Strong-willed. Still upset about hand tremors. Recently stressed.`,
+        impression: `Strong-willed. Still upset about hand tremors. Recently stressed. Very caring towards her.`,
         history: [
           {
             title: `Missing Sister - Hit-and-Run`,
@@ -309,7 +309,7 @@ const characters = {
         other: ["N/A"],
         work: "Future heiress to a car manufacturing business.",
         impression: "Prideful, spoiled.",
-        dayOfTheMurder: ["Angry about something"]
+        dayOfTheMurder: ["Was angry about something."]
       },
 
       D: {
@@ -379,33 +379,32 @@ const characters = {
       {
         time: "3:00 PM",
         events: [
-          "Evelyn returns and tells you she recorded an argument between Host Gen and someone about an accident 8 years ago, with evidence.",
-          "You argue with Evelyn about confronting Host Gen immediately. There is no evidence and confront her could lead her to run away.",
+          "Evelyn returns and tells you she recorded an argument between Host Gen and someone about an accident 8 years ago; the recording mentioned evidence.",
+          "You argue with Evelyn about reporting Host Gen immediately. You don't have the evidence and confronting her could lead her to run.",
           "You angrily leave to take a walk outside."
         ]
       },
       {
         time: "3:30 PM",
         events: [
-          "You see Host Gen leaving the Retreat",
-          "You decide to sneak into her room to find evidence",
-          "Host Gen's room was unlocked",
-          "Evelyn is remotely attending a physiotherapy session for her hands."
+          "You see Host Gen quickly leaving the Retreat and enter a black car.",
+          "Evelyn should be busy remotely attending a physiotherapy session for her hands.",
+          "You decide to sneak into her room to find evidence; Host Gen's room was luckily unlocked",
         ]
       },
       {
         time: "4:00 PM",
         events: [
-          "You saw a blackbox recording of the accident.",
-          "You saw Host Gen has the same cloud keychain that you gave Cady.",
-          "You hear that Host Gen has returned, leave and decide to kill Host Gen."
+          "You found a blackbox recording of the accident.",
+          "You saw Host Gen has the same cloud keychain that you gave Cadie and decide to kill Host Gen for vengeance.",
+          "You hear that Host Gen has returned and leave."
         ]
       },
       {
         time: "4:15 PM",
         events: [
-          "You check Host Gen's posted schedule.",
-          "You pass by an angry Allison."
+          "You check Host Gen's posted schedule in the kitchen and see she is planning on picking up drinks for dinner.",
+          "An angry Allison passes by."
         ]
       },
       {
@@ -428,7 +427,7 @@ const characters = {
           "Host Gen goes to garage to pick up drinks for dinner.",
           "You knock out Host Gen with a brick, unlock her car, and put her in the backseat.",
           "You inject Host Gen with the muscle relaxant, turn on the engine, and lock her in the car.",
-          "You take Cady's cloud keychain and leave the keys in the car."
+          "You take Cadie's cloud keychain and leave the keys in the car."
         ]
       },
       {
