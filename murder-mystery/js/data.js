@@ -82,7 +82,7 @@ const characters = {
       },
 
       B: {
-        name: "Brother Brady",
+        name: "Brother Brodie",
         personalDetails: {
           gender: "Male",
           birthDate: "1992-01-01",
@@ -115,7 +115,7 @@ const characters = {
           gender: "Female",
           birthDate: "2000-01-01",
           age: 25,
-          relStatus: ["First time meeting at the Retreat","Dating Brother Brady."],
+          relStatus: ["First time meeting at the Retreat","Dating Brother Brodie."],
         },
         other: ["N/A"],
         work: "Pharmacist",
@@ -180,7 +180,7 @@ const characters = {
         time: "4:15 PM",
         events: [
           "You return angrily from shopping with nothing.",
-          "You pass by Brother Brady in the kithen",
+          "You pass by Brother Brodie in the kithen",
           "You see a threatening letter and screenshot from a recording from Host Gen.",
           "You decide to steal the recording.",
           "You hide the letter in the room and get ready for dinner."
@@ -215,7 +215,7 @@ const characters = {
     ]
   },
   B: {
-    name: "Brother Brady",
+    name: "Brother Brodie",
     password: "20",
     personalDetails: {
       gender: "Male",
