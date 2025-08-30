@@ -8,7 +8,7 @@ const characters = {
       age: 29,
       relStatus: ["Dating Doug for 7 years."],
     },
-    personality: ["Prideful", "Spoiled", "Lavish lifestyle"],
+    personality: ["Arrogant", "Spoiled", "Lavish lifestyle"],
     work: "Heiress to a car manufacturer business. Currently unemployed.",
     other: ["Grew up in Rich Town","Likes street racing. Was once part of a street racing club.","Receives a $5,000 monthly allowance"],
     history: [
@@ -90,7 +90,7 @@ const characters = {
           relStatus: ["First time meeting at the Retreat","Dating Pharmacist Evelyn."],
         },
         other: ["N/A"],
-        work: "Lawyer",
+        work: "Prosecutor",
         impression: "Passionate, protective, straight-laced man.",
         dayOfTheMurder: []
       },
@@ -223,9 +223,9 @@ const characters = {
       age: 29,
       relStatus: ["Older brother of Cadie","Dating Evelyn for 5 years."],
     },
-    personality: ["Dedicated", "Meticulous", "Overprotective", "Jaded by the justice system"],
-    work: "Lawyer",
-    other: ["Grew up in Mid Village"],
+    personality: ["Protective", "Takes work very seriously", "Jaded by the justice system"],
+    work: "Criminal Prosecutor",
+    other: ["Grew up in Mid Village", "Stresses about losing criminal cases"],
     history: [
       {
         title: 'Raising your sister',
@@ -236,7 +236,7 @@ const characters = {
         description: `On December 8, 2017, you fought with Cadie, and she ran away from home. You assumed she was at her friend Evelyn’s, but when neither could be reached, you reported them missing. The next day, police said Evelyn was in a suspected hit-and-run. At the hospital, Evelyn could only recall someone yelling “watch out” and seeing a red Mercedes before blacking out. Your sister wasn’t found, and her case was closed as a runaway due to lack of evidence. However, you always believed Cadie actually died in the hit-and-run accident. You spent over a year searching for your sister with Pharmacist Evelyn in vain.`,
       },
     ],
-    whyYouHere: `Recently, Pharmacist Evelyn has been depressed after hearing about an alumni gathering of their former surgeon friends.Additionally, the anniversary of Cadie’s disappearance is approaching, making you and Evelyn more sensitive. You booked this Lover’s Retreat to help both of you relax. `,
+    whyYouHere: `Recently, you and Pharmacist Evelyn have been depressed. You lost a reopened criminal case. Evelyn was mistakenly invited, then uninvited, from an alumni gathering of surgeon friends. Additionally, the anniversary of Cadie’s disappearance is approaching. You booked this Lover’s Retreat to help both of you relax. `,
     dayOfTheMurder: [
       "Discovered Host Gen used to own a red Mercedes.",
       "Pharmacist Evelyn told you Host Gen was involved in the hit-and-run.",
@@ -281,11 +281,239 @@ const characters = {
           gender: "Female",
           birthDate: "2000-01-01",
           age: 25,
+          relStatus: ["Dating for 7 years","Best friend of younger sister, Cadie"],
+        },
+        other: ["Grew up in Mid Village", "Regularly attends weekly physiotherapy sessions for hand tremors", "Owns muscle relaxing medicine", "Dreamt of becoming a surgeon"],
+        work: "Pharmacist",
+        impression: `Strong-willed and prideful, but sensitive and supportive. Feel like kindred spirits.`,
+        history: [
+          {
+            title: `Missing Sister - Hit-and-Run`,
+            description: `Direct witness and victim in the hit-and-run incident. You try not to blame her for not remembering much. The hit-and-run injured her hands, shattering her dream of becoming a surgeon. This remains a sensitive topic for her.`
+          },
+          {
+            title: `Bonding over loss`,
+            description: `For over a year, helped you search for Cadie. The only one who believed Cadie didn't just run away from home. Eventually got close and started dating.`
+          },
+        ],
+        dayOfTheMurder: ["Depressed over pictures of surgeon alumni gathering", "Recorded Host G arguing with someone about an accident 8 years ago.", "Argued over reporting to police", "Attended physiotherapy session"]
+      },
+
+      A: {
+        name: "Heiress Allison", 
+        personalDetails: {
+          gender: "Female",
+          birthDate: "1996-11-09",
+          age: 29,
+          relStatus: ["First time meeting at the Retreat","Dating Dealer Doug."],
+        },
+        other: ["N/A"],
+        work: "Future heiress to a car manufacturing business.",
+        impression: "Arrogant, spoiled.",
+        dayOfTheMurder: ["Was angry about something."]
+      },
+
+      D: {
+        name: "Dealer Doug",
+        personalDetails: {
+          gender: "Male",
+          birthDate: "1990-02-14",
+          age: 35,
+          relStatus: "Dating Heiress Allison",
+        },
+        other: [],
+        work: "Owner of CGG (Cars Gotta Go), a scrapyard business",
+        impression: "Rough and gangster-like man.",
+        dayOfTheMurder: []
+      },
+
+      C: {
+        name: "Scared Carl",
+        personalDetails: {
+          gender: "Male",
+          birthDate: "1998-01-01",
+          age: 27,
+          relStatus: ["First time meeting at the Retreat","Dating Free Faye."],
+        },
+        other: ["N/A"],
+        work: "Contract worker",
+        impression: "Seems constantly nervous.",
+        dayOfTheMurder: []
+      },
+
+      F: {
+        name: "Free Faye",
+        personalDetails: {
+          gender: "Female",
+          birthDate: "2000-01-01",
+          age: 25,
+          relStatus: ["First time meeting at the Retreat","Dating Scared Carl."],
+        },
+        other: ["N/A"],
+        work: "N/A",
+        impression: `Timid and quiet. Nothing interesting`,
+        dayOfTheMurder: []
+      }
+    },
+    timeline: [
+      {
+        time: "1:00 PM",
+        events: [
+          "Host Gen left to buy groceries.",
+          "You and Pharmacist Evelyn go out for lunch.",
+        ]
+      },
+      {
+        time: "2:00 PM",
+        events: [
+          "Host Gen returns with snacks.",
+          "You and Evelyn return and head to your room to watch a drama.",
+          "Saw a picture of Host Gen driving a red Mercedes."
+        ]
+      },
+      {
+        time: "2:30 PM",
+        events: [
+          "Evelyn leaves to get water after seeing picture of surgeon alumni gathering.",
+        ]
+      },
+      {
+        time: "3:00 PM",
+        events: [
+          "Evelyn returns and tells you she recorded an argument between Host Gen and someone about an accident 8 years ago; the recording mentioned evidence.",
+          "You argue with Evelyn about reporting Host Gen immediately. You don't have the evidence and confronting her could lead her to run.",
+          "You angrily leave to take a walk outside."
+        ]
+      },
+      {
+        time: "3:30 PM",
+        events: [
+          "You see Host Gen quickly leaving the Retreat and enter a black car.",
+          "Evelyn should be busy remotely attending a physiotherapy session for her hands.",
+          "You decide to sneak into her room to find evidence; Host Gen's room was luckily unlocked",
+        ]
+      },
+      {
+        time: "4:00 PM",
+        events: [
+          "You found a blackbox recording of the accident.",
+          "You saw Host Gen has the same cloud keychain that you gave Cadie and decide to kill Host Gen for vengeance.",
+          "You hear that Host Gen has returned and leave."
+        ]
+      },
+      {
+        time: "4:15 PM",
+        events: [
+          "You check Host Gen's posted schedule in the kitchen and see she is planning on picking up drinks for dinner.",
+          "An angry Allison passes by."
+        ]
+      },
+      {
+        time: "4:30 PM",
+        events: [
+          "Returned to your room; Evelyn is sleeping.",
+          "Stole some of Evelyn's muscle relaxant medicine."
+        ]
+      },
+      {
+        time: "5:00 PM",
+        events: [
+          "You wait in the garage with a brick.",
+          "You hear someone opening and closing the coat closet."
+        ]
+      },
+      {
+        time: "5:15 PM",
+        events: [
+          "Host Gen goes to garage to pick up drinks for dinner.",
+          "You knock out Host Gen with a brick, unlock her car, and put her in the backseat.",
+          "You inject Host Gen with the muscle relaxant, turn on the engine, and lock her in the car.",
+          "You take Cadie's cloud keychain and leave the keys in the car."
+        ]
+      },
+      {
+        time: "5:30 PM",
+        events: [
+          "You return to your room to get ready for dinner.",
+          "You hide the cloud keychain in your luggage"
+        ]
+      },
+      {
+        time: "6:00 PM",
+        events: [
+          "Kitchen staff call Host Gen regarding drinks for dinner and discover body."
+        ]
+      }
+    ]
+  },
+  C: {
+    name: "Scared Carl",
+    password: "20",
+    personalDetails: {
+      gender: "Male",
+      birthDate: "1992-01-01",
+      age: 29,
+      relStatus: ["First time meeting at the Retreat","Dating Free Faye."],
+    },
+    personality: ["Skittish","Cowardly",],
+    work: "Contract worker",
+    other: ["Grew up in Mid Village"],
+    history: [
+      {
+        title: 'Raising your sister',
+        description: `Your parents died young, so you raised your sister Cadie, eight years younger. Over protective and strict, you often argued. You bought her a cloud keychain for her nickname, “Cloud.”. `,
+      },
+      {
+        title: 'Missing Sister - Hit-and-Run',
+        description: `On December 8, 2017, you fought with Cadie, and she ran away from home. You assumed she was at her friend Evelyn’s, but when neither could be reached, you reported them missing. The next day, police said Evelyn was in a suspected hit-and-run. At the hospital, Evelyn could only recall someone yelling “watch out” and seeing a red Mercedes before blacking out. Your sister wasn’t found, and her case was closed as a runaway due to lack of evidence. However, you always believed Cadie actually died in the hit-and-run accident. You spent over a year searching for your sister with Pharmacist Evelyn in vain.`,
+      },
+    ],
+    whyYouHere: `Recently, Pharmacist Evelyn has been depressed after hearing about an alumni gathering of their former surgeon friends.Additionally, the anniversary of Cadie’s disappearance is approaching, making you and Evelyn more sensitive. You booked this Lover’s Retreat to help both of you relax. `,
+    dayOfTheMurder: [
+      "Discovered Host Gen used to own a red Mercedes.",
+      "Pharmacist Evelyn told you Host Gen was involved in the hit-and-run.",
+      "Snuck into Host Gen's room and saw evidence proving Cadie was hit by Host Gen's car",
+      "Saw that Host Gen has Cadie's cloud keychain",
+      "Stole Pharmacist Evelyn's muscle relaxant medicine",
+      "Murdered Host Gen - Waited for Host Gen in garage, knocked out Host Gen using the muscle relaxant, unlocked her car, put her in the backseat, turned the engine on, and locked the keys inside the car.",
+      "Retrieved Cadie's cloud keychain and hid it in your luggage."
+    ],
+    motives: [
+      "Revenge for your dead younger sister, Cadie.",
+      "Revenge for girlfriend, Pharmacist Evelyn, who had to give up their dreams because of the hit-and-run.",
+      "Feared you may never cross paths again"
+    ],
+    relationships: {
+      G: {
+        name: "Host Gen",
+        personalDetails: {
+          gender: "Female",
+          birthDate: "1996-07-02",
+          age: 29,
+          relStatus: ["First time meeting at Lover's Retreat", "Murdered Cadie"],
+        },
+        other: [],
+        work: "Manager for Lover’s Retreat",
+        impression: `Originally, just a woman who follows the rules. After finding out her secret, you're angry this murderer is living normally.`,
+        history: [],
+        dayOfTheMurder: [
+          "Pharmacist Evelyn overheard and recorded Host Gen being involved in some accident 8 years ago.",
+          "Found multiple clues (red Mercedes, blackbox recording, cloud keychain) that point to Host Gen being the driver in the hit-and-run.",
+          "Discovered that Host Gen hit Cadie.",
+          "Killed Host Gen and reclaimed the cloud keychain."
+        ]
+      },
+      E: {
+        name: "Pharmacist Evelyn",
+        personalDetails: {
+          gender: "Female",
+          birthDate: "2000-01-01",
+          age: 25,
           relStatus: ["Dating for 7 years","Best friend of Cadie"],
         },
-        other: ["Grew up in Mid Village", "Attends physiotherapy sessions for hand tremors and takes muscle relaxing medicine", "Dreamt of becoming a surgeon"],
+        other: ["Grew up in Mid Village", "Attends physiotherapy sessions for hand tremors and takes muscle relaxing medicine", "Dreamt of becoming a surgeon","Recently depressed about alumni gathering of former surgeon friends."],
         work: "Pharmacist",
-        impression: `Strong-willed. Still upset about hand tremors. Recently stressed. Very caring towards her.`,
+        impression: `Strong-willed. Sensitive about hand tremors. You care for her very much.`,
         history: [
           {
             title: `Missing Sister - Hit-and-Run`,
@@ -293,10 +521,10 @@ const characters = {
           },
           {
             title: `Bonding over loss`,
-            description: `For over a year, searched for Cadie together. Got close and started dating.`
+            description: `For over a year, you searched for Cadie together. Got close and started dating.`
           },
         ],
-        dayOfTheMurder: ["Saw pictures of surgeon alumni gathering", "Recorded Host G arguing with someone about an accident 8 years ago.", "Argued over reporting to police", "Attended physiotherapy session"]
+        dayOfTheMurder: ["Saw pictures of alumni gathering", "Recorded Host G arguing with someone about an accident 8 years ago.", "Argued over reporting to police", "Attended physiotherapy session"]
       },
       A: {
         name: "Heiress Allison", 
@@ -308,7 +536,7 @@ const characters = {
         },
         other: ["N/A"],
         work: "Future heiress to a car manufacturing business.",
-        impression: "Prideful, spoiled.",
+        impression: "Arrogant, spoiled.",
         dayOfTheMurder: ["Was angry about something."]
       },
 
@@ -318,7 +546,7 @@ const characters = {
           gender: "Male",
           birthDate: "1990-02-14",
           age: 35,
-          relStatus: "Dating Heiress Allison",
+          relStatus: ["First time meeting at the Retreat","Dating Heiress Allison"],
         },
         other: [],
         work: "Owner of CGG (Cars Gotta Go), a scrapyard business",
