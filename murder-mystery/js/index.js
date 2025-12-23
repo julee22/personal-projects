@@ -10,6 +10,16 @@ const loginWrapper = document.getElementById("characterForm");
 const mainWrapper = document.getElementById("main");
 
 $(document).ready(function(){
+    // Execute a function when the user presses a key on the keyboard
+    loginWrapper.addEventListener("keypress", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("submitBtn").click();
+    }
+    }); 
 });
 
 // Password
@@ -39,6 +49,7 @@ function showError() {
     errorMessage.classList.add("show");
     console.log("show error");
 }
+
 
 // Navigation
 window.switchTab = function(tab, tabContent) {

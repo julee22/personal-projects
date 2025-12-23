@@ -46,7 +46,7 @@
 			<input class="input-field" id="password" type="tel" maxlength="2" />
 			<p class="error" id="pass-error">! Incorrect password</p>
 		</div>
-		<button class="red-btn" type="button" onclick="checkPassword()">Submit</button>
+		<button id="submitBtn" class="red-btn" type="button" onclick="checkPassword()">Submit</button>
 	</form>
 	<main class="hide" id="main">
 		<h1 id="name"></h1>
@@ -90,6 +90,7 @@
 				<h2 class="tab" onclick="switchTab(this,'charActions')">What you did</h2>
 				<h2 class="tab" onclick="switchTab(this,'charRelationships')">Suspect Profiles</h2>
 				<h2 class="tab" onclick="switchTab(this,'charTimeline')">Timeline</h2>
+				<h2 class="tab" onclick="switchTab(this,'notes')">Notes</h2>
 			</div>
 			<div class="tab-content show" id="charBackground">
 				<div id="history">
@@ -169,6 +170,9 @@
 						<th scope="col">Event</th>
 					</tr>
 				</table>
+			</div>
+			<div class="tab-content hide" id="notes">
+				<textarea id="note-field" style="width: 100%; min-height: 50vh"></textarea>
 			</div>
 		</section>
 	</main>
