@@ -1,4 +1,19 @@
 const form = document.getElementById('my-form');
+const initialWaves = document.getElementById('on-page-load');
+const waves = document.getElementById('waves');
+
+initialWaves.addEventListener("click", () => {
+  initialWaves.classList.add("recede");
+  waves.classList.add("slide-in");
+    
+  setTimeout(() => {
+    document.querySelectorAll('.fade').forEach(el => {
+      observer.observe(el);
+    });
+  }, "1000");
+
+});
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -49,3 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // optional: run once
+      }
+    });
+  },
+  {
+    threshold: 0.2 // 20% visible
+  }
+);
