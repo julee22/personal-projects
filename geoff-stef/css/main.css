@@ -9,6 +9,7 @@ body {
 	background-image: url('../images/sea-shore.png');
 	background-color: #c2c3be;
 	background-size: cover;
+	background-position-x: right;
 	background-position-y: -300px;
 	background-repeat: no-repeat;
 	color: #1a1a1a;
@@ -27,6 +28,10 @@ body {
 	opacity: 0;
 	position: absolute;
 	top: -10000px;
+}
+
+.fade {
+	transition-duration: 1s;
 }
 
 .sr-only {
@@ -50,12 +55,16 @@ section {
 	padding-bottom: 30px;
 }
 
+.container:last-of-type {
+	margin-bottom: 50px;
+}
+
 #on-page-load {
 	background-image: url('../images/sea.png');
 	background-color: #c2c3be;
 	background-size: cover;
 	background-repeat: repeat no-repeat;
-	background-position: center bottom 0%;
+	background-position: center bottom;
 	height: 100vh;
 	width: 100%;
 	position: fixed;
@@ -70,11 +79,17 @@ section {
 
 #on-page-load * {
 	color: white;
+	opacity: 1;
+	transition: opacity 1s ease;
 }
 
 #on-page-load.recede {
 	top: -100% !important;
 	background-color: transparent;
+}
+
+#on-page-load.recede * {
+	opacity: 0;
 }
 
 .wave-container {
@@ -121,8 +136,12 @@ h1 {
 	font-size: 4rem;
 }
 
+.subtitle {
+	font-size: 21px;
+}
+
 h2, .accent-font {
-	font-size: 2.5rem;
+	font-size: 36px;
 }
 
 h1, h2, .accent-font {
@@ -134,7 +153,6 @@ h1, h2, .accent-font {
 	display: block;
 	font-size: 2.3rem;
 	margin-bottom: -0.5em;
-	margin-left: calc(3.75 * 1em);
 }
 
 .photo-container {
@@ -146,14 +164,23 @@ h1, h2, .accent-font {
 	min-height: 300px;
 }
 
+.photo-container:hover .image-wrapper:nth-of-type(1), .photo-container:focus .image-wrapper:nth-of-type(1) {
+	transform: rotate(-10deg);
+}
+.photo-container:hover .image-wrapper:nth-of-type(2), .photo-container:focus .image-wrapper:nth-of-type(2) {
+	transform: rotate(10deg);
+}
+
 .image-wrapper {
 	display: inline-block;
 	overflow: hidden;
-	width: 200px;
-	height: 200px;
+	width: 175px;
+	height: 175px;
+	box-sizing: content-box;
 	border: 5px solid white;
 	border-bottom-width: 50px;
 	box-shadow: inset 2px 2px 15px 5px rgba(0, 0, 0, 0.2), 3px 3px 15px 5px rgba(208, 204, 196,0.7), -3px -3px 15px 5px rgba(0, 0, 0, 0.3);
+	transition: transform 1s ease;
 }
 
 .image-wrapper:nth-of-type(1) {
@@ -178,7 +205,7 @@ hr {
 
 .form-container {
 	display: flex;
-	gap: 30px;
+	gap: 1rem;
 	align-items: center;
 }
 /* Fields */
@@ -235,11 +262,26 @@ button:disabled {
 	body {
 		background-position-y: -25vh;
 	}
+
+	.and-sign {
+		margin-left: calc(3.75 * 1em);
+	}
 }
 
 
 @media (max-width: 468px) {
-	h1, h1 ~ p  {
+	h1, h2, p {
 		text-align: center;
+	}
+	
+	.photo-container {
+		min-height: 500px;
+	}
+	
+	.image-wrapper:nth-of-type(1) {
+		transform: rotate(-10deg);
+	}
+	.image-wrapper:nth-of-type(2) {
+		transform: rotate(10deg);
 	}
 }
