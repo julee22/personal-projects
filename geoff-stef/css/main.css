@@ -92,6 +92,10 @@ section {
 	opacity: 0;
 }
 
+@keyframes ping {
+	
+}
+
 .wave-container {
 	height: 315px;
 	width: 100%;
@@ -164,18 +168,18 @@ h1, h2, .accent-font {
 	min-height: 300px;
 }
 
-.photo-container:hover .image-wrapper:nth-of-type(1), .photo-container:focus .image-wrapper:nth-of-type(1) {
+.photo-container:hover .photo-wrapper:nth-of-type(1), .photo-container:focus .photo-wrapper:nth-of-type(1) {
 	transform: rotate(-10deg);
 }
-.photo-container:hover .image-wrapper:nth-of-type(2), .photo-container:focus .image-wrapper:nth-of-type(2) {
+.photo-container:hover .photo-wrapper:nth-of-type(2), .photo-container:focus .photo-wrapper:nth-of-type(2) {
 	transform: rotate(10deg);
 }
 
-.image-wrapper {
+.photo-wrapper {
 	display: inline-block;
 	overflow: hidden;
-	width: 175px;
-	height: 175px;
+	width: 200px;
+	height: 215px;
 	box-sizing: content-box;
 	border: 5px solid white;
 	border-bottom-width: 50px;
@@ -183,10 +187,10 @@ h1, h2, .accent-font {
 	transition: transform 1s ease;
 }
 
-.image-wrapper:nth-of-type(1) {
+.photo-wrapper:nth-of-type(1) {
 	transform: rotate(-15deg);
 }
-.image-wrapper:nth-of-type(2) {
+.photo-wrapper:nth-of-type(2) {
 	transform: rotate(15deg);
 }
 
@@ -199,7 +203,21 @@ hr {
 	mix-blend-mode: soft-light;
 	height: 20px;
 	opacity: initial;
-	margin: 15px 0;
+	margin: 30px 0 15px;
+}
+
+.img-wrapper {
+	position: relative;
+}
+
+.img-wrapper img {
+	position: absolute;
+	right: 0%;
+	bottom: 0%;
+	max-width: 200px;
+	width: 130%;
+	height: auto;
+	mix-blend-mode: soft-light;
 }
 
 
@@ -238,7 +256,7 @@ hr {
 
 button, .btn {
 	min-height: 42px;
-	min-width: 100px;
+	min-width: fit-content;
 	padding: 0.5em 1em;
 	transition: all .3s ease;
 	background: #053e4c;
@@ -258,7 +276,18 @@ button:disabled {
 }
 
 
-@media (min-width: 468px) {
+@media (min-width: 768px) {
+	.img-wrapper {
+		min-height: 100px;
+	}
+	
+	.photo-wrapper {
+		width: 175px;
+		height: 200px;
+	}
+}
+
+@media (min-width: 480px) {
 	body {
 		background-position-y: -25vh;
 	}
@@ -266,22 +295,36 @@ button:disabled {
 	.and-sign {
 		margin-left: calc(3.75 * 1em);
 	}
+
+	.photo-wrapper {
+		width: 175px;
+		height: 180px;
+	}
 }
 
 
-@media (max-width: 468px) {
+@media (max-width: 480px) {
 	h1, h2, p {
 		text-align: center;
 	}
-	
-	.photo-container {
-		min-height: 500px;
+
+	.img-wrapper {
+		text-align: center;
 	}
 	
-	.image-wrapper:nth-of-type(1) {
+	.img-wrapper img {
+		position: relative;
+		right: auto;
+	}
+
+	.photo-wrapper:nth-of-type(1) {
 		transform: rotate(-10deg);
 	}
-	.image-wrapper:nth-of-type(2) {
+	.photo-wrapper:nth-of-type(2) {
 		transform: rotate(10deg);
+	}
+
+	.form-container {
+		flex-direction: column;
 	}
 }
