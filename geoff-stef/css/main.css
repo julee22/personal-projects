@@ -97,7 +97,7 @@ section {
 }
 
 .wave-container {
-	height: 315px;
+	height: 250px;
 	width: 100%;
 	overflow: hidden;
 	z-index: 1;
@@ -109,7 +109,7 @@ section {
 	background-size: cover;
 	background-repeat: repeat no-repeat;
 	background-position: center bottom 0%;
-	height: 315px;
+	height: inherit;
 	width: 100%;
 	transition: transform 3s ease;
 	transform: translateY(-60%);
@@ -277,6 +277,10 @@ button:disabled {
 
 
 @media (min-width: 768px) {
+	.wave-container {
+		height: 315px;
+	}
+
 	.img-wrapper {
 		min-height: 100px;
 	}
