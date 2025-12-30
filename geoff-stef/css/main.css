@@ -4,7 +4,7 @@
 body {
 	margin: 0px auto;
 	box-sizing: content-box;
-	font-size: 18px;
+	font-size: 1.2rem;
 	font-family: 'Minion Variable concept', serif;
 	background-image: url('../images/sea-shore.png');
 	background-color: #c2c3be;
@@ -141,11 +141,11 @@ h1 {
 }
 
 .subtitle {
-	font-size: 21px;
+	font-size: 1.3rem;
 }
 
 h2, .accent-font {
-	font-size: 36px;
+	font-size: 2rem;
 }
 
 h1, h2, .accent-font {
