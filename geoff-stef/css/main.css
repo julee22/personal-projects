@@ -1,18 +1,24 @@
 /*wow css*/
 @import url("use.typekit.net");
 
+:root {
+	--primaryColor : #053e4c;
+	--secondaryColor : #0b2f35;
+	--bgColor : #c2c3be;
+	--black : #1a1a1a;
+}
+
 body {
 	margin: 0px auto;
 	box-sizing: content-box;
-	font-size: 1.2rem;
 	font-family: 'Minion Variable concept', serif;
 	background-image: url('../images/sea-shore.png');
-	background-color: #c2c3be;
+	background-color: var(--bgColor);
 	background-size: cover;
 	background-position-x: right;
 	background-position-y: -300px;
 	background-repeat: no-repeat;
-	color: #1a1a1a;
+	color: var(--black);
 	overflow-x: hidden;
 	max-width: 100vw;
 }
@@ -61,7 +67,7 @@ section {
 
 #on-page-load {
 	background-image: url('../images/sea.png');
-	background-color: #c2c3be;
+	background-color: var(--bgColor);
 	background-size: cover;
 	background-repeat: repeat no-repeat;
 	background-position: center bottom;
@@ -144,13 +150,18 @@ h1 {
 	font-size: 1.3rem;
 }
 
-h2, .accent-font {
+h2 {
+	margin-top: 1em;
 	font-size: 2rem;
 }
 
 h1, h2, .accent-font {
 	font-family: 'Allura', 'Brush Script MT', 'Courier New', cursive;
-	color: #053e4c;
+	color: var(--primaryColor);
+}
+
+.accent-font {
+	font-size: 1.5em;
 }
 
 .and-sign {
@@ -211,9 +222,6 @@ hr {
 }
 
 .img-wrapper img {
-	position: absolute;
-	right: 0%;
-	bottom: 0%;
 	max-width: 200px;
 	width: 130%;
 	height: auto;
@@ -240,7 +248,7 @@ hr {
 	background-color: #9a958c9e;
 	border: none;
 	border-radius: 10px;
-	color: #1a1a1a;
+	color: var(--black);
 	-webkit-box-shadow: 0px 0px 8px 4px #9a958c9e; 
 	box-shadow: 0px 0px 8px 4px #9a958c9e;
 }
@@ -259,20 +267,34 @@ button, .btn {
 	min-width: fit-content;
 	padding: 0.5em 1em;
 	transition: all .3s ease;
-	background: #053e4c;
+	background: var(--primaryColor);
 	color: white;
 	border: none;
 	border-radius: 10px;
+	font-family: 'Minion Variable concept', serif;
 }
 
 button:hover, .btn:hover {
-	background: #0b2f35;
+	background: var(--secondaryColor);
 	color: white;
 }
 
 button:disabled {
 	border-color: gray;
 	color: grey;
+}
+
+/* Accordion */
+.accordion-item {
+	background-color: transparent;
+}
+
+button.accordion-button {
+	font-weight: bold;
+	background-color: inherit;
+}
+button.accordion-button:hover, .accordion-button:not(.collapsed) {
+	color: var(--secondaryColor);
 }
 
 
@@ -314,11 +336,6 @@ button:disabled {
 
 	.img-wrapper {
 		text-align: center;
-	}
-	
-	.img-wrapper img {
-		position: relative;
-		right: auto;
 	}
 
 	.photo-wrapper:nth-of-type(1) {
