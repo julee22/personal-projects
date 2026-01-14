@@ -16,7 +16,6 @@ body {
 	background-color: var(--bgColor);
 	background-size: cover;
 	background-position-x: right;
-	background-position-y: -300px;
 	background-repeat: no-repeat;
 	color: var(--black);
 	overflow-x: hidden;
@@ -57,10 +56,6 @@ body {
 	transition: opacity 1s ease;
 }
 
-.container:last-of-type {
-	margin-bottom: 50px;
-}
-
 #on-page-load {
 	background-image: url('../images/sea.png');
 	background-color: var(--bgColor);
@@ -74,7 +69,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-top: 30vh;
+	padding: 30vh 1rem 0;
 	transition: top 3s ease;
 	top: 0%;
 }
@@ -139,7 +134,7 @@ body {
 
 
 h1 {
-	font-size: 4rem;
+	font-size: 3.25rem;
 }
 
 .subtitle {
@@ -147,7 +142,7 @@ h1 {
 }
 
 h2 {
-	margin-top: 1em;
+	margin-top: 0.5em;
 	font-size: 2rem;
 }
 
@@ -156,7 +151,7 @@ h1, h2, .accent-font {
 	color: var(--primaryColor);
 }
 
-.accent-font {
+.md-font {
 	font-size: 1.5em;
 }
 
@@ -229,6 +224,8 @@ hr {
 	display: flex;
 	gap: 1rem;
 	align-items: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 /* Fields */
 .input-field-label {
@@ -255,27 +252,35 @@ hr {
 	flex-wrap: wrap;
 	gap: 15px;
 	margin: 15px auto;
-	justify-content: left;
+	justify-content: center;
 }
 
-button, .btn {
+.btn {
 	min-height: 42px;
 	min-width: fit-content;
 	padding: 0.5em 1em;
 	transition: all .3s ease;
 	background: var(--primaryColor);
 	color: white;
-	border: none;
+	border: 1px solid transparent;
 	border-radius: 10px;
 	font-family: 'Minion Variable concept', serif;
 }
 
-button:hover, .btn:hover {
+.btn.secondary {
+	background: transparent;
+	color: var(--primaryColor);
+	border: 1px solid var(--primaryColor);
+	border-radius: 10px;
+	font-family: 'Minion Variable concept', serif;
+}
+
+.btn:hover {
 	background: var(--secondaryColor);
 	color: white;
 }
 
-button:disabled {
+.btn:disabled {
 	border-color: gray;
 	color: grey;
 }
@@ -293,6 +298,41 @@ button.accordion-button:hover, .accordion-button:not(.collapsed) {
 	color: var(--secondaryColor);
 }
 
+/* Carousel */
+
+.carousel-item {
+	max-width: 480px;
+	max-height: 70vh;
+	margin: auto;
+	float: none;
+}
+
+.carousel-item.active {
+	display: flex;
+	align-items: center;
+}
+
+.carousel-indicators {
+	position: relative;
+	margin: auto;
+}
+
+.carousel-indicators [data-bs-target] {
+	border-radius: 5px;
+  	height: 5px;
+  	width: 5px;
+	border: 4px solid var(--primaryColor);
+	background-color: transparent;
+	margin-top: 30px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.carousel-indicators [data-bs-target].active {
+  	width: 15px;
+	background-color: var(--secondaryColor);
+}
+
 
 @media (min-width: 768px) {
 	.wave-container {
@@ -307,11 +347,22 @@ button.accordion-button:hover, .accordion-button:not(.collapsed) {
 		width: 175px;
 		height: 200px;
 	}
+	
+	.carousel-item {
+		max-width: 480px;
+		max-height: 600px;
+	}
 }
 
 @media (min-width: 480px) {
 	body {
-		background-position-y: -25vh;
+		background-position-y: -50px;
+	}
+	.desktop-only {
+		display: block;
+	}
+	.mobile-only {
+		display: none;
 	}
 
 	.and-sign {
@@ -322,10 +373,21 @@ button.accordion-button:hover, .accordion-button:not(.collapsed) {
 		width: 175px;
 		height: 180px;
 	}
+	
+	.btn-wrapper {
+		justify-content: left;
+	}
 }
 
 
 @media (max-width: 480px) {
+	.desktop-only {
+		display: none;
+	}
+	.mobile-only {
+		display: block;
+	}
+
 	h1, h2, p {
 		text-align: center;
 	}
@@ -339,6 +401,7 @@ button.accordion-button:hover, .accordion-button:not(.collapsed) {
 	}
 	.photo-wrapper:nth-of-type(2) {
 		transform: rotate(10deg);
+		margin-top: -25px;
 	}
 
 	.form-container {

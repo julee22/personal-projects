@@ -34,14 +34,27 @@ const observer = new IntersectionObserver(
 
 document.addEventListener("DOMContentLoaded", () => {
 
+  const acceptBtn = document.getElementById("attending-btn");
+  const rejectBtn = document.getElementById("not-attending-btn");
+  const attendanceInput = document.getElementById("attendance-value");
+  const sendingCopy = document.getElementById("sending");
+
   form.reset();
+  
+  acceptBtn.addEventListener("click", () => {
+    attendanceInput.value = "Attending";
+  });
+
+  rejectBtn.addEventListener("click", () => {
+    attendanceInput.value = "Not Attending";
+  });
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault(); // STOP page reload / navigation
 
-    const submitBtn = document.getElementById("submit-btn");
-    submitBtn.value = "Sending...";
-    submitBtn.disabled = true;
+    acceptBtn.classList.add("hide");
+    rejectBtn.classList.add("hide");
+    sendingCopy.classList.remove("hide");
 
     const data = new FormData(form);
 
@@ -59,14 +72,17 @@ document.addEventListener("DOMContentLoaded", () => {
         json = JSON.parse(text);
       } catch {
         alert("Server returned an unexpected response (not JSON).");
-        submitBtn.value = "Submit";
-        submitBtn.disabled = false;
+        acceptBtn.value = "Submit";
+        acceptBtn.disabled = false;
         return;
       }
 
       if (json.result === "success") {
-        alert("Delighted you can make it!");
+        alert("Thank you for your response!");
         form.reset();
+        acceptBtn.classList.remove("hide");
+        rejectBtn.classList.remove("hide");
+        sendingCopy.classList.add("hide");
       } else {
         alert("Submission error: " + (json.error || "Unknown error"));
       }
@@ -75,9 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error(error);
       alert("Network or server error occurred.");
     }
-
-    submitBtn.value = "Submit";
-    submitBtn.disabled = false;
   });
 
 });
