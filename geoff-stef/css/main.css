@@ -3,7 +3,8 @@
 
 :root {
 	--primaryColor : #053e4c;
-	--secondaryColor : #0b2f35;
+	--secondaryColor : #509bb3;
+	--tertiaryColor: #2e5967;
 	--bgColor : #c2c3be;
 	--black : #1a1a1a;
 }
@@ -151,6 +152,11 @@ h1, h2, .accent-font {
 	color: var(--primaryColor);
 }
 
+a {
+	color: var(--tertiaryColor);
+	text-decoration: dotted;
+}
+
 .md-font {
 	font-size: 1.5em;
 }
@@ -260,7 +266,7 @@ hr {
 	min-width: fit-content;
 	padding: 0.5em 1em;
 	transition: all .3s ease;
-	background: var(--primaryColor);
+	background: var(--secondaryColor);
 	color: white;
 	border: 1px solid transparent;
 	border-radius: 10px;
@@ -270,13 +276,13 @@ hr {
 .btn.secondary {
 	background: transparent;
 	color: var(--primaryColor);
-	border: 1px solid var(--primaryColor);
+	border: 1px solid var(--secondaryColor);
 	border-radius: 10px;
 	font-family: 'Minion Variable concept', serif;
 }
 
 .btn:hover {
-	background: var(--secondaryColor);
+	background: var(--tertiaryColor);
 	color: white;
 }
 
@@ -296,6 +302,7 @@ button.accordion-button {
 }
 button.accordion-button:hover, .accordion-button:not(.collapsed) {
 	color: var(--secondaryColor);
+	background-color: #e7f1ff50;
 }
 
 /* Carousel */
@@ -310,6 +317,10 @@ button.accordion-button:hover, .accordion-button:not(.collapsed) {
 .carousel-item.active {
 	display: flex;
 	align-items: center;
+}
+
+.carousel-item .card {
+	width: 30%;
 }
 
 .carousel-indicators {
@@ -349,8 +360,14 @@ button.accordion-button:hover, .accordion-button:not(.collapsed) {
 	}
 	
 	.carousel-item {
-		max-width: 480px;
-		max-height: 600px;
+		gap: 2em;
+		justify-content: center;
+		max-width: 90%;
+		max-height: 350px;
+	}
+	.carousel-control-next, .carousel-control-prev {
+		width: 30px;
+		color: var(--black);
 	}
 }
 
