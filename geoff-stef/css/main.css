@@ -301,7 +301,7 @@ button.accordion-button {
 	background-color: inherit;
 }
 button.accordion-button:hover, .accordion-button:not(.collapsed) {
-	color: var(--secondaryColor);
+	color: var(--primaryColor);
 	background-color: #e7f1ff50;
 }
 
@@ -309,7 +309,6 @@ button.accordion-button:hover, .accordion-button:not(.collapsed) {
 
 .carousel-item {
 	max-width: 480px;
-	max-height: 70vh;
 	margin: auto;
 	float: none;
 }
@@ -320,7 +319,14 @@ button.accordion-button:hover, .accordion-button:not(.collapsed) {
 }
 
 .carousel-item .card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 30%;
+}
+
+.carousel-item .card img {
+	width: 100%;
 }
 
 .carousel-indicators {
@@ -363,6 +369,10 @@ button.accordion-button:hover, .accordion-button:not(.collapsed) {
 		gap: 2em;
 		justify-content: center;
 		max-width: 90%;
+	}
+
+	.carousel-item .card {
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 6px 14px rgba(0, 0, 0, 0.08), 0 16px 30px rgba(0, 0, 0, 0.05);
 		max-height: 350px;
 	}
 	.carousel-control-next, .carousel-control-prev {
@@ -419,6 +429,10 @@ button.accordion-button:hover, .accordion-button:not(.collapsed) {
 	.photo-wrapper:nth-of-type(2) {
 		transform: rotate(10deg);
 		margin-top: -25px;
+	}
+
+	.carousel-item {
+		max-height: 70vh;
 	}
 
 	.form-container {
