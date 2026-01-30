@@ -163,10 +163,11 @@ const characters = {
         ]
       },
       {
-        time: "2:45 PM",
+        time: "3:00 PM",
         events: [
           "Host Gen gets a call about Sick Harry and tells you to leave.",
-          "Decided to go out stress shopping & texted Doug."
+          "Decided to go out stress shopping & texted Doug.",
+          "Saw Carl in the kitchen.",
         ]
       },
       {
@@ -659,14 +660,13 @@ const characters = {
         time: "3:00 PM",
         events: [
           "Called Doug to confirm Host Gen's involvement with the H accident and an incoming package from a private investigator.",
-          "Heard yelling from Evelyn and Brodie's room.",
-          "Returns to room with water.",
-          "Faye fell asleep"
+          "Saw Allison leave the Resort."
         ]
       },
       {
         time: "3:15 PM",
         events: [
+          "Returns to room with water. Faye fell asleep.",
           "Former gang boss texts Doug and you to get rid of Host Gen.",
           "Doug texts you to wait for further instructions."
         ]
@@ -868,6 +868,12 @@ const characters = {
           "Out having lunch with Allison.",
           "Allison's gets annoyed after reading a text message.",
           "Received text from gang boss wanting an update.",
+        ]
+      },
+      {
+        time: "1:30 PM",
+        events: [
+          "Received text from Carl about Host Gen's involvement in the Hit 8 years ago.",
         ]
       },
       {
@@ -1091,8 +1097,6 @@ const characters = {
         time: "1:00 PM",
         events: [
           "Out having lunch with Brodie.",
-          "Allison's gets annoyed after reading a text message.",
-          "Received text from gang boss wanting an update.",
         ]
       },
       {
@@ -1110,7 +1114,7 @@ const characters = {
         ]
       },
       {
-        time: "2:45 PM",
+        time: "2:40 PM",
         events: [
           "Overheard Host Gen and Allison arguing about a car accident 8 years ago. “I can’t believe you keep bringing up what happened 8 years ago!."
         ]
@@ -1343,14 +1347,7 @@ const characters = {
         events: [
           "Heard yelling from Evelyn and Brodie's room.",
           "Carl returns to room with water.",
-          "Fell asleep"
-        ]
-      },
-      {
-        time: "3:15 PM",
-        events: [
-          "Former gang boss texts Doug and you to get rid of Host Gen.",
-          "Doug texts you to wait for further instructions"
+          "Fell asleep",
         ]
       },
       {
