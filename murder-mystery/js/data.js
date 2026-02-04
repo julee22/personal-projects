@@ -1,6 +1,7 @@
 const characters = {
   A: {
     name: "Allison",
+    phonePass: "",
     password: "10",
     personalDetails: {
       gender: "Female",
@@ -145,7 +146,6 @@ const characters = {
         events: [
           "Went out to have lunch with Doug.",
           "Your parents text to warn you to learn the value of money if you want to inherit the business, and to avoid street racing or scandals.",
-          "Doug is stressed after reading a text message."
         ]
       },
       {
@@ -157,9 +157,9 @@ const characters = {
         ]
       },
       {
-        time: "2:30 PM",
+        time: "2:15 PM",
         events: [
-          "Went to Host Gen's room and confronted her about the monthly $4,000 payment.",
+          "Went to Host Gen's room and confronted her about the monthly $4,000 payment. Threatened her saying 'Don't forget what you also did 8 years ago!'",
         ]
       },
       {
@@ -191,19 +191,19 @@ const characters = {
         time: "5:00 PM",
         events: [
           "Doug returns to your room to shower before dinner.",
-          "Waited for Doug to enter the shower and then leave."
+          "Waited for Doug to enter the shower then left room for Host Gen's."
         ]
       },
       {
-        time: "5:10 PM",
+        time: "5:05 PM",
         events: [
-          "Saw Faye arguing with Host Gen.",
-          "Snuck into Host Gen's room to steal the blackbox recording."
+          "Snuck into Host Gen's room to steal the blackbox recording. Door was unlocked."
         ]
       },
       {
         time: "5:45 PM",
         events: [
+          "Found blackbox recording.",
           "Left Host Gen's room and returned to room to hide the blackbox recording with the letter.",
           "Passed by Evelyn in the hall."
         ]
@@ -218,6 +218,7 @@ const characters = {
   },
   B: {
     name: "Brodie",
+    phonePass: "",
     password: "20",
     personalDetails: {
       gender: "Male",
@@ -370,15 +371,15 @@ const characters = {
       {
         time: "2:00 PM",
         events: [
-          "Host Gen returns with snacks.",
+          "Host Gen returns to Resort.",
           "Returned to house with Evelyn and went to your room to watch a drama.",
-          "Saw a picture of Host Gen driving a red Mercedes."
+          "Saw a picture of Host Gen posing beside a red Mercedes on the wall."
         ]
       },
       {
         time: "2:30 PM",
         events: [
-          "Evelyn leaves to get water after seeing picture of surgeon alumni gathering.",
+          "Evelyn leaves to get water after getting a picture message of surgeon alumni gathering.",
         ]
       },
       {
@@ -408,15 +409,14 @@ const characters = {
         events: [
           "Found a blackbox recording of the accident.",
           "Saw Host Gen has the same cloud keychain that you gave Cadie and decide to kill Host Gen for vengeance.",
-          "Saw Host Gen's car return to the Resort.",
-          "Left Host Gen's room."
         ]
       },
       {
         time: "4:15 PM",
         events: [
-          "Checked Host Gen's posted schedule in the kitchen and saw she is planning on picking up drinks for dinner.",
-          "Ate snacks in kitchen",
+          "Saw Host Gen's car return to the Resort and left Host Gen's room.",
+          "Went to kitchen to check Host Gen's posted schedule; saw she is planning on picking up drinks for dinner.",
+          "Ate snacks to pass the time.",
           "An angry Allison passes by.",
         ]
       },
@@ -425,15 +425,22 @@ const characters = {
         events: [
           "Doug arrived at the kitchen. Told him Allison seemed angry.",
           "Returned to your room; Evelyn is sleeping.",
-          "Stole some of Evelyn's muscle relaxant medicine."
+
+        ]
+      },
+      {
+        time: "4:45 PM",
+        events: [
+          "Stole some of Evelyn's muscle relaxant medicine.",
+          "Left the room."
         ]
       },
       {
         time: "5:00 PM",
         events: [
-          "Waited in the garage with a brick.",
+          "Waited in the garage with a brick and blocked the car exhaust",
           "Heard someone opening and closing a door.",
-          "Heard Host Gen arguing with a soft female voice."
+          "Heard Host Gen talking to a female with a soft voice."
         ]
       },
       {
@@ -447,8 +454,8 @@ const characters = {
         time: "5:30 PM",
         events: [
           "Heard someone opening and closing a door again.",
-          "Injected Host Gen with the muscle relaxant, turned on the engine, and locked her in the car.",
-          "Took Cadie's cloud keychain and left the keys in the car."
+          "Took Cadie's cloud keychain.",
+          "Injected Host Gen with the muscle relaxant, turned on the engine, left the keys in the car and locked the door.",
         ]
       },
       {
@@ -456,7 +463,7 @@ const characters = {
         events: [
           "Returned to your room to shower and get ready for dinner.",
           "Evelyn leaves",
-          "Hid the cloud keychain in your luggage"
+          "Hid the cloud keychain in your luggage."
         ]
       },
       {
@@ -469,6 +476,7 @@ const characters = {
   },
   C: {
     name: "Carl 'Charlie'",
+    phonePass: "",
     password: "30",
     personalDetails: {
       gender: "Male",
@@ -629,7 +637,7 @@ const characters = {
         events: [
           "On the way back from bringing dessert for Faye (who was napping).",
           "Host Gen left to buy groceries.",
-          "Snuck into Host Gen's room.",
+          "Picklocked Host Gen's room.",
         ]
       },
       {
@@ -637,7 +645,7 @@ const characters = {
         events: [
           "Found an old unlocked phone; text messages prove Host Gen was actually the one who threatened to report you to the police 8 years ago.",
           "Messaged Doug about Host Gen's involvement.",
-          "Left Host Gen's room."
+          "Left Host Gen's room and locked the door."
         ]
       },
       {
@@ -659,7 +667,7 @@ const characters = {
       {
         time: "3:00 PM",
         events: [
-          "Called Doug to confirm Host Gen's involvement with the H accident and an incoming package from a private investigator.",
+          "Called Doug to confirm Host Gen's involvement with 'The Hit' and an incoming package from a private investigator.",
           "Saw Allison leave the Resort."
         ]
       },
@@ -680,6 +688,13 @@ const characters = {
         ]
       },
       {
+        time: "4:00 PM",
+        events: [
+          // "Saw Host Gen quickly leaving the Retreat and enter a black car.",
+          "Received text from Doug to stash drugs in the coat closet."
+        ]
+      },
+      {
         time: "4:15 PM",
         events: [
           "Faye called you and says she remembered being hit by a lady driving a red car, likely to be Host Gen.",
@@ -689,22 +704,17 @@ const characters = {
       {
         time: "5:00 PM",
         events: [
+          "Returned to resort with drug",
           "Stashed drugs in coat closet then returned to room to get ready for dinner.",
           "Noticed Faye is not in the room."
         ]
       },
       {
-        time: "5:30 PM",
+        time: "5:35 PM",
         events: [
           "Faye returned to the room upset.",
           "Showed Faye the cloud keychain that you picked up near where you found Faye in 2017.",
           "Fought with Faye about keeping secrets."
-        ]
-      },
-      {
-        time: "5:45 PM",
-        events: [
-          "Faye leaves room for some space."
         ]
       },
       {
@@ -717,6 +727,7 @@ const characters = {
   },
   D: {
     name: "Doug",
+    phonePass: "",
     password: "40",
     personalDetails: {
       gender: "Male",
@@ -735,7 +746,7 @@ const characters = {
     ],
     whyYouHere: `Recently, your bosses have informed you that someone has been investigating the Hit incident again. They suspect it to be Host Gen, Harry's sister. They tell you to deal with it before it causes problems for the gang. You called up Carl to finish the job and tie up loose ends. Coincidentally, Allison is best friends with Host Gen and was offered a free stay at Lover's Retreat.`,
     dayOfTheMurder: [
-      "Instructed to get rid of Host Gen and any evidence by gang boss",
+      "Instructed and pressured to get rid of Host Gen and any evidence by gang boss",
       "Instructed Carl to pick up drugs",
       "Broke into Host Gen's room and stole investigative package",
       "Picked up drugs Carl stashed in coat closet",
@@ -867,7 +878,6 @@ const characters = {
         events: [
           "Out having lunch with Allison.",
           "Allison's gets annoyed after reading a text message.",
-          "Received text from gang boss wanting an update.",
         ]
       },
       {
@@ -880,7 +890,7 @@ const characters = {
         time: "2:10 PM",
         events: [
           "Came back from lunch with Allison.",
-          "Received call 'work call' from gang boss; answered in room.",
+          "Received call 'work call' from gang boss; answered in room. Gang boss wants an update on the situation with Host Gen.",
           "Allison left elsewhere."
         ]
       },
@@ -888,14 +898,14 @@ const characters = {
         time: "3:00 PM",
         events: [
           "Carl called to confirm Host Gen's involvement with the H accident and an incoming package from a private investigator.",
-          "Informed boss about Host Gen",
+          "Informed boss about Host Gen.",
           "Allison texted 'Went out stress shopping'"
         ]
       },
       {
         time: "3:15 PM",
         events: [
-          "Threatening letter is slid under the door; opened door and saw Host Gen turning the corner.",
+          "A threatening letter is slid under the door, saying 'I will expose what you did 8 years ago'; opened door and saw Host Gen turning the corner.",
           "Former gang boss texts you to get rid of Host Gen.",
           "Texted Carl to wait for further instructions.",
           "Hid threatening letter in bedside table."
@@ -906,6 +916,13 @@ const characters = {
         events: [
           // "Saw Host Gen quickly leaving the Retreat and enter a black car.",
           "Texted Carl to pick up drugs from gang boss to use on Host Gen.",
+        ]
+      },
+      {
+        time: "4:00 PM",
+        events: [
+          "Left room to smoke in backyard",
+          "Texted Carl to stash the drugs in the coat closet."
         ]
       },
       {
@@ -934,6 +951,7 @@ const characters = {
         time: "5:30 PM",
         events: [
           "Went to the coat closet to pick up stashed drugs.",
+          "Faye passed by from outside",
           "Snuck into kitchen to lace Host Gen's meal with drugs."
         ]
       },
@@ -954,6 +972,7 @@ const characters = {
   },
   E: {
     name: "Evelyn",
+    phonePass: "",
     password: "50",
     personalDetails: {
       gender: "Female",
@@ -1102,21 +1121,21 @@ const characters = {
       {
         time: "2:00 PM",
         events: [
-          "Host Gen returns with snacks.",
+          "Host Gen returns to Resort.",
           "Returned to house with Brodie and went to your room to watch a drama.",
-          "Saw a picture of Host Gen driving a red Mercedes."
+          "Saw a picture of Host Gen posing beside a red Mercedes."
         ]
       },
       {
         time: "2:30 PM",
         events: [
-          "Received picture of alumni gathering and depressed; stepped out to get water."
+          "Received picture of alumni gathering and got depressed; stepped out to get water."
         ]
       },
       {
-        time: "2:40 PM",
+        time: "2:35 PM",
         events: [
-          "Overheard Host Gen and Allison arguing about a car accident 8 years ago. “I can’t believe you keep bringing up what happened 8 years ago!."
+          "Overheard Host Gen and another girl arguing in Host Gen's room about a car accident 8 years ago. 'Don't forget what you also did 8 years ago!'"
         ]
       },
       {
@@ -1148,14 +1167,15 @@ const characters = {
       {
         time: "4:45 PM",
         events: [
-          "Woke up due to knocking sounds but went back to sleep."
+          "Woke up hearing movement outside but went back to sleep."
         ]
       },
       {
-        time: "5:30 PM",
+        time: "5:35 PM",
         events: [
           "Woke up.",
           "Overhears fighting from Faye and Carl.",
+          "Took a shower to get ready for dinner."
         ]
       },
       {
@@ -1177,6 +1197,7 @@ const characters = {
   },
   F: {
     name: "Faye",
+    phonePass: "",
     password: "60",
     personalDetails: {
       gender: "Female",
@@ -1396,7 +1417,14 @@ const characters = {
       {
         time: "5:30 PM",
         events: [
-          "Returned to the room upset.",
+          "Returned to the resort.",
+          "Passed by Doug near the entrance.",
+          "Went to room.",
+        ]
+      },
+      {
+        time: "5:35 PM",
+        events: [
           "Carl showed the cloud keychain that he picked up near where you were found in 2017.",
           "Fought with Carl."
         ]
