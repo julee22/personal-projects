@@ -1,13 +1,20 @@
-import characters from "./data.js";
+import {texts, calls} from "./phone-data.js";
+import data from "./data.js";
 
 var charObject = Object;
-var selectedChar = "";
+var phoneOwner = "";
 
-const profileKeys = ["gender","birthDate","age","relStatus","personality","work","other","dayOfTheMurder", "motives"];
-const otherProfileKeys = ["gender","birthDate","age","relStatus","impression","work","other","dayOfTheMurder"]
+var selectedChar = "";
 
 const loginWrapper = document.getElementById("characterForm");
 const mainWrapper = document.getElementById("main");
+
+const textLog = document.getElementById('text-log');
+const convoContainer = document.getElementById("conversation-list");
+const conversation = document.getElementById("conversation");
+
+const callLog = document.getElementById('call-list');
+
 
 $(document).ready(function(){
     // Execute a function when the user presses a key on the keyboard
@@ -25,14 +32,14 @@ $(document).ready(function(){
 // Password
 window.checkPassword = function() {
     event.preventDefault()
-    selectedChar = document.getElementById("characterList").value;
+    phoneOwner = document.getElementById("characterList").value;
     const pass = document.getElementById("password");
     
     if (pass) {
-        if (pass.value == characters[selectedChar].phonePass) {
+        if (pass.value == characters[phoneOwner].phonePass) {
             loginWrapper.classList.add("hide");
             mainWrapper.classList.remove("hide");
-            charObject = characters[selectedChar];
+            charObject = characters[phoneOwner];
             generateProfile();
             generateRelationList();
             generateTimeline();
@@ -54,10 +61,8 @@ function showError() {
 // Navigation
 window.openApp = function(appName) {
     const selectedApp = document.getElementById(appName);
-    selectedApp.classList.add("show");
     selectedApp.classList.remove("hide");
 
-    console.log(mainWrapper);
     mainWrapper.classList.add("hide");
 }
 
@@ -72,137 +77,111 @@ window.backBtn = function() {
     mainWrapper.classList.remove("hide");
 }
 
+window.closeConvo = function() {
+    textLog.classList.remove('hide');
+    convoContainer.classList.add('hide');
+    conversation.innerHTML = "";
+}
+
 // Generate content functions
-function generateProfile() {
-    const name = document.getElementById('name');
-    name.textContent = charObject['name'];
+window.openConversation = function(user, char, textOrCall) {
+    phoneOwner = user;
+    selectedChar = char;
 
-    profileKeys.forEach(key => {
-        const element = document.getElementById(key); 
-        
-        if (["gender","birthDate","age","relStatus"].includes(key)) {
-            element.textContent = arrayOrString(charObject.personalDetails[key]);
-
-        } else if (["other","dayOfTheMurder","motives"].includes(key)) {
-            if (charObject[key] == "") {
-                element.innerHTML = "<li>N/A</li>";
-            } else {
-                charObject[key].forEach(index => {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = index;
-                    element.appendChild(listItem);
-                });
-            }
+    if (textOrCall == 'text') {
+        const selectedConversation = document.getElementById('selectedConvo');
+        if (data[char]) {
+            selectedConversation.innerHTML = data[char].name;
         } else {
-            element.textContent = arrayOrString(charObject[key]);   
+            selectedConversation.innerHTML = char;
         }
-    });
-    
-    generateBackground(charObject,'history');
-}
 
-function generateRelationList() {
-    const charDropdown = document.getElementById('relationList');
-    charDropdown.querySelector(`option[value="`+selectedChar+`"]`).remove();
-    generateRelationship(charDropdown);
-}
+        textLog.classList.add("hide");
+        openApp('conversation-list');
 
-window.generateRelationship = function(elem) {
-    const otherCharObject = charObject.relationships[elem.value];
-    
-    // const name = document.getElementById('other-name');
-    // name.textContent = otherCharObject['name'];
-
-    otherProfileKeys.forEach(key => {
-        const element = document.getElementById('other-'+key); 
-        
-        if (["other-gender","other-birthDate","other-age","other-relStatus"].includes('other-'+key)) {
-            element.textContent = arrayOrString(otherCharObject.personalDetails[key]);
-
-        } else if (key == 'other' || key == 'dayOfTheMurder') {
-            // resets for other characters
-            element.innerHTML = "";
-
-
-            if (otherCharObject[key] == "") {
-                element.innerHTML = "<li>N/A</li>";
-            } else {
-                otherCharObject[key].forEach(index => {
-                    const listItem = document.createElement('li');
-    
-                    listItem.textContent = index;
-                    element.appendChild(listItem);
-                });
-            }
-        } else {
-            element.textContent = arrayOrString(otherCharObject[key]);   
-        }
-    });
-    
-    // Resets and populates other-history
-    const otherHistory = document.getElementById('other-history'); 
-    otherHistory.innerHTML = "";
-
-    if ('history' in otherCharObject) {
-        otherHistory.innerHTML = "<h2>Shared history</h2>";
-        generateBackground(otherCharObject,'other-history', 'h4');
+        generateMessages(texts);
+    } else {
+        generateCalls(calls);
     }
 }
 
-function generateBackground(object, id, heading) {
-    heading = heading || 'h3';
-    // Generates dynamic history content
-    const container = document.getElementById(id);
-
-    object.history.forEach(subobject => {
-        // Create elements
-        const header = document.createElement(heading);
-        const content = document.createElement('p');
-
-        header.textContent = subobject.title;
-        content.textContent = subobject.description;
-
-        // Append content > container
-        container.appendChild(header);
-        container.appendChild(content);
-    });
-
-    // Populates How you got here for main profile only
-    if (object == charObject) {
-        const howGotHere = document.getElementById('whyYouHere');
-        howGotHere.textContent = object['whyYouHere'];
-    }
+function filterPhoneContent(listContent) {
+    const userKey = getKey(phoneOwner, selectedChar);
+    const filteredList = listContent.filter((convo) => getKey(convo.from, convo.to) === userKey);
+    console.log(filteredList);
+    return filteredList;
 }
 
-function generateTimeline() {
-    const timelineId = document.getElementById("timeline");
-    
-    charObject.timeline.forEach(key => {
-        // Create elements
-        const row = document.createElement('tr');
-        const timeCell = document.createElement('th');
-        const eventCell = document.createElement('td');
-        const eventList = document.createElement('ul');
+function getKey(a, b) {
+    return [a,b].sort().join("_");
+}
 
-        timeCell.scope = 'row';
-        timeCell.textContent = key.time;
-        row.appendChild(timeCell);
-
-        // Creates a list item for event
-        key.events.forEach(event => {
-            const eventItem = document.createElement('li');
-
-            eventItem.innerHTML = event;
-            eventList.appendChild(eventItem);
-        });
+// generate texts
+function generateMessages(phonecontent) {
+    filterPhoneContent(phonecontent).forEach(element => {
         
-        // Append list > cell > row > table
-        eventCell.appendChild(eventList);
-        row.appendChild(eventCell);
-        timelineId.appendChild(row);
+        // Create elements
+        const messageWrapper = document.createElement('div');
+            messageWrapper.classList.add("message-log");
+        if (element.from == phoneOwner) {
+            messageWrapper.classList.add("outgoing");
+        } else {
+            messageWrapper.classList.add("incoming");
+        }
+
+        const message = document.createElement('p');
+        message.classList.add("message");
+
+        const timestamp = document.createElement('p');
+        timestamp.classList.add("timestamp");
+
+        // assign values
+        message.innerHTML = element.message;
+        timestamp.innerHTML = element.time;
+
+        // Append
+        messageWrapper.appendChild(message);
+        messageWrapper.appendChild(timestamp);
+        conversation.appendChild(messageWrapper);
     });
 }
 
+// generate calls
+function generateCalls(phonecontent) {
+    filterPhoneContent(phonecontent).forEach(element => {
+        
+        // Create elements
+        const callWrapper = document.createElement('div');
+        callWrapper.classList.add("call-log");
+
+        const profileImg = document.createElement('div');
+        profileImg.classList.add('profile-img');
+
+        const name = document.createElement('p');
+        name.classList.add("call");
+
+        const timestamp = document.createElement('p');
+        timestamp.classList.add("timestamp");
+        
+        const icon = document.createElement('span');
+        // assign values
+        if (element.from == phoneOwner) {
+            name.innerHTML = element.to;
+            icon.classList.add('icon-outgoing');
+            timestamp.innerHTML = 'Outgoing, ' + element.time;
+        } else {
+            name.innerHTML = element.from;
+            icon.classList.add('icon-incoming');
+            timestamp.innerHTML = 'Incoming, ' + element.time;
+        }
+
+
+        // Append
+        messageWrapper.appendChild(message);
+        messageWrapper.appendChild(timestamp);
+        callLog.appendChild(messageWrapper);
+    });
+}
 // If array, return string with commas
 function arrayOrString(object) {
     if (Array.isArray(object)) {

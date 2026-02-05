@@ -37,7 +37,7 @@
 			<p class="error" id="pass-error">! Incorrect password</p>
     </section> -->
     <section class="" id="main">
-        <button class="btn" onclick="openApp('call-log')">
+        <button class="btn" onclick="openApp('call-log'), openConversation()">
             <span class="material-symbols-outlined">phone_enabled</span>
         </button>
         <button class="btn" onclick="openApp('text-log')">
@@ -54,31 +54,33 @@
         <div class="app-frame">
             <div class="app-nav">
                 <button class="btn" onclick="backBtn()"><span class="material-symbols-outlined">arrow_back_ios</span></button>
-                <h2>Messages</h2>
+                <h2 class="h3">Messages</h2>
             </div>
             <div class="app-content">
                 <div class="contact-list">
-                    <div class="contact" id="contact-a">
-                        <span class="profile-img"></span>
-                        Name
+                    <div class="contact" id="contact-b" onclick="openConversation('A','D','text')">
+                        My Beast ♡
+                    </div>
+                    <div class="contact" onclick="openConversation('A','Dad','text')">
+                        Dad
+                    </div>
+                    <div class="contact" onclick="openConversation('A','Gen','text')">
+                        Gen
                     </div>
                 </div>
-                <div id="contact-a-msg" class="contact-messages">
-                    <div class="message-header">
-                        <span class="profile-img"></span> Name
-                    </div>
-                    <div class="messages-container">
-                        <div class="message">
-                            <p class="incoming">Lorem ipsum</p>
-                            <p class="timestamp">1:00 PM</p>
-                        </div>
-                        <div class="message">
-                            <span class="icon-outgoing"></span>
-                            <p class="outgoing">Name</p>
-                            <p class="timestamp">1:00 PM</p>
-                        </div>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hide" id="conversation-list">
+        <div class="app-frame">
+            <div class="app-nav">
+                <button class="btn" onclick="closeConvo()"><span class="material-symbols-outlined">arrow_back_ios</span></button>
+                <h2 class="h3" id="selectedConvo"></h2>
+            </div>
+        </div>
+        <div class="app-content">
+            <p class="timestamp text-center mt-2">Today</p>
+            <div class="messages-container" id="conversation">
             </div>
         </div>
     </section>
@@ -86,9 +88,9 @@
         <div class="app-frame">
             <div class="app-nav">
                 <button class="btn" onclick="backBtn()"><span class="material-symbols-outlined">arrow_back_ios</span></button>
-                <h2>Calls</h2>
+                <h2 class="h3">Calls</h2>
             </div>
-            <div class="app-content">
+            <div class="app-content" id="call-list">
                 <div class="call-log incoming">
                     <div class="profile-img"></div>
                     <p>Name
@@ -110,7 +112,7 @@
         <div class="app-frame">
             <div class="app-nav">
                 <button class="btn" onclick="backBtn()"><span class="material-symbols-outlined">arrow_back_ios</span></button>
-                <h2>Gallery</h2>
+                <h2 class="h3">Gallery</h2>
             </div>
             <div class="app-content"></div>
         </div>
@@ -119,7 +121,7 @@
         <div class="app-frame">
             <div class="app-nav">
                 <button class="btn" onclick="backBtn()"><span class="material-symbols-outlined">arrow_back_ios</span></button>
-                <h2>Mail</h2>
+                <h2 class="h3">Mail</h2>
             </div>
             <div class="app-content"></div>
         </div>

@@ -1,7 +1,7 @@
 const characters = {
   A: {
     name: "Allison",
-    phonePass: "",
+    phoneLink: "",
     password: "10",
     personalDetails: {
       gender: "Female",
@@ -145,7 +145,13 @@ const characters = {
         time: "1:00 PM",
         events: [
           "Went out to have lunch with Doug.",
-          "Your parents text to warn you to learn the value of money if you want to inherit the business, and to avoid street racing or scandals.",
+          "Your dad texts to warn you to learn the value of money if you want to inherit the business, and to avoid street racing or scandals.",
+        ]
+      },
+      {
+        time: "1:10 PM",
+        events: [
+          "Texted Host Gen 'We need to talk'",
         ]
       },
       {
@@ -173,8 +179,8 @@ const characters = {
       {
         time: "4:00 PM",
         events: [
-          "Credit card gets declined so you call your parents.",
-          "Your parents say that they won’t give you more allowance for this month."
+          "Credit card gets declined so you call your dad.",
+          "Your dad say that he won’t give you more allowance for this month."
         ]
       },
       {
@@ -218,7 +224,7 @@ const characters = {
   },
   B: {
     name: "Brodie",
-    phonePass: "",
+    phoneLink: "",
     password: "20",
     personalDetails: {
       gender: "Male",
@@ -476,7 +482,7 @@ const characters = {
   },
   C: {
     name: "Carl 'Charlie'",
-    phonePass: "",
+    phoneLink: "",
     password: "30",
     personalDetails: {
       gender: "Male",
@@ -727,7 +733,7 @@ const characters = {
   },
   D: {
     name: "Doug",
-    phonePass: "",
+    phoneLink: "",
     password: "40",
     personalDetails: {
       gender: "Male",
@@ -972,7 +978,7 @@ const characters = {
   },
   E: {
     name: "Evelyn",
-    phonePass: "",
+    phoneLink: "",
     password: "50",
     personalDetails: {
       gender: "Female",
@@ -1197,7 +1203,7 @@ const characters = {
   },
   F: {
     name: "Faye",
-    phonePass: "",
+    phoneLink: "",
     password: "60",
     personalDetails: {
       gender: "Female",
@@ -1438,5 +1444,5 @@ const characters = {
     ]
   },
 };
-
 export default characters;
+
