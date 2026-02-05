@@ -37,7 +37,7 @@
 			<p class="error" id="pass-error">! Incorrect password</p>
     </section> -->
     <section class="" id="main">
-        <button class="btn" onclick="openApp('call-log'), openConversation()">
+        <button class="btn" onclick="openApp('call-log'), generateCalls('A')">
             <span class="material-symbols-outlined">phone_enabled</span>
         </button>
         <button class="btn" onclick="openApp('text-log')">
@@ -91,20 +91,6 @@
                 <h2 class="h3">Calls</h2>
             </div>
             <div class="app-content" id="call-list">
-                <div class="call-log incoming">
-                    <div class="profile-img"></div>
-                    <p>Name
-                        <span class="d-block small-copy">Incoming, timestamp</span>
-                    </p>
-                    <span class="icon-incoming"></span>
-                </div>
-                <div class="call-log outgoing">
-                    <div class="profile-img"></div>
-                    <p>Name
-                        <span class="d-block small-copy">Outgoing, timestamp</span>
-                    </p>
-                    <span class="icon-outgoing"></span>
-                </div>
             </div>
         </div>
     </section>

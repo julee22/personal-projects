@@ -75,6 +75,7 @@ window.backBtn = function() {
         }
     }
     mainWrapper.classList.remove("hide");
+    callLog.innerHTML = "";
 }
 
 window.closeConvo = function() {
@@ -84,25 +85,21 @@ window.closeConvo = function() {
 }
 
 // Generate content functions
-window.openConversation = function(user, char, textOrCall) {
+window.openConversation = function(user, char) {
     phoneOwner = user;
     selectedChar = char;
 
-    if (textOrCall == 'text') {
-        const selectedConversation = document.getElementById('selectedConvo');
-        if (data[char]) {
-            selectedConversation.innerHTML = data[char].name;
-        } else {
-            selectedConversation.innerHTML = char;
-        }
-
-        textLog.classList.add("hide");
-        openApp('conversation-list');
-
-        generateMessages(texts);
+    const selectedConversation = document.getElementById('selectedConvo');
+    if (data[char]) {
+        selectedConversation.innerHTML = data[char].name;
     } else {
-        generateCalls(calls);
+        selectedConversation.innerHTML = char;
     }
+
+    textLog.classList.add("hide");
+    openApp('conversation-list');
+
+    generateMessages(texts);
 }
 
 function filterPhoneContent(listContent) {
@@ -147,9 +144,10 @@ function generateMessages(phonecontent) {
 }
 
 // generate calls
-function generateCalls(phonecontent) {
-    filterPhoneContent(phonecontent).forEach(element => {
-        
+window.generateCalls = function(user) {
+    phoneOwner = user;
+    const filteredList = calls.filter((convo) => convo.from == user || convo.to == user);
+    filteredList.forEach(element => {
         // Create elements
         const callWrapper = document.createElement('div');
         callWrapper.classList.add("call-log");
@@ -164,22 +162,27 @@ function generateCalls(phonecontent) {
         timestamp.classList.add("timestamp");
         
         const icon = document.createElement('span');
+        icon.classList.add('material-symbols-outlined');
+
         // assign values
         if (element.from == phoneOwner) {
             name.innerHTML = element.to;
-            icon.classList.add('icon-outgoing');
+            profileImg.id = "profile-img-"+element.to;
+            icon.innerHTML = "call_made";
             timestamp.innerHTML = 'Outgoing, ' + element.time;
         } else {
             name.innerHTML = element.from;
-            icon.classList.add('icon-incoming');
+            profileImg.id = "profile-img-"+element.from;
+            icon.innerHTML = "call_received";
             timestamp.innerHTML = 'Incoming, ' + element.time;
         }
 
-
         // Append
-        messageWrapper.appendChild(message);
-        messageWrapper.appendChild(timestamp);
-        callLog.appendChild(messageWrapper);
+        callWrapper.appendChild(profileImg);
+        callWrapper.appendChild(name);
+        callWrapper.appendChild(timestamp);
+        callWrapper.appendChild(icon);
+        callLog.appendChild(callWrapper);
     });
 }
 // If array, return string with commas
