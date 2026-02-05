@@ -106,6 +106,22 @@ section {
     margin-left: auto;
 }
 
+/* Calls */
+.call-log {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid grey;
+}
+
+.call-log > p {
+    margin-bottom: 0px;
+}
+.call-log .timestamp {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
 .timestamp {
     font-size: 12px;
     margin-bottom: 0px;
