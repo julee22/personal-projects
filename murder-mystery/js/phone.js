@@ -90,34 +90,8 @@ window.openConversation = function(user, char) {
     phoneOwner = user;
     selectedChar = char;
 
-    const selectedConversation = document.getElementById('selectedConvo');
-    if (data[char]) {
-        selectedConversation.innerHTML = data[char].name;
-    } else {
-        selectedConversation.innerHTML = char;
-    }
-
-    textLog.classList.add("hide");
-    openApp('conversation-list');
-
-    generateMessages(texts);
-}
-
-function filterPhoneContent(listContent) {
-    const userKey = getKey(phoneOwner, selectedChar);
-    const filteredList = listContent.filter((convo) => getKey(convo.from, convo.to) === userKey);
-    console.log(filteredList);
-    return filteredList;
-}
-
-function getKey(a, b) {
-    return [a,b].sort().join("_");
-}
-
-// generate texts
-function generateMessages(phonecontent) {
-    filterPhoneContent(phonecontent).forEach(element => {
-        
+    // Generate messages
+    filterPhoneContent(texts).forEach(element => {
         // Create elements
         const messageWrapper = document.createElement('div');
             messageWrapper.classList.add("message-log");
@@ -141,9 +115,41 @@ function generateMessages(phonecontent) {
         messageWrapper.appendChild(message);
         messageWrapper.appendChild(timestamp);
         conversation.appendChild(messageWrapper);
+
+        if (phoneOwner == element.to && element.fromNickname) {
+            setNickname(element.fromNickname);
+        } else if (phoneOwner == element.from && element.toNickname) {
+            setNickname(element.toNickname);
+        } else {
+            setNickname(char);
+        }
     });
+
+    textLog.classList.add("hide");
+    openApp('conversation-list');
+
 }
 
+function setNickname(character) {
+    const selectedConversation = document.getElementById('selectedConvo');
+    if (data[character]) {
+        selectedConversation.innerHTML = data[character].name;
+    } else {
+        selectedConversation.innerHTML = character;
+    }
+}
+
+
+function filterPhoneContent(listContent) {
+    const userKey = getKey(phoneOwner, selectedChar);
+    const filteredList = listContent.filter((convo) => getKey(convo.from, convo.to) === userKey);
+    console.log(filteredList);
+    return filteredList;
+}
+
+function getKey(a, b) {
+    return [a,b].sort().join("_");
+}
 // generate calls
 window.generateCalls = function(user) {
     phoneOwner = user;
@@ -184,6 +190,21 @@ window.generateCalls = function(user) {
         callWrapper.appendChild(timestamp);
         callWrapper.appendChild(icon);
         callLog.appendChild(callWrapper);
+
+        // nicknames
+        if (phoneOwner == element.to) {
+            if (element.fromNickname) {
+                setNickname(element.fromNickname);
+            } else {
+                setNickname(element.fromo);
+            }
+        } else {
+            if (element.toNickname) {
+                setNickname(element.toNickname);
+            } else {
+                setNickname(element.to);
+            }
+        }
     });
 }
 

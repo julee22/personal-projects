@@ -20,30 +20,40 @@ export const texts = [
   {
     from: "A",
     to: "Gen",
+    fromNickname: "Princess",
+    toNickname: "B*stie B*tch",
     time: "01:10 PM",
     message: "Hey prude, we need to talk."
   },
   {
     from: "A",
     to: "D",
+    fromNickname: "Princess",
+    toNickname: "Beast <3",
     time: "03:00 PM",
     message: "Babe, I'M SO FUCKING PISSED right now. I'm leaving."
   },
   {
     from: "D",
     to: "A",
+    fromNickname: "Beast <3",
+    toNickname: "Princess",
     time: "03:03 PM",
     message: "Who pissed off my princess? Where you going?"
   },
   {
     from: "A",
     to: "D",
+    fromNickname: "Princess",
+    toNickname: "Beast <3",
     time: "03:05 PM",
     message: "Retail therapy."
   }, 
   {
     from: "D",
     to: "A",
+    fromNickname: "Beast <3",
+    toNickname: "Princess",
     time: "03:06 PM",
     message: "Ok. See ya later, princess. Go get whatever you need."
   },
