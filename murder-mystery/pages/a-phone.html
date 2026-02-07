@@ -46,7 +46,7 @@
         <button class="btn" onclick="openApp('email')">
             <span class="material-symbols-outlined">mail</span>
         </button>
-        <button class="btn" onclick="openApp('gallery')">
+        <button class="btn" onclick="openApp('gallery'), setImage('a-1')">
             <span class="material-symbols-outlined">image</span>
         </button>
     </section>
@@ -82,6 +82,11 @@
             <p class="timestamp text-center mt-2">Today</p>
             <div class="messages-container" id="conversation">
             </div>
+            <div class="fake-keyboard">
+                <span class="material-symbols-outlined">add</span>
+                <div class="fake-input"></div>
+                <span class="material-symbols-outlined">send</span>
+            </div>
         </div>
     </section>
     <section class="hide" id="call-log">
@@ -102,7 +107,22 @@
                 <button class="btn" onclick="backBtn()"><span class="material-symbols-outlined">arrow_back_ios</span></button>
                 <h2 class="h3">Gallery</h2>
             </div>
-            <div class="app-content"></div>
+            <div class="app-content">
+                <div class="main-img-wrapper">
+                    <img src="" alt="" id="main-img">
+                </div>
+                <div class="img-nav-wrapper">
+                    <div onclick="setImage('a-1')" class="img-nav">
+                        <img src="../images/a-1.jpg" alt="">
+                    </div>
+                    <div onclick="setImage('a-2')" class="img-nav">
+                        <img src="../images/a-2.jpg" alt="">
+                    </div>
+                    <div onclick="setImage('a-3')" class="img-nav">
+                        <img src="../images/a-3.jpg" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="hide" id="email">

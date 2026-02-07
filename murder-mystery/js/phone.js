@@ -15,6 +15,7 @@ const conversation = document.getElementById("conversation");
 
 const callLog = document.getElementById('call-list');
 
+const mainImg = document.getElementById("main-img");
 
 $(document).ready(function(){
     // Execute a function when the user presses a key on the keyboard
@@ -26,7 +27,7 @@ $(document).ready(function(){
         // Trigger the button element with a click
         document.getElementById("submitBtn").click();
     }
-    }); 
+    });
 });
 
 // Password
@@ -185,6 +186,13 @@ window.generateCalls = function(user) {
         callLog.appendChild(callWrapper);
     });
 }
+
+// set main image
+window.setImage = function(path) {
+    console.log(mainImg);
+    mainImg.src = "../images/" + path + ".jpg";
+}
+
 // If array, return string with commas
 function arrayOrString(object) {
     if (Array.isArray(object)) {
