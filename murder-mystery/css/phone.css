@@ -183,5 +183,5 @@ section {
 
 .img-nav {
     height: 75px;
-    flex: 1 0 auto;
+    min-width: fit-content;
 }
