@@ -1,21 +1,4 @@
 const form = document.getElementById('my-form');
-const initialWaves = document.getElementById('on-page-load');
-const waves = document.getElementById('waves');
-
-initialWaves.addEventListener("click", () => {
-  initialWaves.classList.add("recede");
-  waves.classList.add("slide-in");
-  document.querySelectorAll('.fade').forEach(el => {
-    el.classList.remove("hide");
-  });
-    
-  setTimeout(() => {
-    document.querySelectorAll('.fade').forEach(el => {
-      observer.observe(el);
-    });
-  }, "1000");
-
-});
 
 // Fade In animation
 const observer = new IntersectionObserver(
@@ -31,6 +14,18 @@ const observer = new IntersectionObserver(
     threshold: 0.1 // 10% visible
   }
 );
+
+document.addEventListener("scroll", () => {
+  document.querySelectorAll('.fade').forEach(el => {
+    el.classList.remove("hide");
+  });
+    
+  setTimeout(() => {
+    document.querySelectorAll('.fade').forEach(el => {
+      observer.observe(el);
+    });
+  }, "500");
+});
 
 document.addEventListener("DOMContentLoaded", () => {
 
