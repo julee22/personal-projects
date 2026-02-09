@@ -101,14 +101,6 @@ hr {
 	width: 60px;
 }
 
-.form-container {
-	display: flex;
-	gap: 1rem;
-	align-items: center;
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
-
 /* Fields */
 .form-control, .form-select{
 	/* background-color: transparent; */
@@ -266,6 +258,12 @@ section {
 	.mobile-only {
 		display: none;
 	}
+	
+	#my-form {
+		width: 80%;
+		margin: auto;
+	}
+
 }
 
 
@@ -275,9 +273,5 @@ section {
 	}
 	.mobile-only {
 		display: block;
-	}
-
-	.form-container {
-		flex-direction: column;
 	}
 }

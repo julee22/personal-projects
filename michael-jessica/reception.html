@@ -55,63 +55,58 @@
         </div>
 	</section>
     <section class="container fade hide" id="section-3">
+        <h2 class="accent-font">Let us know</h2>
+        <p>If you can make it by <strong style="white-space: nowrap;">June 30, 2026</strong>.</p>
         <form id="my-form"
             method="POST"
             action="https://script.google.com/macros/s/AKfycby-ODM3hnbBQfu2eqNjOVCzX1Tn6QDOEc0dWTqIVSXblFv_E-vCqxDfd1B36Ls1Sm6AOw/exec"
         >
-            <h2 class="accent-font">Let us know</h2>
-            <p>If you can make it by <strong style="white-space: nowrap;">June 30, 2026</strong>.</p>
             <hr class="divider" style="border-color: var(--tertiaryColor);"/>
-            <div class="row justify-content-center">
-                <div class="col-sm-10 col-12">
-
-                    <div class="form-input">
-                        <label for="Guest" class="form-label sm-font">Your name</label>
-                        <input type="text" class="form-control" maxlength="256" name="Guest" placeholder="Full Name" id="Guest" required="">
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="Response" value="Yes" id="attending" required onchange="showMeal()">
-                                <label class="form-check-label sm-font" for="attending">
-                                    I'm attending
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="Response" value="No" id="not-attending" onchange="showMeal()">
-                                <label class="form-check-label sm-font" for="not-attending">
-                                    I can't attend
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="meal-options" class="d-none">
-                        <label class="sm-font form-label" for="meals">Select your meal</label>
-                        <select class="form-select" aria-label="Default select example" name="Meal" id="meals">
-                            <option selected>- Select one -</option>
-                            <option value="Short-rib">Beef Short Rib</option>
-                            <option value="Tenderloin">Seared Beef Tenderloin</option>
-                            <option value="Salmon">Grilled Salmon Fillet</option>
-                            <option value="Chicken">Herb Roasted Chicken</option>
-                            <option value="Kid's meal">Kid's meal</option>
-                            <option value="None">No dinner required</option>
-                        </select>
-                        <div class="form-input">
-                            <label class="form-label sm-font" for="allergies">If you have any allergies or dietary restrictions, please inform us here.</label>
-                            <textarea class="form-control" name="Allergies" id="allergies"></textarea>
-                        </div>
-
-                    </div>
-                    
-                    <input type="hidden" name="formType" value="Reception">
-                        
-                    <div class="btn-wrapper">
-                        <button t class="btn" type="submit" id="submit-btn" data-wait="Please wait...">Send response</button>
-                        <p class="d-none" id="sending">Sending...</p>
+            <div class="form-input">
+                <label for="Guest" class="form-label sm-font">Your name</label>
+                <input type="text" class="form-control" maxlength="256" name="Guest" placeholder="Full Name" id="Guest" required="">
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Response" value="Yes" id="attending" required onchange="showMeal()">
+                        <label class="form-check-label sm-font" for="attending">
+                            I'm attending
+                        </label>
                     </div>
                 </div>
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Response" value="No" id="not-attending" onchange="showMeal()">
+                        <label class="form-check-label sm-font" for="not-attending">
+                            I can't attend
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="meal-options" class="d-none">
+                <label class="sm-font form-label" for="meals">Select your meal</label>
+                <select class="form-select" aria-label="Default select example" name="Meal" id="meals">
+                    <option selected>- Select one -</option>
+                    <option value="Short-rib">Beef Short Rib</option>
+                    <option value="Tenderloin">Seared Beef Tenderloin</option>
+                    <option value="Salmon">Grilled Salmon Fillet</option>
+                    <option value="Chicken">Herb Roasted Chicken</option>
+                    <option value="Kid's meal">Kid's meal</option>
+                    <option value="None">No dinner required</option>
+                </select>
+                <div class="form-input">
+                    <label class="form-label sm-font" for="allergies">If you have any allergies or dietary restrictions, please inform us here.</label>
+                    <textarea class="form-control" name="Allergies" id="allergies"></textarea>
+                </div>
+
+            </div>
+            
+            <input type="hidden" name="formType" value="Reception">
+                
+            <div class="btn-wrapper">
+                <button t class="btn" type="submit" id="submit-btn" data-wait="Please wait...">Send response</button>
+                <p class="d-none" id="sending">Sending...</p>
             </div>
         </form>
     </section>
