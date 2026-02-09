@@ -84,8 +84,11 @@ p {
 }
 
 a {
-	color: var(--tertiaryColor);
-	text-decoration-color: var(--secondaryColor);
+	color: var(--secondaryColor);
+	text-decoration: none;
+}
+a:hover {
+	color: var(--primaryColor);
 }
 
 .md-font {
@@ -156,12 +159,12 @@ input::placeholder {
 .btn {
 	min-height: 42px;
 	min-width: fit-content;
-	padding: 0.25em .75em;
+	padding: 0.25em 1em;
 	transition: all .3s ease;
 	background: var(--secondaryColor);
 	color: white;
 	border: 1px solid transparent;
-	border-radius: 10px;
+	border-radius: 5px;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 }
@@ -170,7 +173,6 @@ input::placeholder {
 	background: transparent;
 	color: var(--primaryColor);
 	border: 1px solid var(--secondaryColor);
-	border-radius: 10px;
 }
 
 .btn:hover {
@@ -246,6 +248,12 @@ section {
 	background-repeat: no-repeat, no-repeat;
 	background-size: 40%, 40%;
 	padding-bottom: 120px;
+}
+
+#section-5 a {
+	text-decoration: underline;
+	text-decoration-color: var(--secondaryColor);
+	color: var(--tertiaryColor);
 }
 
 @media (min-width: 768px) {
