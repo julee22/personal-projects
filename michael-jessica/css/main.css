@@ -68,7 +68,6 @@ h1 {
 
 h2 {
 	font-size: 1.35rem;
-	color: var(--primaryColor);
 }
 
 .accent-font {
@@ -77,6 +76,7 @@ h2 {
 	text-transform: lowercase;
 	letter-spacing: 0em;
 	display: inline-block;
+	color: var(--primaryColor);
 }
 
 p {
