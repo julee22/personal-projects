@@ -12,15 +12,20 @@
 body {
 	margin: 0px auto;
 	box-sizing: content-box;
-	font-family: 'Bell MT', serif;
 	background-color: var(--bgColor);
 	color: var(--secondaryColor);
 	overflow-x: hidden;
 	max-width: 100vw;
+	font-family: 'Bell MT', serif;
 	text-transform: uppercase;
 	letter-spacing: 0.15em;
 	word-spacing: 0f.2em;
 	text-align: center;
+	font-size: 15px;
+}
+
+.container {
+	max-width: 600px;
 }
 
 .show {
@@ -62,14 +67,13 @@ h1 {
 }
 
 h2 {
-	margin-top: 0.5em;
 	font-size: 1.35rem;
+	color: var(--primaryColor);
 }
 
 .accent-font {
 	font-family: 'Allura', 'Brush Script MT', 'Courier New', cursive;
-	color: var(--primaryColor);
-	font-size: 1.7em;
+	font-size: 1.8em;
 	text-transform: lowercase;
 	letter-spacing: 0em;
 	display: inline-block;
@@ -80,8 +84,8 @@ p {
 }
 
 a {
-	color: var(--primaryColor);
-	text-decoration: dotted;
+	color: var(--tertiaryColor);
+	text-decoration-color: var(--secondaryColor);
 }
 
 .md-font {
@@ -91,57 +95,11 @@ a {
 	font-size: .75em;
 }
 
-.photo-container {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	min-height: 300px;
-}
-
-.photo-container:hover .photo-wrapper:nth-of-type(1), .photo-container:focus .photo-wrapper:nth-of-type(1) {
-	transform: rotate(-10deg);
-}
-.photo-container:hover .photo-wrapper:nth-of-type(2), .photo-container:focus .photo-wrapper:nth-of-type(2) {
-	transform: rotate(10deg);
-}
-
-.photo-wrapper {
-	display: inline-block;
-	overflow: hidden;
-	width: 200px;
-	height: 215px;
-	box-sizing: content-box;
-	border: 5px solid white;
-	border-bottom-width: 50px;
-	box-shadow: inset 2px 2px 15px 5px rgba(0, 0, 0, 0.2), 3px 3px 15px 5px rgba(208, 204, 196,0.7), -3px -3px 15px 5px rgba(0, 0, 0, 0.3);
-	transition: transform 1s ease;
-}
-
-.photo-wrapper:nth-of-type(1) {
-	transform: rotate(-15deg);
-}
-.photo-wrapper:nth-of-type(2) {
-	transform: rotate(15deg);
-}
-
 hr {
 	border: 1px solid var(--secondaryColor);
-	margin: 0.5em auto;
+	margin: 15px auto 30px;
 	width: 60px;
 }
-
-.img-wrapper {
-	position: relative;
-}
-
-.img-wrapper img {
-	max-width: 200px;
-	width: 130%;
-	height: auto;
-}
-
 
 .form-container {
 	display: flex;
@@ -152,43 +110,68 @@ hr {
 }
 
 /* Fields */
-.input-field-label {
-	margin-right: .5em;
-	display: block;
-	font-size: inherit;
+.form-control, .form-select{
+	/* background-color: transparent; */
+	/* color: var(--tertiaryColor); */
+	border: 1px solid var(--secondaryColor);
+	font-weight: 600;
 }
-.input-field {
-	height: 40px;
-	width: 100%;
-	max-width: 300px;
-	padding: .05em .5em;
-	background-color: #9a958c9e;
-	border: none;
-	border-radius: 10px;
+
+/* Textfield */
+.form-input {
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+
+input::placeholder {
+	color: var(--secondaryColor) !important;
+}
+
+/* Dropdown */
+.form-select option {
 	color: var(--black);
-	-webkit-box-shadow: 0px 0px 8px 4px #9a958c9e; 
-	box-shadow: 0px 0px 8px 4px #9a958c9e;
 }
+.form-select option:hover {
+	color: var(--primaryColor);
+}
+
+
+/* Radio */
+.form-check {
+	text-align: left;
+	margin-top: .5em;
+	margin-bottom: 1em;
+}
+.form-check-input:checked {
+	border-color: var(--tertiaryColor);
+	background-color: var(--secondaryColor);
+}
+.form-check-input {
+	border-color: var(--tertiaryColor);
+	background-color: var(--primaryColor);
+}
+
 
 /* Buttons */
 .btn-wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 15px;
-	margin: 15px auto;
+	margin: 30px auto 15px;
 	justify-content: center;
 }
 
 .btn {
 	min-height: 42px;
 	min-width: fit-content;
-	padding: 0.5em 1em;
+	padding: 0.25em .75em;
 	transition: all .3s ease;
 	background: var(--secondaryColor);
 	color: white;
 	border: 1px solid transparent;
 	border-radius: 10px;
-	font-family: 'Minion Variable concept', serif;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
 }
 
 .btn.secondary {
@@ -196,7 +179,6 @@ hr {
 	color: var(--primaryColor);
 	border: 1px solid var(--secondaryColor);
 	border-radius: 10px;
-	font-family: 'Minion Variable concept', serif;
 }
 
 .btn:hover {
@@ -211,7 +193,7 @@ hr {
 
 /* Section styling */
 section {
-	padding: 30px;
+	padding: 50px 30px;
 }
 
 #section-1 {
@@ -226,9 +208,9 @@ section {
 	background-image: url('../images/roses-left.png');
 	background-position: left center;
 	background-repeat: no-repeat;
-	background-size: 70px;
+	background-size: 100px;
 	text-align: left;
-	padding-left: 70px;
+	padding-left: 100px;
 }
 
 .schedule {
@@ -245,15 +227,33 @@ section {
 	width: 100%;
 }
 
-.schedule .information {
-	flex: 1 0 1;
+.schedule .information p {
+	margin-bottom: 0;
+}
+
+#section-3, #section-5 {
+	background-color: var(--primaryColor);
+	color: var(--tertiaryColor);
+}
+
+#section-3 h2, #section-5 h2 {
+	color: var(--tertiaryColor);
+}
+
+#section-4 {
+	background-image: url('../images/roses-bottom.png');
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding-bottom: 100px;
 }
 
 @media (min-width: 768px) {
-
-	.img-wrapper {
-		min-height: 100px;
+	
+	img {
+		max-width: 400px;
 	}
+
 }
 
 @media (min-width: 480px) {
@@ -275,10 +275,6 @@ section {
 	}
 	.mobile-only {
 		display: block;
-	}
-
-	.img-wrapper {
-		text-align: center;
 	}
 
 	.form-container {

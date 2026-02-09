@@ -1,4 +1,6 @@
 const form = document.getElementById('my-form');
+const attending = document.getElementById('attending');
+const mealOpt = document.getElementById('meal-options');
 
 // Fade In animation
 const observer = new IntersectionObserver(
@@ -29,27 +31,17 @@ document.addEventListener("scroll", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const acceptBtn = document.getElementById("attending-btn");
-  const rejectBtn = document.getElementById("not-attending-btn");
+  const submitBtn = document.getElementById("submit-btn");
   const attendanceInput = document.getElementById("attendance-value");
   const sendingCopy = document.getElementById("sending");
 
   form.reset();
-  
-  acceptBtn.addEventListener("click", () => {
-    attendanceInput.value = "Attending";
-  });
-
-  rejectBtn.addEventListener("click", () => {
-    attendanceInput.value = "Not Attending";
-  });
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault(); // STOP page reload / navigation
 
-    acceptBtn.classList.add("hide");
-    rejectBtn.classList.add("hide");
-    sendingCopy.classList.remove("hide");
+    submitBtn.classList.add("d-none");
+    sendingCopy.classList.remove("d-none");
 
     const data = new FormData(form);
 
@@ -67,17 +59,16 @@ document.addEventListener("DOMContentLoaded", () => {
         json = JSON.parse(text);
       } catch {
         alert("Server returned an unexpected response (not JSON).");
-        acceptBtn.value = "Submit";
-        acceptBtn.disabled = false;
+        submitBtn.classList.remove("d-none");
+        sendingCopy.classList.add("d-none");
         return;
       }
 
       if (json.result === "success") {
         alert("Thank you for your response!");
         form.reset();
-        acceptBtn.classList.remove("hide");
-        rejectBtn.classList.remove("hide");
-        sendingCopy.classList.add("hide");
+        submitBtn.classList.remove("d-none");
+        sendingCopy.classList.add("d-none");
       } else {
         alert("Submission error: " + (json.error || "Unknown error"));
       }
@@ -89,3 +80,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+function showMeal() {
+  console.log("changed");
+  if (attending.checked) {
+  console.log("selected");
+    mealOpt.classList.remove("d-none");
+  } else {
+    mealOpt.classList.add("d-none");
+  }
+}
