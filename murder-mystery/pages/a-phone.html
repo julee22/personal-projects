@@ -24,27 +24,32 @@
 			}
 
         :root {
-            --main-bg : url();
+            --main-bg : url(../images/a-main-bg.jpeg);
+            --lock-bg : url(../images/a-lock-bg.jpeg);
         }
 	</style>
 
 </head>
 <body>
-    <!-- <section id="lock-screen">
-        <label>Enter password</label>
-        <input type="password" />
-		<button class="btn" id="submitBtn" type="button" onclick="checkPassword()">Submit</button>
-			<p class="error" id="pass-error">! Incorrect password</p>
-    </section> -->
-    <section class="" id="main">
+    <section id="lock-screen">
+        <div class="pass-wrapper">
+        <label>Password</label>
+        <input type="password" id="password" maxlength="4"/>
+		<button class="btn" id="submitBtn" type="button" onclick="checkPassword('a')">Submit</button>
+			<p class="error" id="pass-error">! Incorrect. Hint: the last 4 of 4. Most important number.</p>
+
+        </div>
+    </section>
+    <section class="hide" id="main">
+        <div id="fake-time">06:00 PM</div>
         <button class="btn" onclick="openApp('call-log'), generateCalls('A')">
             <span class="material-symbols-outlined">phone_enabled</span>
         </button>
         <button class="btn" onclick="openApp('text-log')">
             <span class="material-symbols-outlined">chat_bubble</span>
         </button>
-        <button class="btn" onclick="openApp('email')">
-            <span class="material-symbols-outlined">mail</span>
+        <button class="btn" onclick="openApp('files')">
+            <span class="material-symbols-outlined">folder</span>
         </button>
         <button class="btn" onclick="openApp('gallery'), setImage('a-1')">
             <span class="material-symbols-outlined">image</span>
@@ -125,13 +130,23 @@
             </div>
         </div>
     </section>
-    <section class="hide" id="email">
+    <section class="hide" id="files">
         <div class="app-frame">
             <div class="app-nav">
-                <button class="btn" onclick="backBtn()"><span class="material-symbols-outlined">arrow_back_ios</span></button>
-                <h2 class="h3">Mail</h2>
+                <button class="btn ml-auto" onclick="backBtn()"><span class="material-symbols-outlined">arrow_back_ios</span></button><h2 class="h3">Files</h2>
             </div>
-            <div class="app-content"></div>
+            <div class="app-content">
+                <div class="file-wrapper">
+                    <a href="../files/" class="file">
+                        <span class="material-symbols-outlined d-block">file_present</span>
+                        GC Bank Statement
+                    </a>
+                    <a href="../files/" class="file">
+                        <span class="material-symbols-outlined d-block">audio_file</span>
+                        Recording
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
     

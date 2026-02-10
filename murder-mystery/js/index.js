@@ -3,7 +3,7 @@ import characters from "./data.js";
 var charObject = Object;
 var selectedChar = "";
 
-const profileKeys = ["gender","birthDate","age","relStatus","personality","work","other","dayOfTheMurder", "motives"];
+const profileKeys = ["gender","birthDate","age","relStatus","personality","work","other","dayOfTheMurder", "motives", "phoneLink"];
 const otherProfileKeys = ["gender","birthDate","age","relStatus","impression","work","other","dayOfTheMurder"]
 
 const loginWrapper = document.getElementById("characterForm");
@@ -94,6 +94,8 @@ function generateProfile() {
                     element.appendChild(listItem);
                 });
             }
+        } else if (key == "phoneLink") {
+            element.href = "pages/" + arrayOrString(charObject[key]) + ".html";   
         } else {
             element.textContent = arrayOrString(charObject[key]);   
         }

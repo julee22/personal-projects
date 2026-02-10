@@ -1,4 +1,4 @@
-import {texts, calls} from "./phone-data.js";
+import {passwords, texts, calls} from "./phone-data.js";
 import data from "./data.js";
 
 var charObject = Object;
@@ -6,7 +6,7 @@ var phoneOwner = "";
 
 var selectedChar = "";
 
-const loginWrapper = document.getElementById("characterForm");
+const loginWrapper = document.getElementById("lock-screen");
 const mainWrapper = document.getElementById("main");
 
 const textLog = document.getElementById('text-log');
@@ -31,19 +31,16 @@ $(document).ready(function(){
 });
 
 // Password
-window.checkPassword = function() {
+window.checkPassword = function(user) {
     event.preventDefault()
-    phoneOwner = document.getElementById("characterList").value;
-    const pass = document.getElementById("password");
+    const passInput = document.getElementById("password");
+    const pass = passwords[user];
+    console.log(passInput.value)
     
-    if (pass) {
-        if (pass.value == characters[phoneOwner].phonePass) {
+    if (passInput) {
+        if (passInput.value == pass) {
             loginWrapper.classList.add("hide");
             mainWrapper.classList.remove("hide");
-            charObject = characters[phoneOwner];
-            generateProfile();
-            generateRelationList();
-            generateTimeline();
         } else {
             showError();
         }

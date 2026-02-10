@@ -32,11 +32,43 @@ section {
     padding: 0.75rem 1rem 0.5rem 0.5rem;
     background-color: lightgray;
     border-bottom: 1px solid #ccc;
+    position: relative;
 }
 
 .app-content {
     max-height: calc(100vh - 65px);
     overflow-y: auto;
+}
+
+#lock-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: var(--lock-bg);
+    background-size: cover;
+}
+
+.pass-wrapper {
+    text-align: center;
+    background-color: #ffffffdc;
+    padding: 30px;
+    width: 70%;
+}
+
+#password {
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+#submitBtn {
+    border: 1px solid white;
+    background-color: #cccccc80;
+    margin-top: 1em;
+}
+.error {
+	display: none;
 }
 
 /* MAIN */
@@ -48,6 +80,14 @@ section {
     padding: 1rem;
 
     background-image: var(--main-bg);
+    background-size: cover;
+}
+
+#main #fake-time {
+    position: fixed;
+    top: 50px;
+    font-size: 3rem;
+    text-shadow: 0px 0px 5px white;
 }
 
 #main button {
@@ -58,6 +98,7 @@ section {
     border: none;
     -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.3); 
     box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.3);
+    background-color: #ffffffdc;
 }
 
 /* Messages */
@@ -184,4 +225,17 @@ section {
 .img-nav {
     height: 75px;
     min-width: fit-content;
+}
+
+/* Files */
+
+.file-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.file {
+    text-align: center;
+    height: 100px;
+    margin: 24px;
 }

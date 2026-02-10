@@ -1,8 +1,8 @@
 const characters = {
   A: {
-    name: "Allison",
-    phoneLink: "",
-    password: "10",
+    name: "Allison Heirs",
+    phoneLink: "a-phone",
+    password: "80",
     personalDetails: {
       gender: "Female",
       birthDate: "1996-11-09",
@@ -15,7 +15,7 @@ const characters = {
     history: [
       {
         title: 'The Accident',
-        description: `On December 8, 2017, after your parents took your car keys to stop you from street racing, you snuck out to borrow Host Gen’s car. While racing through the mountains of Mid Village, a text from your parents warning they’d cut off your allowance distracted you — you nearly hit a girl in a blue dress, but another girl pushed her away, taking the hit and tumbling off a cliff. The girl in the blue dress was knocked unconscious. Shaken, you returned the car to Host Gen, who spotted the damage and demanded the truth. She agreed to keep quiet in exchange for $4,000 a month and told you to scrap the car. You’ve never raced since.`,
+        description: `On December 8, 2019, after your parents took your car keys to stop you from street racing, you snuck out to borrow Host Gen’s car. While racing through the mountains of Mid Village, a text from your parents warning they’d cut off your allowance distracted you — you nearly hit a girl in a blue dress, but another girl pushed her away, taking the hit and tumbling off a cliff. The girl in the blue dress was knocked unconscious. Shaken, you returned the car to Host Gen to ask for help. She agreed to keep quiet in exchange for $4,000 a month and told you to scrap the car. You scrapped the car at a scrapyard in Poor Land. You’ve never raced since.`,
       },
     ],
     whyYouHere: `Recently, your parents are cracking down on your spending and want you to prove you can handle more responsibility. They told you to learn from your manager friend, Host Gen. You decided to visit Lover’s Retreat with your boyfriend and potentially talk to Host Gen about ending the $4,000 payments.`,
@@ -23,11 +23,12 @@ const characters = {
       "Parents threatened to cut you off if you cause any problems.",
       "Parents discovered that you have been sending money to someone.",
       "Confronted Host Gen about $4,000 but was rejected.",
-      "Blackmailed by Host Gen with a black box recording of the Accident.",
-      "Snuck into Host Gen's room to steal black box recording."
+      "Found blackmail letter from Host Gen in room; Host Gen has a black box recording of the Accident",
+      "Snuck into Host Gen's room to steal black box recording.",
+      "Ripped up threatening letter."
     ],
     motives: [
-      "Is getting blackmailed by G.",
+      "Is getting blackmailed by Host Gen.",
       "If you stop paying, Host Gen will report the Accident to the police.",
       "Your parents may disinherit you."
     ],
@@ -38,15 +39,15 @@ const characters = {
           gender: "Female",
           birthDate: "1996-07-02",
           age: 29,
-          relStatus: ["Longtime friends","Older sister of Sick Harry"],
+          relStatus: ["Longtime friends","Older sister of Harry"],
         },
-        other: ["Grew up in Mid Village"],
+        other: ["Grew up in Poor Land"],
         work: "Manager for Lover’s Retreat",
-        impression: `Stuck-up and stuffy. Lifestyle differences cause friction. Fiercely devoted to Sick Harry. Used to be easier to deal with`,
+        impression: `Stuck-up and stuffy. Lifestyle differences cause friction. Fiercely devoted to Harry. Used to be easier to deal with`,
         history: [
           {
             title: `Harry's Coma`,
-            description: `Host Gen's brother, Sick Harry, has been in a coma for 9 years due to unknown reasons. Host Gen claims to use the money to pay for his hospital bills.`
+            description: `Host Gen's brother, Harry, has been in a coma for 9 years due to unknown reasons. Host Gen claims to use the money to pay for his hospital bills.`
           },
           {
             title: 'The Accident',
@@ -54,9 +55,9 @@ const characters = {
           }
         ],
         dayOfTheMurder: [
-          "Is actively investigating Sick Harry's accident.",
-          "Discovered that Host Gen kept the black box recording of the accident.",
-          "Threatened to go to the cops if the $4,000 payments are stopped."
+          "Got a call from someone about Harry.",
+          "Threatened you to go to the cops if the $4,000 payments are stopped.",
+          "Told you that she kept a black box recording of the accident.",
         ]
       },
 
@@ -68,7 +69,7 @@ const characters = {
           age: 35,
           relStatus: "Dating Allison",
         },
-        other: ["Has a tattoo."],
+        other: ["Has a tattoo on his neck."],
         work: "Owner of CGG (Cars Gotta Go), a scrapyard business",
         impression: "An alpha male. The rugged beast to your beauty. Treats you like a princess. ",
         history: [
@@ -93,7 +94,7 @@ const characters = {
         other: ["N/A"],
         work: "Prosecutor",
         impression: "Passionate, protective, straight-laced man.",
-        dayOfTheMurder: []
+        dayOfTheMurder: ["Passed by in the kitchen."]
       },
 
       C: {
@@ -107,7 +108,7 @@ const characters = {
         other: ["N/A"],
         work: "Contract worker",
         impression: "Easily spooked man. Not worth your attention.",
-        dayOfTheMurder: []
+        dayOfTheMurder: ["Passed by in the kitchen."]
       },
 
       E: {
@@ -171,7 +172,7 @@ const characters = {
       {
         time: "3:00 PM",
         events: [
-          "Host Gen gets a call about Sick Harry and tells you to leave.",
+          "Host Gen gets a call about Harry and tells you to leave.",
           "Decided to go out stress shopping & texted Doug.",
           "Saw Carl in the kitchen.",
         ]
@@ -223,8 +224,8 @@ const characters = {
     ]
   },
   B: {
-    name: "Brodie",
-    phoneLink: "",
+    name: "Brodie Law",
+    phoneLink: "b-phone",
     password: "20",
     personalDetails: {
       gender: "Male",
@@ -234,7 +235,7 @@ const characters = {
     },
     personality: ["Protective", "Takes work very seriously", "Jaded by the justice system"],
     work: "Criminal Prosecutor",
-    other: ["Grew up in Mid Village", "Stresses about losing criminal cases"],
+    other: ["Grew up in Mid Village", "Stressed about losing criminal cases"],
     history: [
       {
         title: 'Raising your sister',
@@ -242,23 +243,26 @@ const characters = {
       },
       {
         title: 'Missing Sister - Hit-and-Run',
-        description: `On December 8, 2017, you fought with Cadie, and she ran away from home. You assumed she was at her friend Evelyn’s, but when neither could be reached, you reported them missing. The next day, police said Evelyn was in a suspected hit-and-run. At the hospital, Evelyn could only recall someone yelling “watch out” and seeing a red car before blacking out. Your sister wasn’t found, and her case was closed as a runaway due to lack of evidence. However, you always believed Cadie actually died in the hit-and-run accident. You spent over a year searching for your sister with Evelyn in vain.`,
+        description: `On December 8, 2019, you fought with Cadie, and she ran away from home. You assumed she was at her friend Evelyn’s, but when neither could be reached, you reported them missing. The next day, police said Evelyn was in a suspected hit-and-run. At the hospital, Evelyn could only recall someone yelling “watch out” and seeing a red car before blacking out. Your sister wasn’t found, and her case was closed as a runaway due to lack of evidence. However, you always believed Cadie actually died in the hit-and-run accident. You spent over a year searching for your sister with Evelyn in vain.`,
       },
     ],
     whyYouHere: `Recently, you and Evelyn have been depressed. You lost a reopened criminal case. Evelyn was mistakenly invited, then uninvited, from an alumni gathering of surgeon friends. Additionally, the anniversary of Cadie’s disappearance is approaching. You booked this Lover’s Retreat to help both of you relax. `,
     dayOfTheMurder: [
-      "Discovered Host Gen used to own a red Mercedes.",
+      "Noticed Host Gen owned a red Nissan.",
+      "Got another update about losing a crimninal case due to 'lack of evidence'.",
       "Evelyn shared a recording of Host Gen and Allison arguing about a hit-and-run.",
-      "Snuck into Host Gen's room and saw evidence proving Cadie was hit by Host Gen's car",
-      "Saw that Host Gen has Cadie's cloud keychain",
-      "Stole Evelyn's muscle relaxant medicine",
+      "Argued with Evelyn over reporting Host Gen to the police.",
+      "Snuck into Host Gen's room and saw a blackbox recording proving Cadie was hit by Host Gen's car.",
+      "Saw that Host Gen has Cadie's cloud keychain.",
+      "Went to kitchen to check Host Gen's schedule.",
+      "Stole Evelyn's muscle relaxant medicine.",
       "Murdered Host Gen - Waited for Host Gen in garage, knocked out Host Gen using the muscle relaxant, unlocked her car, put her in the backseat, turned the engine on, and locked the keys inside the car.",
-      "Retrieved Cadie's cloud keychain and hid it in your luggage."
+      "Retrieved Cadie's cloud keychain and hid it in your luggage. (key evidence)"
     ],
     motives: [
       "Revenge for your dead younger sister, Cadie.",
       "Revenge for girlfriend, Evelyn, who had to give up their dreams because of the hit-and-run.",
-      "Feared you may never cross paths again"
+      "Feared you may never cross paths again."
     ],
     relationships: {
       G: {
@@ -269,9 +273,9 @@ const characters = {
           age: 29,
           relStatus: ["First time meeting at Lover's Retreat", "Murdered Cadie"],
         },
-        other: ["Owned a red car", "Seems to have lived in Mid Village"],
+        other: [],
         work: "Manager for Lover’s Retreat",
-        impression: `Originally, a normal rule-abiding woman. After, angry this murderer is living normally when they caused so much pain to my loved ones.`,
+        impression: `Originally, a normal rule-abiding woman. Afterwards, she's a murderer who's living normally when they caused so much pain to my loved ones.`,
         history: [
           {
             title: `Missing Sister - Hit-and-Run`,
@@ -280,8 +284,7 @@ const characters = {
         ],
         dayOfTheMurder: [
           "Evelyn overheard and recorded Host Gen and Allison arguing about an accident 8 years ago.",
-          "Found multiple clues (red Mercedes, blackbox recording, cloud keychain) that point to Host Gen being the driver in the hit-and-run.",
-          "Killed Host Gen and reclaimed the cloud keychain."
+          "Left the Retreat and entered a black car.",
         ]
       },
       E: {
@@ -305,7 +308,7 @@ const characters = {
             description: `For over a year, helped you search for Cadie. The only one who believed Cadie didn't just run away from home. Eventually got close and started dating.`
           },
         ],
-        dayOfTheMurder: ["Depressed over pictures of surgeon alumni gathering", "Recorded Host G arguing with someone about an accident 8 years ago.", "Argued over reporting Host Gen to police", "Attended physiotherapy session"]
+        dayOfTheMurder: ["Watched a drama together","Depressed over pictures of surgeon alumni gathering", "Recorded Host G arguing with someone about an accident 8 years ago.", "Argued over reporting Host Gen to police", "Attended physiotherapy session."]
       },
 
       A: {
@@ -334,7 +337,7 @@ const characters = {
         work: "Owner of CGG (Cars Gotta Go), a scrapyard business",
         impression: "Rough and gangster-like man.",
         dayOfTheMurder: [
-          "Saw them in the kitchen once."
+          "Saw him in the kitchen; told him 'his girlfriend seemed pissed'."
         ]
       },
 
@@ -349,7 +352,7 @@ const characters = {
         other: ["N/A"],
         work: "Contract worker",
         impression: "Seems constantly nervous.",
-        dayOfTheMurder: ["Saw him leave the Retreat."]
+        dayOfTheMurder: ["Saw him leave the Retreat right after Host Gen left."]
       },
 
       F: {
@@ -379,13 +382,13 @@ const characters = {
         events: [
           "Host Gen returns to Resort.",
           "Returned to house with Evelyn and went to your room to watch a drama.",
-          "Saw a picture of Host Gen posing beside a red Mercedes on the wall."
+          "Saw a picture of Host Gen posing beside a red Nissan on the wall."
         ]
       },
       {
         time: "2:30 PM",
         events: [
-          "Evelyn leaves to get water after getting a picture message of surgeon alumni gathering.",
+          "Evelyn leaves to get water after seeing a picture message of surgeon alumni gathering.",
         ]
       },
       {
@@ -396,9 +399,10 @@ const characters = {
         ]
       },
       {
-        time: "3:15 PM",
+        time: "3:10 PM",
         events: [
           "Angrily left to take a walk outside.",
+          "Received bad news about losing criminal case.",
         ]
       },
       {
@@ -407,7 +411,7 @@ const characters = {
           "Saw Host Gen quickly leaving the Retreat and enter a black car.",
           "Saw Carl leave the Retreat",
           "Evelyn should be busy remotely attending a physiotherapy session for her hands.",
-          "Snuck into Host Gen's room to find evidence; Host Gen's room was unlocked",
+          "Took master key from kitchen and snuck into Host Gen's room to find evidence; Host Gen's room was locked",
         ]
       },
       {
@@ -420,8 +424,8 @@ const characters = {
       {
         time: "4:15 PM",
         events: [
-          "Saw Host Gen's car return to the Resort and left Host Gen's room.",
-          "Went to kitchen to check Host Gen's posted schedule; saw she is planning on picking up drinks for dinner.",
+          "Saw Host Gen's car return to the Resort and left Host Gen's room, locking the door.",
+          "Went to kitchen to return master key and check Host Gen's posted schedule; saw she is planning on picking up drinks for dinner.",
           "Ate snacks to pass the time.",
           "An angry Allison passes by.",
         ]
@@ -481,8 +485,8 @@ const characters = {
     ]
   },
   C: {
-    name: "Carl 'Charlie'",
-    phoneLink: "",
+    name: "Carl 'Charlie' Crowe",
+    phoneLink: "c-phone",
     password: "30",
     personalDetails: {
       gender: "Male",
@@ -490,30 +494,31 @@ const characters = {
       age: 29,
       relStatus: ["Dating Faye for 5 years."],
     },
-    personality: ["Skittish","Cowardly","Guilt-ridden"],
-    work: "Contract worker, Former drug dealer.",
+    personality: ["Skittish","Guilt-ridden","Volatile","Prone to lashing out if cornered"],
+    work: "Contract worker, Former drug dealer for Smokes.",
     other: ["Lives with Faye", "Grew up in Poor Land", "Has gang tattoo", "Changed name from Charlie to Carl"],
     history: [
       {
         title: 'The Hit',
-        description: `You used to deal drugs to a kid named Harry. 8 years ago, Harry texted that he wanted to stop and would report you to the police. Scared, you told your boss, Doug; they instructed you to scare Harry from snitching. On August 11, 2016, you and Doug tracked down Harry and beat him up. Harry ended up in a coma. Scared of being caught, you changed your name, hid your gang tattoo, and went into hiding, moving to a cottage in Mid Village.`,
+        description: `You used to deal drugs to a kid named Harry. 8 years ago, Harry texted that he wanted to stop and would report you to the police. Scared, you told your boss, Doug; they instructed you to scare Harry from snitching. On August 11, 2018, you and Doug tracked down Harry and beat him up. Harry ended up in a coma. Scared of being caught, you changed your name, hid your gang tattoo, and went into hiding, moving to a cottage in Mid Village.`,
       },
       {
         title: 'Finding Faye',
-        description: `In December 2017, while hunting in the forest around Mid Village, you find an injured unconscious girl. You bring her home and nurse her back to health. She has amnesia so you name her Faye (like a fairy who appeared). Taking pity on her and feeling you can atone for your past, you let her stay. You gradually came to like each other and after confessing, started dating 5 years ago. To support your livelihood, you start doing manual labour contract jobs. The only clue about her identity is a cloud keychain that was found nearby; you've never shown this keychain to Faye because you're scared she will leave you if ever she gets her memories back.`,
+        description: `On December 9, 2019, while hunting in the forest around Mid Village, you find an injured unconscious girl. You bring her home and nurse her back to health. She has amnesia so you name her Faye (like a fairy who appeared). Taking pity on her and feeling you can atone for your past, you let her stay. You gradually came to like each other and after confessing, started dating 5 years ago. To support your livelihood, you start doing manual labour contract jobs. The only clue about her identity is a cloud keychain that was found nearby; you've never shown this keychain to Faye because you're scared she will leave you if ever she gets her memories back.`,
       },
     ],
     whyYouHere: `Worried about your own and Faye's mysterious past, you try to remain hidden. However, Faye has always expressed wanting to travel. Recently, Doug called to tell you that Harry's family apparently got a lead regarding the Hit incident and the gang is not happy about it. Doug and you need to finish the job and tie up loose ends. He sent you the Lover's Resort tickets. You also hope this retreat satisfies Faye's travel desires.`,
     dayOfTheMurder: [
-      "Snuck into Host Gen's room to find out if she has evidence.", 
+      "Picklocked Host Gen's room to find out if she knows anything about the Hit.", 
       "Found out that Host Gen was the one who texted you 8 years ago, threatening to report you to the police.",
-      "Faye admitted that she had been visiting a hypnotherapist to recover her memories; mentions remembering a lady driving a red car whom she suspects is Host Gen.",
       "Overheard Host Gen mention private investigator and incoming package.",
+      "Planned to kill Host Gen with Doug by drug overdose.",
+      "Found out Faye has been visiting a hypnotherapist and thinks Host Gen caused their amnesia",
       "Showed Faye the keychain you had kept hidden.",
     ],
     motives: [
       "Instructed to get rid of Host Gen by former gang boss",
-      "Hide your involvement in the Hit",
+      "Hide your involvement in the Hit 8 years ago",
       "Protect Faye from her assailant"
     ],
     relationships: {
@@ -540,9 +545,7 @@ const characters = {
           
         ],
         dayOfTheMurder: [
-          "Found out that Host Gen was the one who texted you 8 years ago, threatening to report you to the police.",
-          "Received a package from a private investigator about Sick Harry's accident.",
-          "Planned to kill Host Gen with Doug by drug overdose.",
+          "Met up with and received a package from a private investigator about Harry's accident.",
         ]
       },
       A: {
@@ -556,7 +559,7 @@ const characters = {
         other: ["N/A"],
         work: "Future heiress to a car manufacturing business.",
         impression: "Loud, Pretty women are scary.",
-        dayOfTheMurder: []
+        dayOfTheMurder: ["Saw her leave the resort."]
       },
       B: {
         name: "Brodie",
@@ -573,7 +576,6 @@ const characters = {
           "Passed by in the hall"
         ]
       },
-
       D: {
         name: "Doug",
         personalDetails: {
@@ -582,7 +584,7 @@ const characters = {
           age: 35,
           relStatus: ["Your 'big bro' in the gang (pretending you don't know each other)","Dating Allison"],
         },
-        other: ["Gave you the tickets to go on this Retreat", "Grew up in Poor Land"],
+        other: ["Gave you the tickets to go on this Retreat", "Grew up in Poor Land", "Has gang tattoo"],
         work: "Owner of CGG (Cars Gotta Go), a scrapyard business",
         impression: "His word is law.",
         history: [
@@ -630,8 +632,8 @@ const characters = {
           },
         ],
         dayOfTheMurder: [
-          "Was not feeling well.",
-          "Admitted to visting a hypnotherapist to recover her memories.",
+          "Was not feeling well; bought her sleep medication.",
+          "Admitted to visiting a hypnotherapist to recover her memories.",
           "Remembered a lady driving a red car; convinced it was Host Gen.",
           "Showed her the cloud keychain you kept since you found her and got into a fight.",
         ]
@@ -641,7 +643,7 @@ const characters = {
       {
         time: "1:00 PM",
         events: [
-          "On the way back from bringing dessert for Faye (who was napping).",
+          "On the way back to Resort, bringing sleep medication for Faye (who was napping).",
           "Host Gen left to buy groceries.",
           "Picklocked Host Gen's room.",
         ]
@@ -649,16 +651,16 @@ const characters = {
       {
         time: "1:30 PM",
         events: [
-          "Found an old unlocked phone; text messages prove Host Gen was actually the one who threatened to report you to the police 8 years ago.",
+          "Found Harry's old unlocked phone; text messages prove Host Gen was actually the one who threatened to report you to the police 8 years ago.",
           "Messaged Doug about Host Gen's involvement.",
-          "Left Host Gen's room and locked the door."
+          "Left Host Gen's room with phone and locked door."
         ]
       },
       {
         time: "1:45 PM",
         events: [
           "Arrived back to room with Faye.",
-          "Faye woke up and admitted that she has been visiting a hypnotherapist to recover their memories. Mentions they remember a red car.",
+          "Faye woke up and admitted that she has been visiting a hypnotherapist to recover their memories. Mentions they dreamt about something red.",
           "Went out for lunch with Faye."
         ]
       },
@@ -678,18 +680,17 @@ const characters = {
         ]
       },
       {
-        time: "3:15 PM",
+        time: "3:20 PM",
         events: [
-          "Returns to room with water. Faye fell asleep.",
-          "Former gang boss texts Doug and you to get rid of Host Gen.",
-          "Doug texts you to wait for further instructions."
+          "Returned to room with water. Faye fell asleep.",
+          "Doug texts you that Former gang boss wants you to get rid of Host Gen and to wait for further instructions.",
         ]
       },
       {
         time: "3:30 PM",
         events: [
-          // "Saw Host Gen quickly leaving the Retreat and enter a black car.",
           "Received text from Doug to pick up drugs from gang boss to use on Host Gen.",
+          "Initially refused to get more involved but was convinced.",
           "Left the Retreat to pick up drugs.",
         ]
       },
@@ -712,14 +713,15 @@ const characters = {
         events: [
           "Returned to resort with drug",
           "Stashed drugs in coat closet then returned to room to get ready for dinner.",
-          "Noticed Faye is not in the room."
+          "Noticed Faye is not in the room.",
+          "Hid Harry's phone in luggage."
         ]
       },
       {
         time: "5:35 PM",
         events: [
           "Faye returned to the room upset.",
-          "Showed Faye the cloud keychain that you picked up near where you found Faye in 2017.",
+          "Showed Faye the cloud keychain that you picked up near where you found Faye in 2019.",
           "Fought with Faye about keeping secrets."
         ]
       },
@@ -732,29 +734,30 @@ const characters = {
     ]
   },
   D: {
-    name: "Doug",
-    phoneLink: "",
+    name: "Doug LeDamn",
+    phoneLink: "d-phone",
     password: "40",
     personalDetails: {
       gender: "Male",
       birthDate: "1993-08-01",
       age: 34,
-      relStatus: ["Dating Allison since 2017."],
+      relStatus: ["Dating Allison since 2019."],
     },
     personality: ["Alpha male","Rough","Ruthless","Get the job done."],
-    work: "Owner of CGG (Cars Gotta Go), a scrapyard business. Secretly an active member of a gang.",
+    work: "Owner of CGG (Cars Gotta Go), a scrapyard business. Secretly an active member of Smokes gang.",
     other: ["Grew up in Poor Land", "Has gang tattoo"],
     history: [
       {
         title: 'The Hit',
-        description: `Your underling, Scared Charlie used to deal drugs to a kid named Harry. 8 years ago, Harry threatened to report Carl to the police. You instructed Scared Charlie to intimidate Harry from snitching. On August 11, 2016, you and Scared Charlie tracked down Harry and beat him up. Harry ended up in a coma. Scared of being caught, Scared Charlie went into hiding and changed his name to Carl. You stopped contacting him for deals. `,
+        description: `Your underling, Scared Charlie used to deal drugs to a kid named Harry. 8 years ago, Harry threatened to report Carl to the police. You instructed Scared Charlie to intimidate Harry from snitching. On August 11, 2018, you and Scared Charlie tracked down Harry and beat him up. Harry ended up in a coma. Scared of being caught, Scared Charlie went into hiding and changed his name to Carl. You stopped contacting him for deals. `,
       },
     ],
     whyYouHere: `Recently, your bosses have informed you that someone has been investigating the Hit incident again. They suspect it to be Host Gen, Harry's sister. They tell you to deal with it before it causes problems for the gang. You called up Carl to finish the job and tie up loose ends. Coincidentally, Allison is best friends with Host Gen and was offered a free stay at Lover's Retreat.`,
     dayOfTheMurder: [
       "Instructed and pressured to get rid of Host Gen and any evidence by gang boss",
+      "Found out that Host Gen was the one who texted Carl 8 years ago, threatening to report you to the police.",
       "Instructed Carl to pick up drugs",
-      "Broke into Host Gen's room and stole investigative package",
+      "Snuck into Host Gen's room and stole investigative package",
       "Picked up drugs Carl stashed in coat closet",
       "Snuck into kitchen and laced Host Gen's meal with drugs",
       
@@ -779,13 +782,11 @@ const characters = {
         history: [
           {
             title: 'The Hit',
-            description: `The older sister of Harry who you used to deal drugs to in Mid Village. 8 years ago, after receiving a text from Harry that he will report you to the police, you tracked him down and beat him up. Harry fell into a coma and since then, Host Gen has been trying to track you and Carl down.`
+            description: `The older sister of Harry who you used to deal drugs to in Poor Land. 8 years ago, after receiving a text from Harry that he will report you to the police, you tracked him down and beat him up. Harry fell into a coma and since then, Host Gen has been trying to track you and Carl down.`
           }          
         ],
         dayOfTheMurder: [
-          "Found out that Host Gen was the one who texted Carl 8 years ago, threatening to report you to the police.",
-          "Received a package from a private investigator about Sick Harry's accident.",
-          "Planned to kill Host Gen with Carl by drug overdose.",
+          "Met up with and received a package from a private investigator about Harry's accident.",
         ]
       },
       A: {
@@ -833,7 +834,7 @@ const characters = {
         },
         work: "Contract worker, Former drug dealer.",
         other: ["Grew up in Poor Land", "Has gang tattoo", "Changed name from Charlie to Carl","Gave him the tickets to go on this Retreat", ],
-        impression: "Spineless. Has to be told what to do.",
+        impression: "Spineless. Has to be told what to do. Prone to lashing out if cornered.",
         history: [
           {
             title: 'The Hit',
@@ -844,7 +845,8 @@ const characters = {
           "Texted him to investigate Host Gen knows.",
           "Told you that Host Gen was the real texter 8 years ago, threatening to report to the police",
           "Told you that Host Gen is meeting with a private investigator and has an incoming package.",
-          "Instructed him to pick up drugs from gang boss and stash in coat closet",
+          "Instructed him to pick up drugs from gang boss and stash in coat closet.",
+          "Planned together to kill Host Gen by drug overdose.",
         ]
       },
       E: {
@@ -904,15 +906,19 @@ const characters = {
         time: "3:00 PM",
         events: [
           "Carl called to confirm Host Gen's involvement with the H accident and an incoming package from a private investigator.",
-          "Informed boss about Host Gen.",
           "Allison texted 'Went out stress shopping'"
         ]
       },
       {
         time: "3:15 PM",
         events: [
-          "A threatening letter is slid under the door, saying 'I will expose what you did 8 years ago'; opened door and saw Host Gen turning the corner.",
-          "Former gang boss texts you to get rid of Host Gen.",
+          "A threatening letter is slid under the door, saying 'I will expose what you did 8 years ago'; opened door and saw Host Gen leaving.",
+          "Informed boss about Host Gen; boss tells you to get rid of Host Gen.",
+        ]
+      },
+      {
+        time: "3:20 PM",
+        events: [
           "Texted Carl to wait for further instructions.",
           "Hid threatening letter in bedside table."
         ]
@@ -920,8 +926,8 @@ const characters = {
       {
         time: "3:30 PM",
         events: [
-          // "Saw Host Gen quickly leaving the Retreat and enter a black car.",
           "Texted Carl to pick up drugs from gang boss to use on Host Gen.",
+          "Initially, Carl refused to get more involved but was convinced.",
         ]
       },
       {
@@ -937,14 +943,14 @@ const characters = {
           "Went to the kitchen and saw Brodie leaving.",
           "Brodie informed you that Allison seemed angry.",
           "Checked Host Gen's schedule; saw that she has left to pick up drinks for dinner.",
-          "Picklocked Host Gen's room to steal the private investigator’s package.",
+          "Took master key from kitchen and snuck into Host Gen's room to steal the private investigator’s package.",
         ]
       },
       {
         time: "4:45 PM",
         events: [
-          "Faye knocked on Host Gen's room but left when noone opened the door.",
-          "Left Host Gen's room after a few minutes.",
+          "Someone knocked on Host Gen's room but left when noone opened the door.",
+          "Left Host Gen's room after a few minutes; in haste, left door unlocked.",
         ]
       },
       {
@@ -957,8 +963,8 @@ const characters = {
         time: "5:30 PM",
         events: [
           "Went to the coat closet to pick up stashed drugs.",
-          "Faye passed by from outside",
-          "Snuck into kitchen to lace Host Gen's meal with drugs."
+          "Faye entered the Resort and passed by.",
+          "Snuck into kitchen to lace Host Gen's meal with drugs and return master key."
         ]
       },
       {
@@ -977,9 +983,9 @@ const characters = {
     ]
   },
   E: {
-    name: "Evelyn",
-    phoneLink: "",
-    password: "50",
+    name: "Evelyn Dokta",
+    phoneLink: "e-phone",
+    password: "88",
     personalDetails: {
       gender: "Female",
       birthDate: "2000-01-01",
@@ -992,12 +998,13 @@ const characters = {
     history: [
       {
         title: 'Missing Friend - Hit-and-Run',
-        description: `On December 8, 2017, your best friend, Cadie, ran away from home after a fight with her brother. You planned to pick her up as always. On the way, you heard Cadie yelling "watch out" briefly saw a red car before being knocked unconscious. Waking up in the hospital, you learned that Cadie never arrived at your house. You believe something must have happened to Cadie but the cops labelled her a runaway. The accident caused your hand tremors, forcing you to drop out of med school for surgery and become a pharmacist instead.`,
+        description: `On December 8, 2019, your best friend, Cadie, ran away from home after a fight with her brother. You planned to pick her up as always. On the way, you heard Cadie yelling "watch out" briefly saw a red car before being knocked unconscious. Waking up in the hospital, you learned that Cadie never arrived at your house. You believe something must have happened to Cadie but the cops labelled her a runaway. The accident caused your hand tremors, forcing you to drop out of med school for surgery and become a pharmacist instead.`,
       },
     ],
     whyYouHere: `Recently, you and Brodie have been depressed. He lost a criminal case. You were embaressed when your friends invited, then uninvited, you from an alumni gathering of surgeon. Additionally, the anniversary of Cadie’s disappearance is approaching. Brodie booked this Lover's Retreat to help you both relax.'`,
     dayOfTheMurder: [
       "Overheard and recorded Host Gen and Allison arguing about an accident 8 years ago.", 
+      "Noticed Host Gen owned a red Nissan.", 
       "Depressed over pictures of surgeon alumni gathering", 
       "Argued over reporting Host Gen to police", 
       "Attended physiotherapy session",
@@ -1017,7 +1024,7 @@ const characters = {
           age: 29,
           relStatus: ["First time meeting at Lover's Retreat"],
         },
-        other: ["Owned a red car"],
+        other: [],
         work: "Manager for Lover’s Retreat",
         impression: `Average working woman.`,
         history: [
@@ -1027,6 +1034,7 @@ const characters = {
           }          
         ],
         dayOfTheMurder: [
+          "Saw she used to own a red Nissan, the same car from the Hit-and-Run",
           "Overheard and recorded Host Gen and Allison arguing about an accident 8 years ago."
         ]
       },
@@ -1129,13 +1137,13 @@ const characters = {
         events: [
           "Host Gen returns to Resort.",
           "Returned to house with Brodie and went to your room to watch a drama.",
-          "Saw a picture of Host Gen posing beside a red Mercedes."
+          "Saw a picture of Host Gen posing beside a red Nissan."
         ]
       },
       {
         time: "2:30 PM",
         events: [
-          "Received picture of alumni gathering and got depressed; stepped out to get water."
+          "Saw picture of alumni gathering and got depressed; stepped out to get water."
         ]
       },
       {
@@ -1151,15 +1159,15 @@ const characters = {
         ]
       },
       {
-        time: "3:15 PM",
+        time: "3:10 PM",
         events: [
           "Brodie angrily left to take a walk outside.",
+          "Heard Host Gen leaving from room.",
         ]
       },
       {
         time: "3:30 PM",
         events: [
-          "Heard Host Gen leaving from room.",
           "Remotely attended a physiotherapy session for her hand.",
         ]
       },
@@ -1203,7 +1211,7 @@ const characters = {
   },
   F: {
     name: "Faye",
-    phoneLink: "",
+    phoneLink: "f-phone",
     password: "60",
     personalDetails: {
       gender: "Female",
@@ -1217,7 +1225,7 @@ const characters = {
     history: [
       {
         title: 'Becoming Faye',
-        description: `In December 2017, Carl found you injured and unconscious in the forest while hunting. He brings you home to a cottage and nurse you back to health. He named you Faye (like a fairy who appeared). Taking pity on you, he let you stay with him. Due to your amnesia and lack of ID, you don't work or go out. You gradually came to like each other and after Carl confessed, started dating 5 years ago.`,
+        description: `On December 9, 2019, Carl found you injured and unconscious in the forest while hunting. He brings you home to a cottage and nurse you back to health. He named you Faye (like a fairy who appeared). Taking pity on you, he let you stay with him. Due to your amnesia and lack of ID, you don't work or go out. You gradually came to like each other and after Carl confessed, started dating 5 years ago.`,
       },
       {
         title: 'Secret Therapy',
@@ -1255,7 +1263,7 @@ const characters = {
         ],
         dayOfTheMurder: [
           "Recalled that a lady was driving the red car that hit you in Mid Village.",
-          "Suspected it was Host Gen who hit you and ran.",
+          "Noticed Host Gen owned a red Nissan; suspected it was Host Gen who hit you and ran.",
           "Confronted Host Gen; who denied being the culprit",
         ]
       },
@@ -1280,9 +1288,11 @@ const characters = {
           }
         ],
         dayOfTheMurder: [
+          "Bought sleep medication for you.",
           "Told him about hypnotherapist.",
-          "Told him about your suspicions towards Host Gen",
-          "Showed you a cloud keychain that you had kept since you found her and got into a fight."
+          "Told him about your suspicions towards Host Gen.",
+          "Showed you a cloud keychain that you had kept since you found her.",
+          "Got into a fight about keeping secrets."
         ]
       },
       A: {
@@ -1313,7 +1323,6 @@ const characters = {
           "Passed by in the hall"
         ]
       },
-
       D: {
         name: "Doug",
         personalDetails: {
@@ -1348,15 +1357,15 @@ const characters = {
         time: "1:30 PM",
         events: [
           "Woke up from nap. Carl is not in the room.",
-          "Dreamt about a red car coming at you.",
+          "Dreamt about a red blur coming at you.",
           "Messaged hypnotherapist about dream.",
         ]
       },
       {
         time: "1:45 PM",
         events: [
-          "Carl arrived back to room with dessert.",
-          "Admitted to Carl about visiting a hypnotherapist to recover their memories. Mentions red car dream.",
+          "Carl arrived back to room with sleep medication.",
+          "Admitted to Carl about visiting a hypnotherapist to recover their memories. Mentions dream.",
           "Went out for lunch with Carl."
         ]
       },
@@ -1364,7 +1373,7 @@ const characters = {
         time: "2:45 PM",
         events: [
           "Returned from lunch with Carl.",
-          "Saw picture of Host Gen's past red car",
+          "Saw picture of Host Gen's with a red Nissan.",
           "Suddenly feels dizzy, goes to room to rest and takes sleep medication.",
           "Carl offers to bring you water."
         ]
@@ -1373,21 +1382,20 @@ const characters = {
         time: "3:00 PM",
         events: [
           "Heard yelling from Evelyn and Brodie's room.",
-          "Carl returns to room with water.",
           "Fell asleep",
         ]
       },
       {
         time: "4:10 PM",
         events: [
-          "Woke up after dreaming about being hit by a lady driving a red car. Also remembered something in the shape of a cloud.",
+          "Woke up after dreaming about being hit by a lady driving a red Nissan. Also remembered something in the shape of a cloud.",
           "Carl is not in the room."
         ]
       },
       {
         time: "4:15 PM",
         events: [
-          "Called Carl about lady and red car in dream. It's likely Host Gen caused you to lose your memories.",
+          "Called Carl about lady and red Nissan in dream. It's likely Host Gen caused you to lose your memories.",
           "Carl says he stepped out for a work matter."
         ]
       },
@@ -1431,14 +1439,14 @@ const characters = {
       {
         time: "5:35 PM",
         events: [
-          "Carl showed the cloud keychain that he picked up near where you were found in 2017.",
+          "Carl showed the cloud keychain that he picked up near where you were found in 2019.",
           "Fought with Carl."
         ]
       },
       {
         time: "6:00 PM",
         events: [
-          "Kitchen staff call Host Gen regarding drinks for dinner and discover body"
+          "Kitchen staff call Host Gen regarding drinks for dinner and discover body."
         ]
       }
     ]
