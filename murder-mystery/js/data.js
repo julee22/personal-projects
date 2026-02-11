@@ -6,7 +6,7 @@ const characters = {
     personalDetails: {
       gender: "Female",
       birthDate: "1996-11-09",
-      age: 29,
+      age: 30,
       relStatus: ["Dating Doug for 7 years."],
     },
     personality: ["Arrogant", "Spoiled", "Lavish lifestyle"],
@@ -146,7 +146,7 @@ const characters = {
         time: "1:00 PM",
         events: [
           "Went out to have lunch with Doug.",
-          "Your dad texts to warn you to learn the value of money if you want to inherit the business, and to avoid street racing or scandals.",
+          "Your dad calls to warn you to learn the value of money if you want to inherit the business, and to avoid street racing or scandals.",
         ]
       },
       {
@@ -180,8 +180,8 @@ const characters = {
       {
         time: "4:00 PM",
         events: [
-          "Credit card gets declined so you call your dad.",
-          "Your dad say that he won’t give you more allowance for this month."
+          "Credit card gets declined so you text your dad.",
+          "Your dad says that he won’t give you more allowance for this month."
         ]
       },
       {
@@ -229,8 +229,8 @@ const characters = {
     password: "20",
     personalDetails: {
       gender: "Male",
-      birthDate: "1992-01-01",
-      age: 29,
+      birthDate: "1992-09-25",
+      age: 34,
       relStatus: ["Older brother of Cadie","Dating Evelyn for 7 years."],
     },
     personality: ["Protective", "Takes work very seriously", "Jaded by the justice system"],
@@ -239,11 +239,11 @@ const characters = {
     history: [
       {
         title: 'Raising your sister',
-        description: `Your parents died young, so you raised your sister Cadie, eight years younger. Over protective and strict, you often argued. You bought her a cloud keychain for her nickname, “Cloud.”`,
+        description: `Your parents died young, so you raised your sister Cadie, who was eight years younger. Over protective and strict, you often argued. You bought her a cloud keychain for her nickname, “Cloud.”`,
       },
       {
         title: 'Missing Sister - Hit-and-Run',
-        description: `On December 8, 2019, you fought with Cadie, and she ran away from home. You assumed she was at her friend Evelyn’s, but when neither could be reached, you reported them missing. The next day, police said Evelyn was in a suspected hit-and-run. At the hospital, Evelyn could only recall someone yelling “watch out” and seeing a red car before blacking out. Your sister wasn’t found, and her case was closed as a runaway due to lack of evidence. However, you always believed Cadie actually died in the hit-and-run accident. You spent over a year searching for your sister with Evelyn in vain.`,
+        description: `On December 8, 2019, you fought with Cadie, and she ran away from home. You assumed she was at her friend Evelyn’s, but when neither could be reached, you reported them missing. The next day, police said Evelyn was in a suspected hit-and-run. At the hospital, Evelyn could only recall someone yelling “watch out” and seeing a red car before blacking out. Your sister wasn’t found, and her case was closed as a runaway due to lack of evidence and her age. However, you always believed Cadie actually died in the hit-and-run accident. You spent over a year searching for your sister with Evelyn in vain.`,
       },
     ],
     whyYouHere: `Recently, you and Evelyn have been depressed. You lost a reopened criminal case. Evelyn was mistakenly invited, then uninvited, from an alumni gathering of surgeon friends. Additionally, the anniversary of Cadie’s disappearance is approaching. You booked this Lover’s Retreat to help both of you relax. `,
@@ -487,11 +487,11 @@ const characters = {
   C: {
     name: "Carl 'Charlie' Crowe",
     phoneLink: "c-phone",
-    password: "30",
+    password: "06",
     personalDetails: {
       gender: "Male",
-      birthDate: "1998-01-01",
-      age: 29,
+      birthDate: "1998-06-17",
+      age: 28,
       relStatus: ["Dating Faye for 5 years."],
     },
     personality: ["Skittish","Guilt-ridden","Volatile","Prone to lashing out if cornered"],
@@ -618,7 +618,7 @@ const characters = {
         name: "Faye",
         personalDetails: {
           gender: "Female",
-          birthDate: "2000-01-01 (maybe?)",
+          birthDate: "2000-12-09 (fake)",
           age: 25,
           relStatus: ["Dating for 5 years"],
         },
@@ -736,11 +736,11 @@ const characters = {
   D: {
     name: "Doug LeDamn",
     phoneLink: "d-phone",
-    password: "40",
+    password: "44",
     personalDetails: {
       gender: "Male",
       birthDate: "1993-08-01",
-      age: 34,
+      age: 33,
       relStatus: ["Dating Allison since 2019."],
     },
     personality: ["Alpha male","Rough","Ruthless","Get the job done."],
@@ -806,6 +806,7 @@ const characters = {
             description: `Met when she dropped off a red car at your scrapyard and immediately hit it off. Have been trying to impress her parents so you can get married into a rich family.`}
         ],
         dayOfTheMurder: [
+          "Got an angry call from father",
           "Stressed about something and went shopping",
         ]
       },
@@ -885,7 +886,7 @@ const characters = {
         time: "1:00 PM",
         events: [
           "Out having lunch with Allison.",
-          "Allison's gets annoyed after reading a text message.",
+          "Allison's gets angry phone call from her father.",
         ]
       },
       {
@@ -988,8 +989,8 @@ const characters = {
     password: "88",
     personalDetails: {
       gender: "Female",
-      birthDate: "2000-01-01",
-      age: 25,
+      birthDate: "2000-01-10",
+      age: 26,
       relStatus: ["Best friend of Cadie", "Dating Brodie for 7 years"],
     },
     personality: ["Ambitious", "Prideful", "Cynical"],
@@ -1212,16 +1213,16 @@ const characters = {
   F: {
     name: "Faye",
     phoneLink: "f-phone",
-    password: "60",
+    password: "10",
     personalDetails: {
       gender: "Female",
-      birthDate: "2000-01-01 (maybe?)",
+      birthDate: "2000-12-09 (fake)",
       age: 25,
       relStatus: ["Dating Carl for 5 years."],
     },
     personality: ["Pure, calm, quite, and shy."],
     work: "N/A",
-    other: ["Has amnesia", "Birthday is date you were found and an estimated year", "Takes sleeping medication for hypnotherapy sessions", "Wants to regain memories to be useful.."],
+    other: ["Has amnesia", "Birthday is date you were found. Estimated your age year", "Takes sleeping medication for hypnotherapy sessions", "Wants to regain memories to be useful.."],
     history: [
       {
         title: 'Becoming Faye',

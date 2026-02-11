@@ -47,6 +47,7 @@ section {
     align-items: center;
     background-image: var(--lock-bg);
     background-size: cover;
+    background-position: top center;
 }
 
 .pass-wrapper {
@@ -81,6 +82,7 @@ section {
 
     background-image: var(--main-bg);
     background-size: cover;
+    background-position: top center;
 }
 
 #main #fake-time {
