@@ -226,7 +226,7 @@ const characters = {
   B: {
     name: "Brodie Law",
     phoneLink: "b-phone",
-    password: "20",
+    password: "47",
     personalDetails: {
       gender: "Male",
       birthDate: "1992-09-25",
