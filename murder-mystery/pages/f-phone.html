@@ -35,14 +35,14 @@
         <div class="pass-wrapper">
         <label>Password</label>
         <input type="password" id="password" maxlength="4"/>
-		<button class="btn" id="submitBtn" type="button" onclick="checkPassword('a')">Submit</button>
-			<p class="error" id="pass-error">! Incorrect. Hint: the last 4 of 4. Most important number.</p>
+		<button class="btn" id="submitBtn" type="button" onclick="checkPassword('F')">Submit</button>
+			<p class="error" id="pass-error">! Incorrect. Hint: Birthday. MMDD</p>
 
         </div>
     </section>
     <section class="hide" id="main">
         <div id="fake-time">06:00 PM</div>
-        <button class="btn" onclick="openApp('call-log'), generateCalls('A')">
+        <button class="btn" onclick="openApp('call-log'), generateCalls('F')">
             <span class="material-symbols-outlined">phone_enabled</span>
         </button>
         <button class="btn" onclick="openApp('text-log')">
@@ -63,7 +63,7 @@
             </div>
             <div class="app-content">
                 <div class="contact-list">
-                    <div class="contact" onclick="openConversation('A','Hypnotherapist','text')">
+                    <div class="contact" onclick="openConversation('F','Hypnotherapist','text')">
                         Hypnotherapist
                     </div>
                 </div>

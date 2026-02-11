@@ -4,11 +4,35 @@ export const passwords = {
   C: "charlie",
   D: "smokes",
   E: "surgery",
-  F: "dec9",
+  F: "1209",
   G: "110818",
   
 }
 export const texts = [
+  {
+    from: "G",
+    to: "PI",
+    time: "Dec 08, 09:00 PM",
+    message: "I heard you specialize in investigating cold cases. I want to commission you to on my brother's case. I believe he was jumped by a gang. "
+  },
+  {
+    from: "PI",
+    to: "G",
+    time: "Dec 08, 09:10 PM",
+    message: "I'll require a deposit of $2,000 to start with. The final cost is calculated once you get some answers. Is that acceptable?"
+  },
+  {
+    from: "G",
+    to: "PI",
+    time: "Dec 08, 09:30 AM",
+    message: "Yes. I just can't stand the thought that the people who did this to my brother are getting away with it. Sent the money."
+  },
+  {
+    from: "PI",
+    to: "G",
+    time: "Dec 08, 09:39 PM",
+    message: "Received. I'll contact you when I have more details."
+  },
   {
     from: "G",
     to: "A",
