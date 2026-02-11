@@ -61,6 +61,7 @@ section {
     display: block;
     text-align: center;
     margin: auto;
+    max-width: 100%;
 }
 
 #submitBtn {

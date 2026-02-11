@@ -266,6 +266,22 @@ export const texts = [
     time: "August 10, 2018, 9:00 AM",
     message: "YOU LITTLE SHIT. YOU BETTER WATCH YOURSELF. I KNOW WHERE YOU LIVE."
   },
+  {
+    from: "G",
+    to: "H",
+    fromNickname: "Sister",
+    toNickname: "Brother",
+    time: "August 5, 2018, 3:00 PM",
+    message: "Harry, don't get involved with these people. You're going to get into trouble. There are better ways..."
+  },
+  {
+    from: "H",
+    to: "G",
+    fromNickname: "Brother",
+    toNickname: "Sister",
+    time: "August 5, 2018, 4:00 PM",
+    message: "Just leave me alone..."
+  },
 ]
 
 export const calls = [

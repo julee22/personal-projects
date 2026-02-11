@@ -166,7 +166,7 @@ const characters = {
       {
         time: "2:15 PM",
         events: [
-          "Went to Host Gen's room and confronted her about the monthly $4,000 payment. Threatened her saying 'Don't forget what you also did 8 years ago!'",
+          "Went to Host Gen's room and told her about stopping the monthly $4,000 payment. Threatened her saying 'Don't forget what you also did 8 years ago!'",
         ]
       },
       {
@@ -187,7 +187,7 @@ const characters = {
       {
         time: "4:15 PM",
         events: [
-          "Returned angrily from shopping with nothing.",
+          "Returned to Resort angrily and headed to room.",
           "Passed by Brodie in the kithen",
           "Found a threatening letter about recording recording evidence from Host Gen in bedside table.",
           "Decided to steal the recording.",
@@ -442,13 +442,13 @@ const characters = {
         time: "4:45 PM",
         events: [
           "Stole some of Evelyn's muscle relaxant medicine.",
-          "Left the room."
+          "Left the room went to garage."
         ]
       },
       {
         time: "5:00 PM",
         events: [
-          "Waited in the garage with a brick and blocked the car exhaust",
+          "Waited in the garage with a hammer and blocked the car exhaust",
           "Heard someone opening and closing a door.",
           "Heard Host Gen talking to a female with a soft voice."
         ]
@@ -457,7 +457,7 @@ const characters = {
         time: "5:15 PM",
         events: [
           "Host Gen goes to garage to pick up drinks for dinner.",
-          "Knocked out Host Gen with a brick, unlocked her car, and put her in the backseat.",
+          "Knocked out Host Gen with a hammer, unlocked her car, and put her in the backseat.",
         ]
       },
       {
@@ -744,7 +744,7 @@ const characters = {
       relStatus: ["Dating Allison since 2019."],
     },
     personality: ["Alpha male","Rough","Ruthless","Get the job done."],
-    work: "Owner of CGG (Cars Gotta Go), a scrapyard business. Secretly an active member of Smokes gang.",
+    work: "Owner of CGG (Cars Gotta Go), a large scrapyard business. Secretly an active member of Smokes gang.",
     other: ["Grew up in Poor Land", "Has gang tattoo"],
     history: [
       {
