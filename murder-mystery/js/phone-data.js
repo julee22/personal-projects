@@ -10,27 +10,59 @@ export const passwords = {
 }
 export const texts = [
   {
+    from: "Cadie",
+    to: "E",
+    fromNickname: "BFF Cadie",
+    time: "Dec 08, 2019, 11:00 PM",
+    message: "Ugh, my brother is getting on my case again! He's way too strict. It's like I'm living in a prison; his word is law! He always thinks he's right just because he's 8 years older. He keeps trying to parent me! I can't stand living with him anymore."
+  },
+  {
+    from: "E",
+    to: "Cadie",
+    fromNickname: "BFF Cadie",
+    time: "Dec 08, 2019, 11:15 PM",
+    message: "So...are you coming over again? I can come meet you at the usual spot."
+  },
+  {
+    from: "B",
+    to: "Cadie",
+    time: "Dec 09, 2019, 01:00 AM",
+    message: "Real mature, just walking out like that. Are you staying at Evelyn's again? You're bothering her parents."
+  },
+  {
+    from: "B",
+    to: "Cadie",
+    time: "Dec 09, 2019, 02:00 AM",
+    message: "Where are you? Did you and Evelyn go somewhere? I called Evelyn's house and her parents said you never came over and neither has Evelyn."
+  },
+  {
+    from: "B",
+    to: "Cadie",
+    time: "Dec 09, 2019, 02:30 AM",
+    message: "If you don't call me soon, I'm going to the cops."
+  },
+  {
     from: "G",
     to: "PI",
-    time: "Dec 08, 09:00 PM",
+    time: "Dec 25, 09:00 PM",
     message: "I heard you specialize in investigating cold cases. I want to commission you to on my brother's case. I believe he was jumped by a gang. "
   },
   {
     from: "PI",
     to: "G",
-    time: "Dec 08, 09:10 PM",
+    time: "Dec 25, 09:10 PM",
     message: "I'll require a deposit of $2,000 to start with. The final cost is calculated once you get some answers. Is that acceptable?"
   },
   {
     from: "G",
     to: "PI",
-    time: "Dec 08, 09:30 AM",
+    time: "Dec 25, 09:30 AM",
     message: "Yes. I just can't stand the thought that the people who did this to my brother are getting away with it. Sent the money."
   },
   {
     from: "PI",
     to: "G",
-    time: "Dec 08, 09:39 PM",
+    time: "Dec 25, 09:39 PM",
     message: "Received. I'll contact you when I have more details."
   },
   {

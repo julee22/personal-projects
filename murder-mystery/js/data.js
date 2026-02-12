@@ -34,12 +34,12 @@ const characters = {
     ],
     relationships: {
       G: {
-        name: "Manager Gemma",
+        name: "Gemma Lim (Victim)",
         personalDetails: {
           gender: "Female",
           birthDate: "1996-07-02",
           age: 29,
-          relStatus: ["Longtime friends","Older sister of Harry"],
+          relStatus: ["Longtime friends","Older sister of Harry Lim"],
         },
         other: ["Grew up in Poor Land"],
         work: "Manager for Lover’s Retreat",
@@ -62,7 +62,7 @@ const characters = {
       },
 
       D: {
-        name: "Doug",
+        name: "Doug LeDamn",
         personalDetails: {
           gender: "Male",
           birthDate: "1990-02-14",
@@ -70,7 +70,7 @@ const characters = {
           relStatus: "Dating Allison",
         },
         other: ["Has a tattoo on his neck."],
-        work: "Owner of CGG (Cars Gotta Go), a scrapyard business",
+        work: "Owner of CGG (Cars Gotta Go), a large scrapyard business",
         impression: "An alpha male. The rugged beast to your beauty. Treats you like a princess. ",
         history: [
           {
@@ -218,7 +218,7 @@ const characters = {
       {
         time: "6:00 PM",
         events: [
-          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover body."
+          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover her dead body."
         ]
       }
     ]
@@ -266,7 +266,7 @@ const characters = {
     ],
     relationships: {
       G: {
-        name: "Manager Gemma",
+        name: "Gemma (Victim)",
         personalDetails: {
           gender: "Female",
           birthDate: "1996-07-02",
@@ -288,7 +288,7 @@ const characters = {
         ]
       },
       E: {
-        name: "Evelyn",
+        name: "Evelyn Dokta",
         personalDetails: {
           gender: "Female",
           birthDate: "2000-01-01",
@@ -479,7 +479,7 @@ const characters = {
       {
         time: "6:00 PM",
         events: [
-          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover body."
+          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover her dead body."
         ]
       }
     ]
@@ -523,7 +523,7 @@ const characters = {
     ],
     relationships: {
       G: {
-        name: "Manager Gemma",
+        name: "Gemma (Victim)",
         personalDetails: {
           gender: "Female",
           birthDate: "1996-07-02",
@@ -728,7 +728,7 @@ const characters = {
       {
         time: "6:00 PM",
         events: [
-          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover body"
+          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover her dead body"
         ]
       }
     ]
@@ -769,7 +769,7 @@ const characters = {
     ],
     relationships: {
       G: {
-        name: "Manager Gemma",
+        name: "Gemma (Victim)",
         personalDetails: {
           gender: "Female",
           birthDate: "1996-07-02",
@@ -790,7 +790,7 @@ const characters = {
         ]
       },
       A: {
-        name: "Allison", 
+        name: "Allison Heirs", 
         personalDetails: {
           gender: "Female",
           birthDate: "1996-11-09",
@@ -978,7 +978,7 @@ const characters = {
       {
         time: "6:00 PM",
         events: [
-          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover body"
+          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover her dead body"
         ]
       }
     ]
@@ -1018,7 +1018,7 @@ const characters = {
     ],
     relationships: {
       G: {
-        name: "Manager Gemma",
+        name: "Gemma (Victim)",
         personalDetails: {
           gender: "Female",
           birthDate: "1996-07-02",
@@ -1040,7 +1040,7 @@ const characters = {
         ]
       },
       B: {
-        name: "Brodie",
+        name: "Brodie Law",
         personalDetails: {
           gender: "Male",
           birthDate: "1992-01-01",
@@ -1245,7 +1245,7 @@ const characters = {
     ],
     relationships: {
       G: {
-        name: "Manager Gemma",
+        name: "Gemma (Victim)",
         personalDetails: {
           gender: "Female",
           birthDate: "1996-07-02",
@@ -1269,7 +1269,7 @@ const characters = {
         ]
       },
       C: {      
-        name: "Carl",
+        name: "Carl Growe",
         personalDetails: {
           gender: "Male",
           birthDate: "1998-01-01",
@@ -1447,7 +1447,7 @@ const characters = {
       {
         time: "6:00 PM",
         events: [
-          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover body."
+          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover her dead body."
         ]
       }
     ]
