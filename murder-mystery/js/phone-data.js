@@ -93,13 +93,13 @@ export const texts = [
     from: "Hospital",
     to: "G",
     time: "Feb 10, 12:00 PM",
-    message: "Hi Ms. Nossent, this is a reminder that the monthly fee for your brother's new treatment and hospice stay is due in 7 days. You have an outstanding balance of $4,000. Due to the nature of his stay and the high demand for space, please ensure that all payments are paid in full by then."
+    message: "Hi Ms. Nossent, this is a reminder that the monthly fee for your brother's new treatment and hospice stay is due in 7 days. Due to the nature of his stay and the high demand for space, please ensure that all payments are paid in full by then."
   },
   {
     from: "Hospital",
     to: "G",
     time: "Today, 12:00 PM",
-    message: "Hi Ms. Nossent, this is a reminder that the monthly fee for your brother's new treatment and hospice stay is due in 3 days. You have an outstanding balance of $4,000. Due to the nature of his stay and the high demand for space, please ensure that all payments are paid in full by then."
+    message: "Hi Ms. Nossent, this is a reminder that the monthly fee for your brother's new treatment and hospice stay is due in 3 days. Due to the nature of his stay and the high demand for space, please ensure that all payments are paid in full by then."
   },
   {
     from: "F",

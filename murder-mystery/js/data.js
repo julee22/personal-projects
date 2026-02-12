@@ -15,7 +15,7 @@ const characters = {
     history: [
       {
         title: 'The Accident',
-        description: `On December 8, 2019, after your parents took your car keys to stop you from street racing, you snuck out to borrow Manager Gemma’s car. While racing through the mountains of Mid Village, a text from your parents warning they’d cut off your allowance distracted you — you nearly hit a girl in a blue dress, but another girl pushed her away, taking the hit and tumbling off a cliff. The girl in the blue dress was knocked unconscious. Shaken, you returned the car to Manager Gemma to ask for help. She agreed to keep quiet in exchange for $4,000 a month and told you to scrap the car. You scrapped the car at a scrapyard in Poor Land. You’ve never raced since.`,
+        description: `On December 8, 2019, after your parents took your car keys to stop you from street racing, you snuck out to borrow Manager Gemma’s car. While racing through the mountains of Mid Village, a text from your parents warning they’d cut off your allowance distracted you — you nearly hit a girl in a blue dress, but another girl pushed her away, taking the hit and tumbling off a cliff. The girl in the blue dress was knocked unconscious. Shaken, you returned the car to Manager Gemma to ask for help. She agreed to keep quiet in exchange for $4,000 a month and helped you to scrap the car. You brought the car to the Cars Gotta Go scrapyard in Poor Land. You’ve never raced since.`,
       },
     ],
     whyYouHere: `Recently, your parents are cracking down on your spending and want you to prove you can handle more responsibility. They told you to learn from your manager friend, Manager Gemma. You decided to visit Lover’s Retreat with your boyfriend and potentially talk to Manager Gemma about ending the $4,000 payments.`,
@@ -509,6 +509,7 @@ const characters = {
     ],
     whyYouHere: `Worried about your own and Faye's mysterious past, you try to remain hidden. However, Faye has always expressed wanting to travel. Recently, Doug called to tell you that Harry's family apparently got a lead regarding the Hit incident and the gang is not happy about it. Doug and you need to finish the job and tie up loose ends. He sent you the Lover's Resort tickets. You also hope this retreat satisfies Faye's travel desires.`,
     dayOfTheMurder: [
+      "Bought sleeping medication for Faye",
       "Picklocked Manager Gemma's room to find out if she knows anything about the Hit.", 
       "Found out that Manager Gemma was the one who texted you 8 years ago, threatening to report you to the police.",
       "Overheard Manager Gemma mention private investigator and incoming package.",
