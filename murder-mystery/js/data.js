@@ -15,26 +15,26 @@ const characters = {
     history: [
       {
         title: 'The Accident',
-        description: `On December 8, 2019, after your parents took your car keys to stop you from street racing, you snuck out to borrow Host Gen’s car. While racing through the mountains of Mid Village, a text from your parents warning they’d cut off your allowance distracted you — you nearly hit a girl in a blue dress, but another girl pushed her away, taking the hit and tumbling off a cliff. The girl in the blue dress was knocked unconscious. Shaken, you returned the car to Host Gen to ask for help. She agreed to keep quiet in exchange for $4,000 a month and told you to scrap the car. You scrapped the car at a scrapyard in Poor Land. You’ve never raced since.`,
+        description: `On December 8, 2019, after your parents took your car keys to stop you from street racing, you snuck out to borrow Manager Gemma’s car. While racing through the mountains of Mid Village, a text from your parents warning they’d cut off your allowance distracted you — you nearly hit a girl in a blue dress, but another girl pushed her away, taking the hit and tumbling off a cliff. The girl in the blue dress was knocked unconscious. Shaken, you returned the car to Manager Gemma to ask for help. She agreed to keep quiet in exchange for $4,000 a month and told you to scrap the car. You scrapped the car at a scrapyard in Poor Land. You’ve never raced since.`,
       },
     ],
-    whyYouHere: `Recently, your parents are cracking down on your spending and want you to prove you can handle more responsibility. They told you to learn from your manager friend, Host Gen. You decided to visit Lover’s Retreat with your boyfriend and potentially talk to Host Gen about ending the $4,000 payments.`,
+    whyYouHere: `Recently, your parents are cracking down on your spending and want you to prove you can handle more responsibility. They told you to learn from your manager friend, Manager Gemma. You decided to visit Lover’s Retreat with your boyfriend and potentially talk to Manager Gemma about ending the $4,000 payments.`,
     dayOfTheMurder: [
       "Parents threatened to cut you off if you cause any problems.",
       "Parents discovered that you have been sending money to someone.",
-      "Confronted Host Gen about $4,000 but was rejected.",
-      "Found blackmail letter from Host Gen in room; Host Gen has a black box recording of the Accident",
-      "Snuck into Host Gen's room to steal black box recording.",
+      "Confronted Manager Gemma about $4,000 but was rejected.",
+      "Found blackmail letter from Manager Gemma in room; Manager Gemma has a black box recording of the Accident",
+      "Snuck into Manager Gemma's room to steal black box recording.",
       "Ripped up threatening letter."
     ],
     motives: [
-      "Is getting blackmailed by Host Gen.",
-      "If you stop paying, Host Gen will report the Accident to the police.",
+      "Is getting blackmailed by Manager Gemma.",
+      "If you stop paying, Manager Gemma will report the Accident to the police.",
       "Your parents may disinherit you."
     ],
     relationships: {
       G: {
-        name: "Host Gen",
+        name: "Manager Gemma",
         personalDetails: {
           gender: "Female",
           birthDate: "1996-07-02",
@@ -47,11 +47,11 @@ const characters = {
         history: [
           {
             title: `Harry's Coma`,
-            description: `Host Gen's brother, Harry, has been in a coma for 9 years due to unknown reasons. Host Gen claims to use the money to pay for his hospital bills.`
+            description: `Manager Gemma's brother, Harry, has been in a coma for 9 years due to unknown reasons. Manager Gemma claims to use the money to pay for his hospital bills.`
           },
           {
             title: 'The Accident',
-            description: `Host Gen helped cover up the accident and is the only person who knows. Currently being paid $4,000 monthly to keep the secret. Because of this, you have not been living comfortably and are worried that your parents will find out. Caused Host Gen to become more arrogant.`
+            description: `Manager Gemma helped cover up the accident and is the only person who knows. Currently being paid $4,000 monthly to keep the secret. Because of this, you have not been living comfortably and are worried that your parents will find out. Caused Manager Gemma to become more arrogant.`
           }
         ],
         dayOfTheMurder: [
@@ -75,7 +75,7 @@ const characters = {
         history: [
           {
             title: 'Love at first sight',
-            description: `Met when you were disposing of Host Gen's car from the Accident and immediately hit it off. Never told him about The Accident nor your past street racing hobby. Parents only mildly approve of him.`}
+            description: `Met when you were disposing of Manager Gemma's car from the Accident and immediately hit it off. Never told him about The Accident nor your past street racing hobby. Parents only mildly approve of him.`}
         ],
         dayOfTheMurder: [
           "Seemed a little stressed.",
@@ -152,7 +152,7 @@ const characters = {
       {
         time: "1:10 PM",
         events: [
-          "Texted Host Gen 'We need to talk'",
+          "Texted Manager Gemma 'We need to talk'",
         ]
       },
       {
@@ -160,19 +160,19 @@ const characters = {
         events: [
           "Returned from lunch with Doug.",
           "Doug takes a private work call in your room.",
-          "Went to find Host Gen."
+          "Went to find Manager Gemma."
         ]
       },
       {
         time: "2:15 PM",
         events: [
-          "Went to Host Gen's room and told her about stopping the monthly $4,000 payment. Threatened her saying 'Don't forget what you also did 8 years ago!'",
+          "Went to Manager Gemma's room and told her about stopping the monthly $4,000 payment. Threatened her saying 'Don't forget what you also did 8 years ago!'",
         ]
       },
       {
         time: "3:00 PM",
         events: [
-          "Host Gen gets a call about Harry and tells you to leave.",
+          "Manager Gemma gets a call about Harry and tells you to leave.",
           "Decided to go out stress shopping & texted Doug.",
           "Saw Carl in the kitchen.",
         ]
@@ -189,7 +189,7 @@ const characters = {
         events: [
           "Returned to Resort angrily and headed to room.",
           "Passed by Brodie in the kithen",
-          "Found a threatening letter about recording recording evidence from Host Gen in bedside table.",
+          "Found a threatening letter about recording recording evidence from Manager Gemma in bedside table.",
           "Decided to steal the recording.",
           "Ripped up and threw out the letter then got ready for dinner."
         ]
@@ -198,27 +198,27 @@ const characters = {
         time: "5:00 PM",
         events: [
           "Doug returns to your room to shower before dinner.",
-          "Waited for Doug to enter the shower then left room for Host Gen's."
+          "Waited for Doug to enter the shower then left room for Manager Gemma's."
         ]
       },
       {
         time: "5:05 PM",
         events: [
-          "Snuck into Host Gen's room to steal the blackbox recording. Door was unlocked."
+          "Snuck into Manager Gemma's room to steal the blackbox recording. Door was unlocked."
         ]
       },
       {
         time: "5:45 PM",
         events: [
           "Found blackbox recording.",
-          "Left Host Gen's room and returned to room to hide the blackbox recording with the letter.",
+          "Left Manager Gemma's room and returned to room to hide the blackbox recording with the letter.",
           "Passed by Evelyn in the hall."
         ]
       },
       {
         time: "6:00 PM",
         events: [
-          "Kitchen staff call Host Gen regarding drinks for dinner and discover body."
+          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover body."
         ]
       }
     ]
@@ -248,15 +248,15 @@ const characters = {
     ],
     whyYouHere: `Recently, you and Evelyn have been depressed. You lost a reopened criminal case. Evelyn was mistakenly invited, then uninvited, from an alumni gathering of surgeon friends. Additionally, the anniversary of Cadie’s disappearance is approaching. You booked this Lover’s Retreat to help both of you relax. `,
     dayOfTheMurder: [
-      "Noticed Host Gen owned a red Nissan.",
+      "Noticed Manager Gemma owned a red Nissan.",
       "Got another update about losing a crimninal case due to 'lack of evidence'.",
-      "Evelyn shared a recording of Host Gen and Allison arguing about a hit-and-run.",
-      "Argued with Evelyn over reporting Host Gen to the police.",
-      "Snuck into Host Gen's room and saw a blackbox recording proving Cadie was hit by Host Gen's car.",
-      "Saw that Host Gen has Cadie's cloud keychain.",
-      "Went to kitchen to check Host Gen's schedule.",
+      "Evelyn shared a recording of Manager Gemma and Allison arguing about a hit-and-run.",
+      "Argued with Evelyn over reporting Manager Gemma to the police.",
+      "Snuck into Manager Gemma's room and saw a blackbox recording proving Cadie was hit by Manager Gemma's car.",
+      "Saw that Manager Gemma has Cadie's cloud keychain.",
+      "Went to kitchen to check Manager Gemma's schedule.",
       "Stole Evelyn's muscle relaxant medicine.",
-      "Murdered Host Gen - Waited for Host Gen in garage, knocked out Host Gen using the muscle relaxant, unlocked her car, put her in the backseat, turned the engine on, and locked the keys inside the car.",
+      "Murdered Manager Gemma - Waited for Manager Gemma in garage, knocked out Manager Gemma using the muscle relaxant, unlocked her car, put her in the backseat, turned the engine on, and locked the keys inside the car.",
       "Retrieved Cadie's cloud keychain and hid it in your luggage. (key evidence)"
     ],
     motives: [
@@ -266,7 +266,7 @@ const characters = {
     ],
     relationships: {
       G: {
-        name: "Host Gen",
+        name: "Manager Gemma",
         personalDetails: {
           gender: "Female",
           birthDate: "1996-07-02",
@@ -279,11 +279,11 @@ const characters = {
         history: [
           {
             title: `Missing Sister - Hit-and-Run`,
-            description: `Discovered that Host Gen was behind the hit-and-run that caused Cadie to go missing and ruined Evelyn's dreams. Fought with Evelyn over reporting to the police (she wanted to call the cops but you don't trust them).`
+            description: `Discovered that Manager Gemma was behind the hit-and-run that caused Cadie to go missing and ruined Evelyn's dreams. Fought with Evelyn over reporting to the police (she wanted to call the cops but you don't trust them).`
           },
         ],
         dayOfTheMurder: [
-          "Evelyn overheard and recorded Host Gen and Allison arguing about an accident 8 years ago.",
+          "Evelyn overheard and recorded Manager Gemma and Allison arguing about an accident 8 years ago.",
           "Left the Retreat and entered a black car.",
         ]
       },
@@ -308,7 +308,7 @@ const characters = {
             description: `For over a year, helped you search for Cadie. The only one who believed Cadie didn't just run away from home. Eventually got close and started dating.`
           },
         ],
-        dayOfTheMurder: ["Watched a drama together","Depressed over pictures of surgeon alumni gathering", "Recorded Host G arguing with someone about an accident 8 years ago.", "Argued over reporting Host Gen to police", "Attended physiotherapy session."]
+        dayOfTheMurder: ["Watched a drama together","Depressed over pictures of surgeon alumni gathering", "Recorded Host G arguing with someone about an accident 8 years ago.", "Argued over reporting Manager Gemma to police", "Attended physiotherapy session."]
       },
 
       A: {
@@ -322,7 +322,7 @@ const characters = {
         other: ["N/A"],
         work: "Future heiress to a car manufacturing business.",
         impression: "Arrogant, spoiled.",
-        dayOfTheMurder: ["Evelyn overheard and recorded Host Gen and Allison arguing about an accident 8 years ago.", "Was angry about something after returning from somewhere."]
+        dayOfTheMurder: ["Evelyn overheard and recorded Manager Gemma and Allison arguing about an accident 8 years ago.", "Was angry about something after returning from somewhere."]
       },
 
       D: {
@@ -352,7 +352,7 @@ const characters = {
         other: ["N/A"],
         work: "Contract worker",
         impression: "Seems constantly nervous.",
-        dayOfTheMurder: ["Saw him leave the Retreat right after Host Gen left."]
+        dayOfTheMurder: ["Saw him leave the Retreat right after Manager Gemma left."]
       },
 
       F: {
@@ -373,16 +373,16 @@ const characters = {
       {
         time: "1:00 PM",
         events: [
-          "Host Gen left to buy groceries.",
+          "Manager Gemma left to buy groceries.",
           "Went out for lunch with Evelyn.",
         ]
       },
       {
         time: "2:00 PM",
         events: [
-          "Host Gen returns to Resort.",
+          "Manager Gemma returns to Resort.",
           "Returned to house with Evelyn and went to your room to watch a drama.",
-          "Saw a picture of Host Gen posing beside a red Nissan on the wall."
+          "Saw a picture of Manager Gemma posing beside a red Nissan on the wall."
         ]
       },
       {
@@ -394,8 +394,8 @@ const characters = {
       {
         time: "3:00 PM",
         events: [
-          "Evelyn returns and tells you she recorded an argument between Host Gen and someone about an accident 8 years ago; the recording mentioned evidence.",
-          "Argued with Evelyn about reporting Host Gen immediately. You don't have the evidence and confronting her could lead her to run.",
+          "Evelyn returns and tells you she recorded an argument between Manager Gemma and someone about an accident 8 years ago; the recording mentioned evidence.",
+          "Argued with Evelyn about reporting Manager Gemma immediately. You don't have the evidence and confronting her could lead her to run.",
         ]
       },
       {
@@ -408,24 +408,24 @@ const characters = {
       {
         time: "3:30 PM",
         events: [
-          "Saw Host Gen quickly leaving the Retreat and enter a black car.",
+          "Saw Manager Gemma quickly leaving the Retreat and enter a black car.",
           "Saw Carl leave the Retreat",
           "Evelyn should be busy remotely attending a physiotherapy session for her hands.",
-          "Took master key from kitchen and snuck into Host Gen's room to find evidence; Host Gen's room was locked",
+          "Took master key from kitchen and snuck into Manager Gemma's room to find evidence; Manager Gemma's room was locked",
         ]
       },
       {
         time: "4:00 PM",
         events: [
           "Found a blackbox recording of the accident.",
-          "Saw Host Gen has the same cloud keychain that you gave Cadie and decide to kill Host Gen for vengeance.",
+          "Saw Manager Gemma has the same cloud keychain that you gave Cadie and decide to kill Manager Gemma for vengeance.",
         ]
       },
       {
         time: "4:15 PM",
         events: [
-          "Saw Host Gen's car return to the Resort and left Host Gen's room, locking the door.",
-          "Went to kitchen to return master key and check Host Gen's posted schedule; saw she is planning on picking up drinks for dinner.",
+          "Saw Manager Gemma's car return to the Resort and left Manager Gemma's room, locking the door.",
+          "Went to kitchen to return master key and check Manager Gemma's posted schedule; saw she is planning on picking up drinks for dinner.",
           "Ate snacks to pass the time.",
           "An angry Allison passes by.",
         ]
@@ -450,14 +450,14 @@ const characters = {
         events: [
           "Waited in the garage with a hammer and blocked the car exhaust",
           "Heard someone opening and closing a door.",
-          "Heard Host Gen talking to a female with a soft voice."
+          "Heard Manager Gemma talking to a female with a soft voice."
         ]
       },
       {
         time: "5:15 PM",
         events: [
-          "Host Gen goes to garage to pick up drinks for dinner.",
-          "Knocked out Host Gen with a hammer, unlocked her car, and put her in the backseat.",
+          "Manager Gemma goes to garage to pick up drinks for dinner.",
+          "Knocked out Manager Gemma with a hammer, unlocked her car, and put her in the backseat.",
         ]
       },
       {
@@ -465,7 +465,7 @@ const characters = {
         events: [
           "Heard someone opening and closing a door again.",
           "Took Cadie's cloud keychain.",
-          "Injected Host Gen with the muscle relaxant, turned on the engine, left the keys in the car and locked the door.",
+          "Injected Manager Gemma with the muscle relaxant, turned on the engine, left the keys in the car and locked the door.",
         ]
       },
       {
@@ -479,7 +479,7 @@ const characters = {
       {
         time: "6:00 PM",
         events: [
-          "Kitchen staff call Host Gen regarding drinks for dinner and discover body."
+          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover body."
         ]
       }
     ]
@@ -509,21 +509,21 @@ const characters = {
     ],
     whyYouHere: `Worried about your own and Faye's mysterious past, you try to remain hidden. However, Faye has always expressed wanting to travel. Recently, Doug called to tell you that Harry's family apparently got a lead regarding the Hit incident and the gang is not happy about it. Doug and you need to finish the job and tie up loose ends. He sent you the Lover's Resort tickets. You also hope this retreat satisfies Faye's travel desires.`,
     dayOfTheMurder: [
-      "Picklocked Host Gen's room to find out if she knows anything about the Hit.", 
-      "Found out that Host Gen was the one who texted you 8 years ago, threatening to report you to the police.",
-      "Overheard Host Gen mention private investigator and incoming package.",
-      "Planned to kill Host Gen with Doug by drug overdose.",
-      "Found out Faye has been visiting a hypnotherapist and thinks Host Gen caused their amnesia",
+      "Picklocked Manager Gemma's room to find out if she knows anything about the Hit.", 
+      "Found out that Manager Gemma was the one who texted you 8 years ago, threatening to report you to the police.",
+      "Overheard Manager Gemma mention private investigator and incoming package.",
+      "Planned to kill Manager Gemma with Doug by drug overdose.",
+      "Found out Faye has been visiting a hypnotherapist and thinks Manager Gemma caused their amnesia",
       "Showed Faye the keychain you had kept hidden.",
     ],
     motives: [
-      "Instructed to get rid of Host Gen by former gang boss",
+      "Instructed to get rid of Manager Gemma by former gang boss",
       "Hide your involvement in the Hit 8 years ago",
       "Protect Faye from her assailant"
     ],
     relationships: {
       G: {
-        name: "Host Gen",
+        name: "Manager Gemma",
         personalDetails: {
           gender: "Female",
           birthDate: "1996-07-02",
@@ -536,7 +536,7 @@ const characters = {
         history: [
           {
             title: 'The Hit',
-            description: `The older sister of Harry who you used to deal drugs to. 8 years ago, after receiving a text from Harry that he will report you to the police, you tracked him down and beat him up. Harry fell into a coma and since then, Host Gen has been trying to track you and Doug down.`
+            description: `The older sister of Harry who you used to deal drugs to. 8 years ago, after receiving a text from Harry that he will report you to the police, you tracked him down and beat him up. Harry fell into a coma and since then, Manager Gemma has been trying to track you and Doug down.`
           },
           {
             title: 'Finding Faye',
@@ -594,11 +594,11 @@ const characters = {
           },
         ],
         dayOfTheMurder: [
-          "Texted you to find out what Host Gen knows.",
-          "Told him that Host Gen was the one who texted you 8 years ago, threatening to report you to the police",
-          "Informed him Host Gen is meeting with a private investigator and has an incoming package.",
+          "Texted you to find out what Manager Gemma knows.",
+          "Told him that Manager Gemma was the one who texted you 8 years ago, threatening to report you to the police",
+          "Informed him Manager Gemma is meeting with a private investigator and has an incoming package.",
           "Instructed you to pick up drugs from gang boss and stash in coat closet",
-          "Planned together to kill Host Gen by drug overdose."
+          "Planned together to kill Manager Gemma by drug overdose."
         ]
       },
       E: {
@@ -634,7 +634,7 @@ const characters = {
         dayOfTheMurder: [
           "Was not feeling well; bought her sleep medication.",
           "Admitted to visiting a hypnotherapist to recover her memories.",
-          "Remembered a lady driving a red car; convinced it was Host Gen.",
+          "Remembered a lady driving a red car; convinced it was Manager Gemma.",
           "Showed her the cloud keychain you kept since you found her and got into a fight.",
         ]
       }
@@ -644,16 +644,16 @@ const characters = {
         time: "1:00 PM",
         events: [
           "On the way back to Resort, bringing sleep medication for Faye (who was napping).",
-          "Host Gen left to buy groceries.",
-          "Picklocked Host Gen's room.",
+          "Manager Gemma left to buy groceries.",
+          "Picklocked Manager Gemma's room.",
         ]
       },
       {
         time: "1:30 PM",
         events: [
-          "Found Harry's old unlocked phone; text messages prove Host Gen was actually the one who threatened to report you to the police 8 years ago.",
-          "Messaged Doug about Host Gen's involvement.",
-          "Left Host Gen's room with phone and locked door."
+          "Found Harry's old unlocked phone; text messages prove Manager Gemma was actually the one who threatened to report you to the police 8 years ago.",
+          "Messaged Doug about Manager Gemma's involvement.",
+          "Left Manager Gemma's room with phone and locked door."
         ]
       },
       {
@@ -669,13 +669,13 @@ const characters = {
         events: [
           "Returned from lunch with Faye.",
           "Faye suddenly feels dizzy, goes to room to rest and takes sleep medication.",
-          "On the way to get water for Faye, overheard Host Gen mention private investigator and incoming secret package."
+          "On the way to get water for Faye, overheard Manager Gemma mention private investigator and incoming secret package."
         ]
       },
       {
         time: "3:00 PM",
         events: [
-          "Called Doug to confirm Host Gen's involvement with 'The Hit' and an incoming package from a private investigator.",
+          "Called Doug to confirm Manager Gemma's involvement with 'The Hit' and an incoming package from a private investigator.",
           "Saw Allison leave the Resort."
         ]
       },
@@ -683,13 +683,13 @@ const characters = {
         time: "3:20 PM",
         events: [
           "Returned to room with water. Faye fell asleep.",
-          "Doug texts you that Former gang boss wants you to get rid of Host Gen and to wait for further instructions.",
+          "Doug texts you that Former gang boss wants you to get rid of Manager Gemma and to wait for further instructions.",
         ]
       },
       {
         time: "3:30 PM",
         events: [
-          "Received text from Doug to pick up drugs from gang boss to use on Host Gen.",
+          "Received text from Doug to pick up drugs from gang boss to use on Manager Gemma.",
           "Initially refused to get more involved but was convinced.",
           "Left the Retreat to pick up drugs.",
         ]
@@ -697,14 +697,14 @@ const characters = {
       {
         time: "4:00 PM",
         events: [
-          // "Saw Host Gen quickly leaving the Retreat and enter a black car.",
+          // "Saw Manager Gemma quickly leaving the Retreat and enter a black car.",
           "Received text from Doug to stash drugs in the coat closet."
         ]
       },
       {
         time: "4:15 PM",
         events: [
-          "Faye called you and says she remembered being hit by a lady driving a red car, likely to be Host Gen.",
+          "Faye called you and says she remembered being hit by a lady driving a red car, likely to be Manager Gemma.",
           "Told Faye you stepped out for a work matter."
         ]
       },
@@ -728,7 +728,7 @@ const characters = {
       {
         time: "6:00 PM",
         events: [
-          "Kitchen staff call Host Gen regarding drinks for dinner and discover body"
+          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover body"
         ]
       }
     ]
@@ -752,24 +752,24 @@ const characters = {
         description: `Your underling, Scared Charlie used to deal drugs to a kid named Harry. 8 years ago, Harry threatened to report Carl to the police. You instructed Scared Charlie to intimidate Harry from snitching. On August 11, 2018, you and Scared Charlie tracked down Harry and beat him up. Harry ended up in a coma. Scared of being caught, Scared Charlie went into hiding and changed his name to Carl. You stopped contacting him for deals. `,
       },
     ],
-    whyYouHere: `Recently, your bosses have informed you that someone has been investigating the Hit incident again. They suspect it to be Host Gen, Harry's sister. They tell you to deal with it before it causes problems for the gang. You called up Carl to finish the job and tie up loose ends. Coincidentally, Allison is best friends with Host Gen and was offered a free stay at Lover's Retreat.`,
+    whyYouHere: `Recently, your bosses have informed you that someone has been investigating the Hit incident again. They suspect it to be Manager Gemma, Harry's sister. They tell you to deal with it before it causes problems for the gang. You called up Carl to finish the job and tie up loose ends. Coincidentally, Allison is best friends with Manager Gemma and was offered a free stay at Lover's Retreat.`,
     dayOfTheMurder: [
-      "Instructed and pressured to get rid of Host Gen and any evidence by gang boss",
-      "Found out that Host Gen was the one who texted Carl 8 years ago, threatening to report you to the police.",
+      "Instructed and pressured to get rid of Manager Gemma and any evidence by gang boss",
+      "Found out that Manager Gemma was the one who texted Carl 8 years ago, threatening to report you to the police.",
       "Instructed Carl to pick up drugs",
-      "Snuck into Host Gen's room and stole investigative package",
+      "Snuck into Manager Gemma's room and stole investigative package",
       "Picked up drugs Carl stashed in coat closet",
-      "Snuck into kitchen and laced Host Gen's meal with drugs",
+      "Snuck into kitchen and laced Manager Gemma's meal with drugs",
       
     ],
     motives: [
       "Pressure from gang boss",
-      "Stop Host Gen from investigating the Hit",
+      "Stop Manager Gemma from investigating the Hit",
       "Hide gangster identity from Allison",
     ],
     relationships: {
       G: {
-        name: "Host Gen",
+        name: "Manager Gemma",
         personalDetails: {
           gender: "Female",
           birthDate: "1996-07-02",
@@ -782,7 +782,7 @@ const characters = {
         history: [
           {
             title: 'The Hit',
-            description: `The older sister of Harry who you used to deal drugs to in Poor Land. 8 years ago, after receiving a text from Harry that he will report you to the police, you tracked him down and beat him up. Harry fell into a coma and since then, Host Gen has been trying to track you and Carl down.`
+            description: `The older sister of Harry who you used to deal drugs to in Poor Land. 8 years ago, after receiving a text from Harry that he will report you to the police, you tracked him down and beat him up. Harry fell into a coma and since then, Manager Gemma has been trying to track you and Carl down.`
           }          
         ],
         dayOfTheMurder: [
@@ -843,11 +843,11 @@ const characters = {
           },
         ],
         dayOfTheMurder: [
-          "Texted him to investigate Host Gen knows.",
-          "Told you that Host Gen was the real texter 8 years ago, threatening to report to the police",
-          "Told you that Host Gen is meeting with a private investigator and has an incoming package.",
+          "Texted him to investigate Manager Gemma knows.",
+          "Told you that Manager Gemma was the real texter 8 years ago, threatening to report to the police",
+          "Told you that Manager Gemma is meeting with a private investigator and has an incoming package.",
           "Instructed him to pick up drugs from gang boss and stash in coat closet.",
-          "Planned together to kill Host Gen by drug overdose.",
+          "Planned together to kill Manager Gemma by drug overdose.",
         ]
       },
       E: {
@@ -877,7 +877,7 @@ const characters = {
         work: "N/A",
         impression: `Has a few screws loose. Where did this random girl come from?`,
         dayOfTheMurder: [
-          "Knocked on the door when you were in Host Gen's room."
+          "Knocked on the door when you were in Manager Gemma's room."
         ]
       },
     },
@@ -892,29 +892,29 @@ const characters = {
       {
         time: "1:30 PM",
         events: [
-          "Received text from Carl about Host Gen's involvement in the Hit 8 years ago.",
+          "Received text from Carl about Manager Gemma's involvement in the Hit 8 years ago.",
         ]
       },
       {
         time: "2:10 PM",
         events: [
           "Came back from lunch with Allison.",
-          "Received call 'work call' from gang boss; answered in room. Gang boss wants an update on the situation with Host Gen.",
+          "Received call 'work call' from gang boss; answered in room. Gang boss wants an update on the situation with Manager Gemma.",
           "Allison left elsewhere."
         ]
       },
       {
         time: "3:00 PM",
         events: [
-          "Carl called to confirm Host Gen's involvement with the H accident and an incoming package from a private investigator.",
+          "Carl called to confirm Manager Gemma's involvement with the H accident and an incoming package from a private investigator.",
           "Allison texted 'Went out stress shopping'"
         ]
       },
       {
         time: "3:15 PM",
         events: [
-          "A threatening letter is slid under the door, saying 'I will expose what you did 8 years ago'; opened door and saw Host Gen leaving.",
-          "Informed boss about Host Gen; boss tells you to get rid of Host Gen.",
+          "A threatening letter is slid under the door, saying 'I will expose what you did 8 years ago'; opened door and saw Manager Gemma leaving.",
+          "Informed boss about Manager Gemma; boss tells you to get rid of Manager Gemma.",
         ]
       },
       {
@@ -927,7 +927,7 @@ const characters = {
       {
         time: "3:30 PM",
         events: [
-          "Texted Carl to pick up drugs from gang boss to use on Host Gen.",
+          "Texted Carl to pick up drugs from gang boss to use on Manager Gemma.",
           "Initially, Carl refused to get more involved but was convinced.",
         ]
       },
@@ -943,15 +943,15 @@ const characters = {
         events: [
           "Went to the kitchen and saw Brodie leaving.",
           "Brodie informed you that Allison seemed angry.",
-          "Checked Host Gen's schedule; saw that she has left to pick up drinks for dinner.",
-          "Took master key from kitchen and snuck into Host Gen's room to steal the private investigator’s package.",
+          "Checked Manager Gemma's schedule; saw that she has left to pick up drinks for dinner.",
+          "Took master key from kitchen and snuck into Manager Gemma's room to steal the private investigator’s package.",
         ]
       },
       {
         time: "4:45 PM",
         events: [
-          "Someone knocked on Host Gen's room but left when noone opened the door.",
-          "Left Host Gen's room after a few minutes; in haste, left door unlocked.",
+          "Someone knocked on Manager Gemma's room but left when noone opened the door.",
+          "Left Manager Gemma's room after a few minutes; in haste, left door unlocked.",
         ]
       },
       {
@@ -965,7 +965,7 @@ const characters = {
         events: [
           "Went to the coat closet to pick up stashed drugs.",
           "Faye entered the Resort and passed by.",
-          "Snuck into kitchen to lace Host Gen's meal with drugs and return master key."
+          "Snuck into kitchen to lace Manager Gemma's meal with drugs and return master key."
         ]
       },
       {
@@ -978,7 +978,7 @@ const characters = {
       {
         time: "6:00 PM",
         events: [
-          "Kitchen staff call Host Gen regarding drinks for dinner and discover body"
+          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover body"
         ]
       }
     ]
@@ -1004,21 +1004,21 @@ const characters = {
     ],
     whyYouHere: `Recently, you and Brodie have been depressed. He lost a criminal case. You were embaressed when your friends invited, then uninvited, you from an alumni gathering of surgeon. Additionally, the anniversary of Cadie’s disappearance is approaching. Brodie booked this Lover's Retreat to help you both relax.'`,
     dayOfTheMurder: [
-      "Overheard and recorded Host Gen and Allison arguing about an accident 8 years ago.", 
-      "Noticed Host Gen owned a red Nissan.", 
+      "Overheard and recorded Manager Gemma and Allison arguing about an accident 8 years ago.", 
+      "Noticed Manager Gemma owned a red Nissan.", 
       "Depressed over pictures of surgeon alumni gathering", 
-      "Argued over reporting Host Gen to police", 
+      "Argued over reporting Manager Gemma to police", 
       "Attended physiotherapy session",
       "Took muscle relaxant medication for pain in hands."
     ],
     motives: [
-      "Host Gen was the driver in the Hit-and-Run 8 years ago",
+      "Manager Gemma was the driver in the Hit-and-Run 8 years ago",
       "Hurt pride when reminded about your surgeon dreams",
       "Vengeance for your best friend, Cadie, and boyfriend, Brodie."
     ],
     relationships: {
       G: {
-        name: "Host Gen",
+        name: "Manager Gemma",
         personalDetails: {
           gender: "Female",
           birthDate: "1996-07-02",
@@ -1031,12 +1031,12 @@ const characters = {
         history: [
           {
             title: 'Missing Friend - Hit-and-Run',
-            description: `Discovered that Host Gen was behind the hit-and-run that caused Cadie to go missing and ruined your dreams. Fought with Brodie over reporting to the police (you wanted to call the cops but he didn't trust them).`
+            description: `Discovered that Manager Gemma was behind the hit-and-run that caused Cadie to go missing and ruined your dreams. Fought with Brodie over reporting to the police (you wanted to call the cops but he didn't trust them).`
           }          
         ],
         dayOfTheMurder: [
           "Saw she used to own a red Nissan, the same car from the Hit-and-Run",
-          "Overheard and recorded Host Gen and Allison arguing about an accident 8 years ago."
+          "Overheard and recorded Manager Gemma and Allison arguing about an accident 8 years ago."
         ]
       },
       B: {
@@ -1061,7 +1061,7 @@ const characters = {
           },
         ],
         dayOfTheMurder: [
-          "Told Brodie about Host Gen and Allison arguing about an accident 8 years ago.", "Depressed over pictures of surgeon alumni gathering", "Argued over reporting Host Gen to police"
+          "Told Brodie about Manager Gemma and Allison arguing about an accident 8 years ago.", "Depressed over pictures of surgeon alumni gathering", "Argued over reporting Manager Gemma to police"
         ]
       },
       A: {
@@ -1076,7 +1076,7 @@ const characters = {
         work: "Future heiress to a car manufacturing business.",
         impression: "A spoiled princess. Annoying to be around.",
         dayOfTheMurder: [
-          "Overheard and recorded Host Gen and Allison arguing about an accident 8 years ago.", 
+          "Overheard and recorded Manager Gemma and Allison arguing about an accident 8 years ago.", 
           "Seemed to be hiding something",
         ]
       },
@@ -1136,9 +1136,9 @@ const characters = {
       {
         time: "2:00 PM",
         events: [
-          "Host Gen returns to Resort.",
+          "Manager Gemma returns to Resort.",
           "Returned to house with Brodie and went to your room to watch a drama.",
-          "Saw a picture of Host Gen posing beside a red Nissan."
+          "Saw a picture of Manager Gemma posing beside a red Nissan."
         ]
       },
       {
@@ -1150,20 +1150,20 @@ const characters = {
       {
         time: "2:35 PM",
         events: [
-          "Overheard Host Gen and another girl arguing in Host Gen's room about a car accident 8 years ago. 'Don't forget what you also did 8 years ago!'"
+          "Overheard Manager Gemma and another girl arguing in Manager Gemma's room about a car accident 8 years ago. 'Don't forget what you also did 8 years ago!'"
         ]
       },
       {
         time: "3:00 PM",
         events: [
-          "Argued with Brodie about reporting Host Gen immediately. He says that there is not enough evidence and confronting her could lead her to run.",
+          "Argued with Brodie about reporting Manager Gemma immediately. He says that there is not enough evidence and confronting her could lead her to run.",
         ]
       },
       {
         time: "3:10 PM",
         events: [
           "Brodie angrily left to take a walk outside.",
-          "Heard Host Gen leaving from room.",
+          "Heard Manager Gemma leaving from room.",
         ]
       },
       {
@@ -1235,17 +1235,17 @@ const characters = {
     ],
     whyYouHere: `You've always expressed wanting to travel but Carl is worried that you might encounter someone dangerous from your unknown past (since you were abandonned with injuries). However, for some reason, he's surprised you with this trip to Lover's Resort!`,
     dayOfTheMurder: [
-      "Recalled that it was a lady driving a red car; suspected it was Host Gen",
-      "Confronted Host Gen; who denied being the culprit",
+      "Recalled that it was a lady driving a red car; suspected it was Manager Gemma",
+      "Confronted Manager Gemma; who denied being the culprit",
       "Felt dizzy and took sleep medication",
       "Fought with Carl who hid a clue (cloud keychain) connected to your past"
     ],
     motives: [
-      "Believes Host Gen is the culprit behind your amnesia",
+      "Believes Manager Gemma is the culprit behind your amnesia",
     ],
     relationships: {
       G: {
-        name: "Host Gen",
+        name: "Manager Gemma",
         personalDetails: {
           gender: "Female",
           birthDate: "1996-07-02",
@@ -1264,8 +1264,8 @@ const characters = {
         ],
         dayOfTheMurder: [
           "Recalled that a lady was driving the red car that hit you in Mid Village.",
-          "Noticed Host Gen owned a red Nissan; suspected it was Host Gen who hit you and ran.",
-          "Confronted Host Gen; who denied being the culprit",
+          "Noticed Manager Gemma owned a red Nissan; suspected it was Manager Gemma who hit you and ran.",
+          "Confronted Manager Gemma; who denied being the culprit",
         ]
       },
       C: {      
@@ -1291,7 +1291,7 @@ const characters = {
         dayOfTheMurder: [
           "Bought sleep medication for you.",
           "Told him about hypnotherapist.",
-          "Told him about your suspicions towards Host Gen.",
+          "Told him about your suspicions towards Manager Gemma.",
           "Showed you a cloud keychain that you had kept since you found her.",
           "Got into a fight about keeping secrets."
         ]
@@ -1374,7 +1374,7 @@ const characters = {
         time: "2:45 PM",
         events: [
           "Returned from lunch with Carl.",
-          "Saw picture of Host Gen's with a red Nissan.",
+          "Saw picture of Manager Gemma's with a red Nissan.",
           "Suddenly feels dizzy, goes to room to rest and takes sleep medication.",
           "Carl offers to bring you water."
         ]
@@ -1396,36 +1396,36 @@ const characters = {
       {
         time: "4:15 PM",
         events: [
-          "Called Carl about lady and red Nissan in dream. It's likely Host Gen caused you to lose your memories.",
+          "Called Carl about lady and red Nissan in dream. It's likely Manager Gemma caused you to lose your memories.",
           "Carl says he stepped out for a work matter."
         ]
       },
       {
         time: "4:45 PM",
         events: [
-          "Heard a noise from Host Gen's room.",
-          "Left room and knocked on Host Gen's door. No response.",
+          "Heard a noise from Manager Gemma's room.",
+          "Left room and knocked on Manager Gemma's door. No response.",
           "Returned to room after a few minutes.",
         ]
       },
       {
         time: "4:55 PM",
         events: [
-          "Saw Host Gen return to the Resort.",
+          "Saw Manager Gemma return to the Resort.",
           "Left room."
         ]
       },
       {
         time: "5:00 PM",
         events: [
-          "Argued with Host Gen in the hallway about the red car and dream.",
-          "Saw Host Gen had a cloud keychain.",
+          "Argued with Manager Gemma in the hallway about the red car and dream.",
+          "Saw Manager Gemma had a cloud keychain.",
         ]
       },
       {
         time: "5:15 PM",
         events: [
-          "Host Gen goes to garage to pick up drinks for dinner.",
+          "Manager Gemma goes to garage to pick up drinks for dinner.",
           "Took a walk to calm down.",
         ]
       },
@@ -1447,7 +1447,7 @@ const characters = {
       {
         time: "6:00 PM",
         events: [
-          "Kitchen staff call Host Gen regarding drinks for dinner and discover body."
+          "Kitchen staff call Manager Gemma regarding drinks for dinner and discover body."
         ]
       }
     ]
