@@ -206,9 +206,9 @@ window.generateCalls = function(user) {
 }
 
 // set main image
-window.setImage = function(path) {
-    console.log(mainImg);
-    mainImg.src = "../images/" + path + ".jpg";
+window.setImage = function(pathID) {
+    const path = document.getElementById(pathID);
+    mainImg.src = path.src;
 }
 
 // If array, return string with commas

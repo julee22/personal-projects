@@ -216,7 +216,7 @@ const characters = {
         ]
       },
       {
-        time: "6:00 PM",
+        time: "6:05 PM",
         events: [
           "Kitchen staff call Manager Gemma regarding drinks for dinner and discover her dead body."
         ]
@@ -465,7 +465,7 @@ const characters = {
         events: [
           "Heard someone opening and closing a door again.",
           "Took Cadie's cloud keychain.",
-          "Injected Manager Gemma with the muscle relaxant, turned on the engine, left the keys in the car and locked the door.",
+          "Fed Manager Gemma the muscle relaxant, turned on the engine, left the keys in the car and locked the door.",
         ]
       },
       {
@@ -477,7 +477,7 @@ const characters = {
         ]
       },
       {
-        time: "6:00 PM",
+        time: "6:05 PM",
         events: [
           "Kitchen staff call Manager Gemma regarding drinks for dinner and discover her dead body."
         ]
@@ -727,7 +727,7 @@ const characters = {
         ]
       },
       {
-        time: "6:00 PM",
+        time: "6:05 PM",
         events: [
           "Kitchen staff call Manager Gemma regarding drinks for dinner and discover her dead body"
         ]
@@ -977,7 +977,7 @@ const characters = {
         ]
       },
       {
-        time: "6:00 PM",
+        time: "6:05 PM",
         events: [
           "Kitchen staff call Manager Gemma regarding drinks for dinner and discover her dead body"
         ]
@@ -1446,7 +1446,7 @@ const characters = {
         ]
       },
       {
-        time: "6:00 PM",
+        time: "6:05 PM",
         events: [
           "Kitchen staff call Manager Gemma regarding drinks for dinner and discover her dead body."
         ]

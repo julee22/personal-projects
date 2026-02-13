@@ -93,13 +93,13 @@ export const texts = [
     from: "Hospital",
     to: "G",
     time: "Feb 10, 12:00 PM",
-    message: "Hi Ms. Nossent, this is a reminder that the monthly fee for your brother's new treatment and hospice stay is due in 7 days. Due to the nature of his stay and the high demand for space, please ensure that all payments are paid in full by then."
+    message: "Hi Ms. Lim, this is a reminder that the monthly fee for your brother's new treatment and hospice stay is due in 7 days. Due to the nature of his stay and the high demand for space, please ensure that all payments are paid in full by then."
   },
   {
     from: "Hospital",
     to: "G",
     time: "Today, 12:00 PM",
-    message: "Hi Ms. Nossent, this is a reminder that the monthly fee for your brother's new treatment and hospice stay is due in 3 days. Due to the nature of his stay and the high demand for space, please ensure that all payments are paid in full by then."
+    message: "Hi Ms. Lim, this is a reminder that the monthly fee for your brother's new treatment and hospice stay is due in 3 days. Due to the nature of his stay and the high demand for space, please ensure that all payments are paid in full by then."
   },
   {
     from: "F",
@@ -111,7 +111,7 @@ export const texts = [
     from: "Hypnotherapist",
     to: "F",
     time: "Today, 01:35 PM",
-    message: "Hi Faye, this is good news. I believe your subconcious is trying to recall something. Maybe you saw or encountered something that is triggering a memory."
+    message: "Hi Faye, this is good news. It sounds like your memory is definitely coming back. I believe your subconcious is trying to recall something. Maybe you saw or encountered something that is triggering a memory."
   },
   {
     from: "C",

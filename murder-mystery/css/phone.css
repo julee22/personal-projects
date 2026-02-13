@@ -81,7 +81,7 @@ section {
     gap: 0.5rem;
     padding: 1rem;
 
-    background-image: var(--main-bg);
+    background-image: var(--lock-bg);
     background-size: cover;
     background-position: top center;
 }
