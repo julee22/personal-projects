@@ -256,7 +256,7 @@ const characters = {
       "Saw that Manager Gemma has Cadie's cloud keychain.",
       "Went to kitchen to check Manager Gemma's schedule.",
       "Stole Evelyn's muscle relaxant medicine.",
-      "Murdered Manager Gemma - Waited for Manager Gemma in garage, knocked out Manager Gemma using the muscle relaxant, unlocked her car, put her in the backseat, turned the engine on, and locked the keys inside the car.",
+      "Murdered Manager Gemma - Waited for Manager Gemma in garage, knocked out Manager Gemma using a fire extinguisher & the muscle relaxant, unlocked her car, put her in the backseat, turned the engine on, and locked the keys inside the car.",
       "Retrieved Cadie's cloud keychain and hid it in your luggage. (key evidence)"
     ],
     motives: [
@@ -442,13 +442,13 @@ const characters = {
         time: "4:45 PM",
         events: [
           "Stole some of Evelyn's muscle relaxant medicine.",
-          "Left the room went to garage."
+          "Left the room and went to garage."
         ]
       },
       {
         time: "5:00 PM",
         events: [
-          "Waited in the garage with a hammer and blocked the car exhaust",
+          "Waited in the garage with a bottle from t and blocked the car exhaust.",
           "Heard someone opening and closing a door.",
           "Heard Manager Gemma talking to a female with a soft voice."
         ]
@@ -457,7 +457,7 @@ const characters = {
         time: "5:15 PM",
         events: [
           "Manager Gemma goes to garage to pick up drinks for dinner.",
-          "Knocked out Manager Gemma with a hammer, unlocked her car, and put her in the backseat.",
+          "Knocked out Manager Gemma with a fire extinguisher, unlocked her car, and put her in the backseat.",
         ]
       },
       {
