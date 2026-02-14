@@ -388,7 +388,7 @@ const characters = {
       {
         time: "2:30 PM",
         events: [
-          "Evelyn leaves to get water after seeing a picture message of surgeon alumni gathering.",
+          "Evelyn leaves to get water after seeing an invite for surgeon alumni gathering.",
         ]
       },
       {
@@ -1145,7 +1145,7 @@ const characters = {
       {
         time: "2:30 PM",
         events: [
-          "Saw picture of alumni gathering and got depressed; stepped out to get water."
+          "Saw invite for alumni gathering and got depressed; stepped out to get water."
         ]
       },
       {
@@ -1177,6 +1177,7 @@ const characters = {
         time: "4:15 PM",
         events: [
           "Hand really hurts after physiotherapy session.",
+          "Threw out alumni invite.",
           "Took muscle relaxant medicine and fell asleep.",
         ]
       },
@@ -1391,14 +1392,15 @@ const characters = {
         time: "4:10 PM",
         events: [
           "Woke up after dreaming about being hit by a lady driving a red Nissan. Also remembered something in the shape of a cloud.",
-          "Carl is not in the room."
+          "Carl is not in the room.",
+          "Wrote about dream in dream diary."
         ]
       },
       {
         time: "4:15 PM",
         events: [
           "Called Carl about lady and red Nissan in dream. It's likely Manager Gemma caused you to lose your memories.",
-          "Carl says he stepped out for a work matter."
+          "Carl says he stepped out for a work matter.",
         ]
       },
       {
