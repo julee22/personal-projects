@@ -1,0 +1,21 @@
+/* Page specific copy */
+#section-2{
+    position: relative;
+}
+.tab-image {
+    position: absolute;
+    top: 10px;
+    opacity: 0.6;
+}
+.tab-image.active {
+    opacity: 1;
+}
+
+.tab-image#her-image {
+    left: 0;
+}
+.tab-image#his-image {
+    right: 0;
+}
+
+.nav-link {  padding-bottom: 0px;}

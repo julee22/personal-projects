@@ -98,6 +98,10 @@ a:hover {
 	font-size: .75em;
 }
 
+.reset-case {
+	text-transform: initial;
+}
+
 hr {
 	border: 1px solid var(--secondaryColor);
 	margin: 15px auto 30px;
@@ -185,85 +189,41 @@ input::placeholder {
 	color: grey;
 }
 
+/* Tabs nav */
+.nav-tabs {
+	justify-content: center;
+	border-bottom: none;
+	margin-bottom: 1em;
+}
+
+.nav-tabs .nav-link {
+	background: transparent;
+	border: none;
+}
+
+.nav-tabs .nav-link.active {
+	background-color: transparent;
+	border-bottom: 1px solid var(--secondaryColor);
+}
+
 /* Section styling */
 section {
 	padding: 50px 30px;
 }
 
-#section-1 {
-	background-image: url(../images/rose-1.png), url(../images/rose-2.png);
-	background-position: left -20px top, right -20px top;
-	background-repeat: no-repeat, no-repeat;
-	background-size: 40%, 40%;
-	padding-top: 100px;
-}
-
-#section-2 {
-	background-image: url('../images/roses-left.png');
-	background-position: left center;
-	background-repeat: no-repeat;
-	background-size: 100px;
-	text-align: left;
-	padding-left: 30vw;
-}
-
-.schedule {
-	display: flex;
-	gap: 15px;
-	justify-content: start;
-	margin-top: 15px;
-	margin-bottom: 30px;
-}
-
-.schedule img {
-	max-width: 40px;
-	height: 100%;
-	width: 100%;
-}
-
-.schedule .information p {
-	margin-bottom: 0;
-}
-
-#section-3, #section-5 {
+section.red {
 	background-color: var(--primaryColor);
+}
+
+section.red h2, section.red * {
 	color: var(--tertiaryColor);
 }
 
-#section-3 h2, #section-5 h2 {
-	color: var(--tertiaryColor);
-}
-
-#section-3 {
-	background-image: url('../images/roses-bottom.png');
-	background-position: center bottom;
-	background-repeat: no-repeat;
-	background-size: auto 100px;
-	padding-bottom: 100px;
-}
-
-#section-4 {
-	background-image: url(../images/rose-3.png), url(../images/rose-4.png);
-	background-position: left -20px bottom, right -20px bottom;
-	background-repeat: no-repeat, no-repeat;
-	background-size: 40%, 40%;
-	padding-bottom: 120px;
-}
-
-#section-5 a {
-	text-decoration: underline;
-	text-decoration-color: var(--secondaryColor);
-	color: var(--tertiaryColor);
-}
 
 @media (min-width: 768px) {
 	
 	img {
 		max-width: 400px;
-	}
-
-	#section-2 {
-		padding-left: 200px;
 	}
 
 }
@@ -277,11 +237,6 @@ section {
 	}
 	.mobile-only {
 		display: none;
-	}
-	
-	#my-form {
-		width: 80%;
-		margin: auto;
 	}
 
 }
