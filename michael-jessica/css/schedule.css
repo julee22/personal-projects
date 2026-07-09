@@ -4,18 +4,21 @@
 }
 .tab-image {
     position: absolute;
-    top: 10px;
-    opacity: 0.6;
+    top: 3em;
+    opacity: 0.35;
+    z-index: 1;
+    width: 125px;
 }
 .tab-image.active {
     opacity: 1;
 }
 
 .tab-image#her-image {
-    left: 0;
+    left: -10px;
 }
 .tab-image#his-image {
-    right: 0;
+    right: -10px;
+    transform: translateY(-6px);
 }
 
 .nav-link {  padding-bottom: 0px;}
