@@ -78,6 +78,9 @@ h2 {
 	display: inline-block;
 	color: var(--primaryColor);
 }
+.dark-font {
+	color: var(--black);
+}
 
 p {
 	margin-bottom: 0.5em;
@@ -98,8 +101,8 @@ a:hover {
 	font-size: .75em;
 }
 
-.reset-case {
-	text-transform: initial;
+.uppercase {
+	text-transform: uppercase;
 }
 
 hr {
@@ -194,6 +197,7 @@ input::placeholder {
 	justify-content: center;
 	border-bottom: none;
 	margin-bottom: 1em;
+	/* background-color: var(--primaryColor); */
 }
 
 .nav-tabs .nav-link {
@@ -213,6 +217,9 @@ section {
 
 section.red {
 	background-color: var(--primaryColor);
+}
+section.white {
+	background-color: var(--tertiaryColor);
 }
 
 section.red h2, section.red * {

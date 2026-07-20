@@ -34,6 +34,8 @@ const tabImage = document.querySelectorAll('.tab-image');
 
 tabNav.forEach(button => {
   button.addEventListener("click", () => {
+    event.preventDefault();
+    
     tabImage.forEach(image => {
       image.classList.remove("active");
     });
@@ -44,6 +46,6 @@ tabNav.forEach(button => {
     }
     const selectTabImage = document.getElementById(imgID);
     selectTabImage.classList.add("active"); 
-    console.log(imgID);
+
   });
 });
