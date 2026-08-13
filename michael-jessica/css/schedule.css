@@ -1,7 +1,17 @@
 /* Page specific copy */
 p {
 	text-transform: initial;
-    line-height: 1.35;
+    line-height: 1.15;
+    letter-spacing: 0.05em;
+}
+
+.reset-case {
+	text-transform: initial;
+    letter-spacing: 0.05em;
+}
+
+a {
+	text-decoration: underline;
 }
 
 ul.list li {
@@ -10,6 +20,7 @@ ul.list li {
     padding-left: 1em;
 	text-align: left;
     text-transform: initial;
+    letter-spacing: 0.05em;
 }
 
 ul.list li:not(:last-child):before {
@@ -21,6 +32,11 @@ ul.list li:not(:last-child):before {
     position: absolute;
     left: -11px;
     top: 20px;
+}
+
+ol#photo-list {
+    padding-left: 0;
+    list-style-type: none;
 }
 
 #section-2{
@@ -66,18 +82,48 @@ ul.list li:not(:last-child):before {
 }
 
 #section-4 {
-	/* background-image: url('../images/roses-left.png');
-	background-position: left center;
+	background-image: url('../images/roses-top.png');
+	background-position: center top;
 	background-repeat: no-repeat;
-	background-size: 100px;
-	padding-left: 20vw; */
+	background-size: min(80%, 500px) auto;
+    padding-top: 20vw;
+}
+
+#credits {
+    background-image: url('../images/roses-left.png'),  url('../images/roses-left.png'); 
+    background-position: 
+    0px 0px, 
+    0px 30px;
+	background-repeat: repeat-y, repeat-y;
+    background-size: 70px;
+	padding-left: 100px;
+}
+
+.ceremony-schedule {
+    width: 300px;
+    margin: auto;
 }
 
 .name-list {
     display: flex;
     flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 1em;
 }
 
-.name-list .name {
-    flex: 1 0 50%;
+#wedding-party .name-list .name {
+    flex: 1 0 calc(50% - 24px);
+}
+
+#credits .name-list .name {
+    width: 100%;
+    text-align: left;
+}
+
+
+.name .label {
+    text-transform: uppercase;
+    font-size: .75em;
+    color: var(--secondaryColorAccessible);
 }

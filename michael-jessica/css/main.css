@@ -4,6 +4,7 @@
 :root {
 	--primaryColor : #530d05;
 	--secondaryColor : #8f6700;
+	--secondaryColorAccessible : #BF8900;
 	--tertiaryColor: white;
 	--bgColor : #f6f4ef;
 	--black : #1a1a1a;
@@ -37,6 +38,10 @@ body {
 .hide {
 	/* display: none; */
 	opacity: 0;
+}
+
+.modal.show, .modal-backdrop.show {
+	position: fixed;
 }
 
 .fade {
@@ -98,7 +103,7 @@ a:hover {
 	font-size: 1.25em;
 }
 .sm-font {
-	font-size: .75em;
+	font-size: .8em;
 }
 
 .uppercase {
@@ -183,7 +188,7 @@ input::placeholder {
 }
 
 .btn:hover {
-	background: var(--tertiaryColor);
+	background-color: color-mix(in srgb, var(--secondaryColor), #000000 30%);
 	color: white;
 }
 
