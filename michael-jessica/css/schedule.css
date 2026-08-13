@@ -1,8 +1,9 @@
 /* Page specific copy */
 p {
 	text-transform: initial;
-    line-height: 1.15;
+    line-height: 1.2;
     letter-spacing: 0.05em;
+	margin-bottom: 0.75em;
 }
 
 .reset-case {
