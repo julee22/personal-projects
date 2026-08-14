@@ -2,12 +2,12 @@
 @import url("use.typekit.net");
 
 :root {
-	--primaryColor : #530d05;
+	--primaryColor : #430700;
 	--secondaryColor : #8f6700;
 	--secondaryColorAccessible : #BF8900;
 	--tertiaryColor: white;
 	--bgColor : #f6f4ef;
-	--black : #1a1a1a;
+	--black : #380702;
 }
 
 body {
