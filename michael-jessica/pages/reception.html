@@ -26,62 +26,79 @@
 	<div class="p-3 pb-0">
 		<a class="sm-font" href="#">Bahasa Indonesia</a>
 	</div>
-	<section id="welcome">
+	<section id="welcome" class="roses-bg-bottom">
         <div>
 			<p class="sm-font uppercase">Hello</p>
 			<select class="js-example-basic-single" id="guestlist">
 				<option>- Select your name -</option>
 			</select>
-			<hr class="divider" style="margin-top: 15px; margin-bottom: 30px;"/>
+			<hr class="divider" style="margin-top: 15px; margin-bottom: 15px;"/>
 		</div>
 	</section>
 
 	<div id="main">
-		<section class="container fade show pt-0">
-			<p class="sm-font uppercase">welcome to the celebration of </p>
-			<h1>Michael & Jessica</h1>
-			<img src="../images/04053.jpeg" alt="Jessi & Mike" width="100%">
-			<hr class="divider" style="margin-top: 30px; margin-bottom: 15px;"/>
-			<p class="md-font">19.09.2026</p>
-		</section>
-		<section class="p-1 fade hide">
+		<section class="container fade show" id="seatSection">
 			<div id="seat">
-				<h2 class="accent-font mb-0">your table</h2>
+				<h2 class="accent-font mb-0">table</h2>
 				<p id="tableNum">...</p>
 			</div>
+			<img class="center-rose" src="../images/roses-center.png" alt="roses" width="175px">
 		</section>
-		<section class="fade hide">
-			<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-8 col-sm-6 col-md-4">
-					<img src="../images/roses-center.png" alt="roses" width="100%">
+		<section class="container fade show white roses-bg-corners">
+			<p class="sm-font uppercase">welcome to the celebration of </p>
+			<h1>Michael & Jessica</h1>
+			<div id="hero" class="carousel slide carousel-fade" data-bs-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="../images/JM1.jpeg" alt="Jessi & Mike" class="d-block w-100">
+					</div>
+					<div class="carousel-item">
+						<img src="../images/JM2.jpg" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="../images/JM3.jpg" class="d-block w-100" alt="...">
+					</div>
 				</div>
 			</div>
-				<h2 class="accent-font">order of events</h2>
-				<ul class="list ceremony-schedule">
-					<li>Welcome & Opening Remarks</li>
-					<li>Processional</li>
-					<li>Opening Prayer</li>
-					<li>Pastor's Message</li>
-					<li>Exchange of Vows</li>
-					<li>Exchange of Rings</li>
-					<li>Wedding Blessings</li>
-					<li>Worship: <span>The Goodness of God</span>
-						<a href="#lyrics" data-bs-toggle="modal" data-bs-target="#lyrics" class="d-block sm-font">View lyrics</a>
-					</li>
-					<li>Pronouncement of Marriage</li>
-					<li>Show of Respect to Parents</li>
-					<li>Signing the Registry</li>
-					<li>Presentation of the Couple</li>
-					<li>Recessional</li>
-				</ul>
-			</div>
+			<hr class="divider" style="margin-bottom: 15px;"/>
+			<p class="md-font">19.09.2026</p>
 		</section>
-		<section class="fade hide red" id="menu">
+		<section class="container fade hide">
+			<h2 class="accent-font">order of events</h2>
+			<ul class="list reception-schedule">
+				<li class="left">Entrance Performance</li>
+				<li class="right">First Dance</li>
+				<li class="left">Opening Speech</li>
+				<li class="right">Appetizer</li>
+				<li class="left">Three Sisters performance</li>
+				<li class="right">Main Course</li>
+				<li class="left">Game 1</li>
+				<li class="right">Dessert</li>
+				<li class="left">Game 2</li>
+				<li class="right">Mother-Daughter Dance</li>
+				<li class="left">Father-Daughter Dance</li>
+				<li class="right">Cake Cutting</li>
+				<li class="left">Bride Performance</li>
+				<li class="right">Open dance floor</li>
+			</ul>
+		</section>
+		<section class="fade hide red roses-bg-top" id="menu">
 			<div class="container">
-				<img src="../images/icon-dine.png" alt="ring" class="d-block" style="margin: 0 auto 1em;" width="55px">
-				<h2 class="accent-font">dining</h2>
-				<p>Your meal has been prepared based on the course you selected in your invitation.</p>
+				<img src="../images/icon-dine.png" alt="ring" class="d-block" style="margin: 1em auto;" width="55px">
+				<h2 class="accent-font">menu</h2>
+				<div class="course">
+					<p class="sm-font label">Appetizer</p>
+					<p class="">Salad</p>
+				</div>
+				<div class="course">
+					<p class="sm-font label">Main Course</p>
+					<p class="" id="mealSelection"></p>
+					<p class="sm-font reset-case">*Chosen during registration.</p>
+				</div>
+				<div class="course">
+					<p class="sm-font label">Dessert</p>
+					<p class="">Ice cream</p>
+				</div>
 			</div>
 		</section>
 		<section class="container fade hide white">

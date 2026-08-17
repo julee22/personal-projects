@@ -93,7 +93,6 @@ p {
 
 a {
 	color: var(--secondaryColor);
-	text-decoration: none;
 }
 a:hover {
 	color: var(--primaryColor);
@@ -106,8 +105,20 @@ a:hover {
 	font-size: .8em;
 }
 
+.label {
+    text-transform: uppercase;
+    font-size: .75em;
+    color: var(--secondaryColorAccessible) !important;
+    margin-bottom: 0.5em;
+}
+
 .uppercase {
 	text-transform: uppercase;
+}
+
+.reset-case {
+	text-transform: initial;
+    letter-spacing: 0.05em;
 }
 
 hr {
@@ -229,6 +240,40 @@ section.white {
 
 section.red h2, section.red * {
 	color: var(--tertiaryColor);
+}
+
+
+
+.roses-bg-top {
+	background-image: url('../images/roses-top.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: min(90%, 500px) auto;
+	padding-top: 22vw;
+}
+
+.roses-bg-bottom {
+	background-image: url('../images/roses-bottom.png');
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: min(100%, 500px) auto;
+  	padding-bottom: 20vw;
+}
+.roses-bg-bottom-right {
+	background-image: url('../images/rose-3.png');
+	background-position: right -20px bottom;
+	background-repeat: no-repeat;
+	background-size: 150px;
+    padding-bottom: 110px;
+}
+
+.roses-bg-corners {
+	background-image: url(../images/rose-4.png), url(../images/rose-2.png);
+	background-position: left -20px bottom, right -20px top;
+	background-repeat: no-repeat, no-repeat;
+	background-size: 150px, 150px;
+	padding-top: 110px;
+    padding-bottom: 110px;
 }
 
 

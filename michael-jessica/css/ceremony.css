@@ -6,15 +6,6 @@ p {
 	margin-bottom: 0.9rem;
 }
 
-.reset-case {
-	text-transform: initial;
-    letter-spacing: 0.05em;
-}
-
-a {
-	text-decoration: underline;
-}
-
 ul.list li {
     position: relative;
     margin-bottom: 0.6em;
@@ -73,23 +64,6 @@ ul.list li:not(:last-child):before {
 }
 
 /* Sections */
-#section-3 {
-	background-image: url(../images/rose-4.png), url(../images/rose-2.png);
-	background-position: left -20px bottom, right -20px top;
-	background-repeat: no-repeat, no-repeat;
-	background-size: 150px, 150px;
-	padding-top: 110px;
-    padding-bottom: 110px;
-}
-
-#section-4 {
-	background-image: url('../images/roses-top.png');
-	background-position: center top;
-	background-repeat: no-repeat;
-	background-size: min(80%, 500px) auto;
-    padding-top: 20vw;
-}
-
 #group-photo {
     background-image: url('../images/roses-left-border.png'); 
     background-position: 0px 0px;
@@ -120,12 +94,4 @@ ul.list li:not(:last-child):before {
     flex-wrap: nowrap;
     gap: 1em;
     flex-direction: column;
-}
-
-
-.name .label {
-    text-transform: uppercase;
-    font-size: .75em;
-    color: var(--secondaryColorAccessible);
-    margin-bottom: 0.5em;
 }

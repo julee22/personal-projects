@@ -28,10 +28,6 @@
   align-items: center;
   justify-content: center;
   transition: height 1s ease-in-out, background-image .8s ease-in-out;
-	background-image: url('../images/roses-bottom.png');
-	background-position: center bottom;
-	background-repeat: no-repeat;
-	background-size: auto 100px;
 }
 
 #welcome.collapse {
@@ -46,17 +42,28 @@
   display: none;
 }
 
+#hero {
+  margin: 30px 0;
+}
+
 /* Seat */
+#seatSection {
+  padding-top: 0em;
+  padding-bottom: 80px;
+}
+
 #seat {
-  height: 200px;
-  width: 200px;
+  height: 175px;
+  width: 175px;
   border-radius: 50%;
   background-color: var(--primaryColor);
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column; */
+  padding: 33px;
   margin: 0 auto;
+  position: relative;
 }
 
 #seat h2 {
@@ -67,4 +74,58 @@
   font-size: 3.5rem;
   margin-bottom: 0;
   color: var(--tertiaryColor);
+  line-height: 0.7;
+}
+
+.center-rose {
+  position: absolute;
+  margin: 0 auto;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/* schedule */
+
+.reception-schedule {
+  list-style-type: none;
+	text-transform: initial;
+  padding-left: 0;
+}
+.reception-schedule  li {
+  position: relative;
+  width: calc(50% + 1px);
+	color: var(--black);
+}
+.reception-schedule .right {
+  text-align: right;
+  border-right: 1px solid var(--secondaryColor);
+  padding-right: 15px;
+}
+.reception-schedule .left {
+  text-align: left;
+  margin-left: calc(50%);
+  border-left: 1px solid var(--secondaryColor);
+  padding-left: 15px;
+}
+.reception-schedule .right:after,
+.reception-schedule .left:before {
+  --bulletWidth: 8px;
+  content: "";
+  display: inline-block;
+  height: var(--bulletWidth);
+  width: var(--bulletWidth);
+  border-radius: 50%;
+  background-color: var(--secondaryColor);
+  position: absolute;
+  top: 0.5em;
+}
+
+.reception-schedule .right:after {
+    right: calc(var(--bulletWidth) * -0.5 - 0px);
+}
+.reception-schedule .left:before {
+    left: calc(var(--bulletWidth) * -0.5);
+}
+
+#menu .course:not(:last-child) {
+  margin-bottom: 2em;
 }

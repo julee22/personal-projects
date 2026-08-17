@@ -2,12 +2,9 @@ import { guestList } from "./seating-chart.js";
 
 let guestSearch;
 const sortedList = guestList.sort((a, b) => a.text.localeCompare(b.text));
-const tableNum = document.getElementById('tableNum');
 
 // Selected Guest
 let selectedGuest;
-let guestName;
-let guestTable;
 
 function populateGuestSearch() {
   for (let index = 0; index < sortedList.length; index++) {
@@ -32,10 +29,12 @@ $(document).ready(function () {
     selectedGuest = sortedList.find((element) => String(element.id) === String(id));
 
     // Update table number
+    const tableNum = document.getElementById('tableNum');
     tableNum.innerHTML = selectedGuest.table;
 
     // Update meal selection
-    // const mealSelection = document.getElementById('mealSelection');
+    const mealSelection = document.getElementById('mealSelection');
+    mealSelection.innerHTML = selectedGuest.meal;
 
     const mainDiv = document.getElementById('main');
     mainDiv.style.display = 'block';
