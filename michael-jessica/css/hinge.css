@@ -99,7 +99,7 @@ section {
 	margin: 1em 0;
 }
 .card-title {
-	background-color: white;
+	background-color: rgb(250, 250, 250);
 	margin-top: 0.5em;
 	top: -1px;
 }
@@ -120,11 +120,11 @@ section {
 }
 
 .card.image .caption {
+	position: absolute;
+	top:0;
 	opacity: 0;
 }
 .card.image:hover .caption {
-	position: absolute;
-	top:0;
 	background-color: rgba(0, 0, 0, 0.5);
 	color: white;
 	height: 100%;
