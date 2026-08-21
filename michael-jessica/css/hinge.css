@@ -1,0 +1,203 @@
+/*wow css*/
+@import url("use.typekit.net");
+
+
+body {
+	margin: 0px auto;
+	box-sizing: content-box;
+	background-color: rgb(250, 250, 250);
+	font-family: "Google Sans Flex", sans-serif;
+}
+section {
+	padding: 1em 0;
+}
+
+.container {
+	max-width: 468px;
+}
+
+.show {
+	display: block;
+	opacity: 1;
+	position: relative;
+}
+
+.hide {
+	display: none;
+	opacity: 0;
+}
+
+.modal.show, .modal-backdrop.show {
+	position: fixed;
+}
+
+.fade {
+	transition-duration: 1s;
+}
+
+.sr-only {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	white-space: nowrap;
+	border: 0;
+}
+
+* {
+	opacity: 1;
+	transition: opacity 1s ease;
+}
+
+.scrollable {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 0.5em;
+	overflow-x: auto;
+}
+
+.profile-thumbnail {
+	flex: 1 0 80%;
+	overflow: hidden;
+	border-radius: 10px;
+	position: relative;
+	margin: 1.5em 1em 2em;
+	min-height: 60vh;
+}
+.profile-thumbnail img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.profile-thumbnail .name {
+	position: absolute;
+	top:0;
+	background: #3b3b3b;
+	background: linear-gradient(180deg, rgba(59, 59, 59, 1) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 100%);
+	height: 100%;
+	width: 100%;
+	padding: 1em;
+	color: white;
+	font-size: 1.5em;
+}
+
+.back {
+	display: block;
+	text-decoration: none;
+	color: black;
+	padding: 0.5em 0;
+}
+
+.card {
+	border-radius: 10px;
+	box-shadow: 0px 0px 2px rgba(211, 211, 211, 1);
+	background-color: white;
+	padding: 50px 1em;
+	margin: 1em 0;
+}
+.card-title {
+	background-color: white;
+	margin-top: 0.5em;
+	top: -1px;
+}
+.card-title.is-pinned {
+	text-align: center;
+	padding: 0.5em 0;
+	border-bottom: 1px solid rgba(211, 211, 211, 1);
+}
+
+.card.image {
+	padding: 0;
+	max-height: calc(468px - 2em);
+	overflow: hidden;
+	position: relative;
+}
+.card.image img {
+	width: 100%;
+}
+
+.card.image .caption {
+	opacity: 0;
+}
+.card.image:hover .caption {
+	position: absolute;
+	top:0;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 1;
+	transition: opacity 0.5s ease;
+}
+
+.card.profile {
+	padding: 0.75em;
+	font-weight: 500;
+}
+.card.profile .scrollable, .card.profile > .details:not(:last-child) {
+	border-bottom: 1px solid rgba(211, 211, 211, 1);
+}
+.card.profile .scrollable .details {
+	border-right: 1px solid rgba(211, 211, 211, 1);
+}
+.card.profile .details {
+	flex: 0 0 auto;
+	display: flex;
+	gap: 0.5em;
+	padding: 0.5em 1em 0.5em 0;
+}
+.card.profile .details i {
+	margin-right: 10px;
+}
+
+.card-prompt {
+	font-weight: 500;
+}
+
+.card-answer {
+	font-family: "times new roman", serif;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+#match {
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	display: inline-block;
+	background-color: #fd223b;
+	color: white;
+	padding: 15px;
+	border-radius: 50%;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	transform: scale(1);
+	transition: transform 0.3s ease;
+}
+
+#match:hover {
+	transform: scale(1.2);
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 480px) {
+	.mobile-only {
+		display: none;
+	}
+
+}
+
+
+@media (max-width: 480px) {
+	.mobile-only {
+		display: block;
+	}
+}
