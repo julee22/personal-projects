@@ -23,6 +23,8 @@ $(document).ready(function () {
   $('#match').on('click', function (event) {
     const winner = document.getElementById('winner');
     winner.textContent = selectedProfile.querySelector('.card-title').textContent;
+    const winnerImage = document.getElementById('winner-image');
+    winnerImage.src = selectedProfile.querySelector('.card-img-top').src;
   });
 });
 
