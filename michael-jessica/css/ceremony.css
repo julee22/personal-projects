@@ -49,29 +49,24 @@ ul.list li:not(:last-child):before {
     transform: scale(1);
 }
 
-.tab-image#her-image {
+.tab-image#his-image {
     left: -30px;
 }
-.tab-image#his-image {
+.tab-image#her-image {
     right: -30px;
     top: -13px;
 }
 
-.nav-link {  padding-bottom: 0px;}
+.nav-link {  padding-bottom: 0px; }
+.nav-link .accent-font {
+    font-size: 2em;
+}
 
 .tab-pane {
     margin-top: 2em;
 }
 
 /* Sections */
-#group-photo {
-    background-image: url('../images/roses-left-border.png'); 
-    background-position: 0px 0px;
-	background-repeat: repeat-y;
-    background-size: 70px;
-	padding-left: 100px;
-    text-align: left;
-}
 
 .ceremony-schedule {
     width: 300px;
