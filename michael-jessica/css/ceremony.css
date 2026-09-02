@@ -6,26 +6,6 @@ p {
 	margin-bottom: 0.9rem;
 }
 
-ul.list li {
-    position: relative;
-    margin-bottom: 0.6em;
-    padding-left: 1em;
-	text-align: left;
-    text-transform: initial;
-    letter-spacing: 0.05em;
-}
-
-ul.list li:not(:last-child):before {
-    content: "";
-    display: inline-block;
-    height: 85%;
-    width: 1px;
-    background-color: var(--secondaryColor);
-    position: absolute;
-    left: -11px;
-    top: 20px;
-}
-
 /* ol#photo-list {
     padding-left: 0;
     list-style-type: none;
@@ -71,6 +51,17 @@ ul.list li:not(:last-child):before {
 .ceremony-schedule {
     width: 300px;
     margin: auto;
+}
+
+.ceremony-schedule li:not(:last-child):before {
+    content: "";
+    display: inline-block;
+    height: 85%;
+    width: 1px;
+    background-color: var(--secondaryColor);
+    position: absolute;
+    left: -11px;
+    top: 20px;
 }
 
 .name-list {

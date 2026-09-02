@@ -1,5 +1,24 @@
 import { guestList } from "./seating-chart.js";
 
+const menuMap = [
+  {
+    meal: "Beef Short Rib",
+    fullName: "Braised Bone-In Beef Short Rib",
+    description: "Comes with natural jus, and garlic mashed potatoes",
+  },
+  {
+    meal: "Herb Roasted Chicken",
+    fullName: "Savory Herb Roasted Chicken Supreme",
+    description: "Comes with garlic and chive mashed potatoes, seasonal vegetables, and chardonnay volute",
+  },
+  {
+    meal: "Grilled Salmon Fillet",
+    fullName: "Grilled Canadian Salmon Fillet with",
+    description: "Comes with saffron and lemon aioli, wild rice pilaf, and seasonal vegetables",
+  }
+
+];
+
 let guestSearch;
 const sortedList = guestList.sort((a, b) => a.text.localeCompare(b.text));
 
@@ -14,6 +33,17 @@ function populateGuestSearch() {
     newOption.innerHTML = sortedList[index].text;
 
     guestSearch.appendChild(newOption);
+  }
+}
+
+function setAlignment() {
+  const list = document.getElementsByClassName('reception-schedule')[0];
+  for (let index = 0; index < list.children.length; index++) {
+    if (index % 2 === 0) {
+      list.children[index].classList.add('left');
+    } else {
+      list.children[index].classList.add('right');
+    }
   }
 }
 
@@ -34,7 +64,8 @@ $(document).ready(function () {
 
     // Update meal selection
     const mealSelection = document.getElementById('mealSelection');
-    mealSelection.innerHTML = selectedGuest.meal;
+    const mealDetails = menuMap.find((element) => element.meal === selectedGuest.meal);
+    mealSelection.innerHTML = mealDetails.fullName + `* <em class="course-desc">(` + mealDetails.description + `)</em>`;
 
     const mainDiv = document.getElementById('main');
     mainDiv.style.display = 'block';
@@ -42,4 +73,6 @@ $(document).ready(function () {
     const welcomeDiv = document.getElementById('welcome');
     welcomeDiv.classList.add('collapse');
   });
+
+  setAlignment();
 });

@@ -68,6 +68,9 @@
 
 @media (min-width: 768px) {
 
+	img {
+		max-width: 400px;
+	}
 	#section-2 {
 		padding-left: 200px;
 	}
