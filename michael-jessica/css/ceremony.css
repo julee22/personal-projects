@@ -61,7 +61,7 @@ p {
     background-color: var(--secondaryColor);
     position: absolute;
     left: -11px;
-    top: 20px;
+    top: 10px;
 }
 
 .name-list {

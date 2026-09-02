@@ -74,6 +74,9 @@ h1 {
 h2 {
 	font-size: 1.35rem;
 }
+h3 {
+	font-size: 1.2rem;
+}
 
 .accent-font {
 	font-family: 'Allura', 'Brush Script MT', 'Courier New', cursive;
