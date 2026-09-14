@@ -20,7 +20,7 @@ const menuMap = [
 ];
 
 let guestSearch;
-const sortedList = guestList.sort((a, b) => a.text.localeCompare(b.text));
+const sortedList = guestList.sort((a, b) => a.name.localeCompare(b.name));
 
 // Selected Guest
 let selectedGuest;
@@ -30,7 +30,7 @@ function populateGuestSearch() {
     const newOption = document.createElement('option');
 
     newOption.value = sortedList[index].id;
-    newOption.innerHTML = sortedList[index].text;
+    newOption.innerHTML = sortedList[index].name;
 
     guestSearch.appendChild(newOption);
   }
