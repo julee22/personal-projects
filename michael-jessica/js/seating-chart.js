@@ -1,4 +1,5 @@
 export const guestList = [
+  {id: 0, table: 1, name: "Joseph M Jahja", meal: "Beef Short Rib"},
   {id: 1, table: 1, name: "Jessica Wijaya", meal: "Beef Short Rib"},
   {id: 2, table: 1, name: "Elizabeth S Melinda", meal: "Grilled Salmon Fillet"},
   {id: 3, table: 1, name: "Wahyu Hidajati", meal: "Beef Short Rib"},
@@ -36,15 +37,13 @@ export const guestList = [
   {id: 32, table: 4, name: "Nadia Tan", meal: "Beef Short Rib"},
   {id: 33, table: 4, name: "Camellia Tan", meal: "Beef Short Rib"},
   {id: 34, table: 4, name: "Edwin Chan", meal: "Beef Short Rib"},
-  {id: 35, table: 4, name: "John Chua", meal: "Beef Short Rib"},
-  {id: 36, table: 4, name: "Calista Tanaka", meal: "Grilled Salmon Fillet"},
   {id: 37, table: 4, name: "Angela Susilo", meal: "Beef Short Rib"},
   {id: 38, table: 4, name: "Randy Yuwono", meal: "Grilled Salmon Fillet"},
   {id: 39, table: 4, name: "Adrian Hartanto", meal: "Beef Short Rib"},
   {id: 40, table: 4, name: "Michael Chow", meal: "Beef Short Rib"},
+  {id: 41, table: 4, name: "Nanda Kuswanto", meal: "Beef Short Rib"},
+  {id: 42, table: 4, name: "Maureen Usman", meal: "Beef Short Rib"},
 
-  {id: 41, table: 5, name: "Nanda Kuswanto", meal: "Beef Short Rib"},
-  {id: 42, table: 5, name: "Maureen Usman", meal: "Beef Short Rib"},
   {id: 43, table: 5, name: "Stefany Jaya", meal: "Beef Short Rib"},
   {id: 44, table: 5, name: "Geoffrey Rota", meal: "Beef Short Rib"},
   {id: 45, table: 5, name: "Genice Chandra", meal: "Beef Short Rib"},
@@ -73,5 +72,6 @@ export const guestList = [
   {id: 66, table: 7, name: "Lucia Chonn", meal: "Grilled Salmon Fillet"},
   {id: 67, table: 7, name: "Patricia de Paula e Freitas", meal: "Herb Roasted Chicken"},
   {id: 68, table: 7, name: "Gabriela de Paula e Freitas Nunes", meal: "Kid's Meal"},
-  {id: 69, table: 7, name: "Wlademir Nunes", meal: "Grilled Salmon Fillet"}
+  {id: 69, table: 7, name: "Wlademir Nunes", meal: "Grilled Salmon Fillet"},
+  {id: 70, table: 7, name: "Maedal", meal: "Grilled Salmon Fillet"},
 ];
