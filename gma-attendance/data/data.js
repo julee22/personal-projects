@@ -69,7 +69,7 @@ let confirmedTimeslot;
 const currentDate = new Date();
 
 $(document).ready(function () {
-    document.getElementById("currentDate").textContent = currentDate.toLocaleDateString("en-CA");
+    document.getElementById("currentDate").value = currentDate.toLocaleDateString("en-CA");
 });
 
 // When student name is selected
@@ -110,68 +110,72 @@ const toTitleCase = function(str) {
 };
 
 // signature
-// const signatureCanvas = document.getElementById("signaturePad");
-// const signatureInput = document.getElementById("signatureData");
-// const clearSignatureButton = document.getElementById("clearSignature");
+const signatureCanvas = document.getElementById("signaturePad");
+const signatureInput = document.getElementById("signatureData");
+const clearSignatureButton = document.getElementById("clearSignature");
+const signatureContext = signatureCanvas.getContext("2d");
 
-// if (signatureCanvas && signatureInput) {
-//     const signatureContext = signatureCanvas.getContext("2d");
-//     let isDrawing = false;
+if (signatureCanvas && signatureInput) {
+    let isDrawing = false;
 
-//     const getCanvasPoint = function(event) {
-//         const rect = signatureCanvas.getBoundingClientRect();
-//         const scaleX = signatureCanvas.width / rect.width;
-//         const scaleY = signatureCanvas.height / rect.height;
+    const getCanvasPoint = function(event) {
+        const rect = signatureCanvas.getBoundingClientRect();
+        const scaleX = signatureCanvas.width / rect.width;
+        const scaleY = signatureCanvas.height / rect.height;
 
-//         return {
-//             x: (event.clientX - rect.left) * scaleX,
-//             y: (event.clientY - rect.top) * scaleY
-//         };
-//     };
+        return {
+            x: (event.clientX - rect.left) * scaleX,
+            y: (event.clientY - rect.top) * scaleY
+        };
+    };
 
-//     const startDrawing = function(event) {
-//         isDrawing = true;
-//         const point = getCanvasPoint(event);
-//         signatureContext.beginPath();
-//         signatureContext.moveTo(point.x, point.y);
-//         signatureContext.lineWidth = 2;
-//         signatureContext.lineCap = "round";
-//         signatureContext.lineJoin = "round";
-//         signatureContext.strokeStyle = "#000";
-//     };
+    const startDrawing = function(event) {
+        isDrawing = true;
+        const point = getCanvasPoint(event);
+        signatureContext.beginPath();
+        signatureContext.moveTo(point.x, point.y);
+        signatureContext.lineWidth = 2;
+        signatureContext.lineCap = "round";
+        signatureContext.lineJoin = "round";
+        signatureContext.strokeStyle = "#000";
+    };
 
-//     const draw = function(event) {
-//         if (!isDrawing) {
-//             return;
-//         }
+    const draw = function(event) {
+        if (!isDrawing) {
+            return;
+        }
 
-//         const point = getCanvasPoint(event);
-//         signatureContext.lineTo(point.x, point.y);
-//         signatureContext.stroke();
-//     };
+        const point = getCanvasPoint(event);
+        signatureContext.lineTo(point.x, point.y);
+        signatureContext.stroke();
+    };
 
-//     const stopDrawing = function() {
-//         if (!isDrawing) {
-//             return;
-//         }
+    const stopDrawing = function() {
+        if (!isDrawing) {
+            return;
+        }
 
-//         isDrawing = false;
-//         signatureContext.beginPath();
-//         signatureInput.value = signatureCanvas.toDataURL("image/png");
-//     };
+        isDrawing = false;
+        signatureContext.beginPath();
+        signatureInput.value = signatureCanvas.toDataURL("image/png");
+    };
 
-//     signatureCanvas.addEventListener("pointerdown", startDrawing);
-//     signatureCanvas.addEventListener("pointermove", draw);
-//     signatureCanvas.addEventListener("pointerup", stopDrawing);
-//     signatureCanvas.addEventListener("pointerleave", stopDrawing);
-//     signatureCanvas.addEventListener("pointercancel", stopDrawing);
+    signatureCanvas.addEventListener("pointerdown", startDrawing);
+    signatureCanvas.addEventListener("pointermove", draw);
+    signatureCanvas.addEventListener("pointerup", stopDrawing);
+    signatureCanvas.addEventListener("pointerleave", stopDrawing);
+    signatureCanvas.addEventListener("pointercancel", stopDrawing);
 
-//     clearSignatureButton.addEventListener("click", function () {
-//         signatureContext.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
-//         signatureInput.value = "";
-//     });
-// }
+    clearSignatureButton.addEventListener("click", function () {
+        signatureContext.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+        signatureInput.value = "";
+    });
+}
 
+clearSignature = function() {
+    signatureContext.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+    signatureInput.value = "";
+}
 
 // Submit form
 const attendanceForm = document.querySelector("form");
@@ -217,6 +221,7 @@ window.addEventListener("load", function() {
         })
         .then(() => {
         this.reset();
+        clearSignature();
         // Apply wait text and disable the button
         if (waitText) {
           $submitButton.val("Send Answer").prop('disabled', false);
