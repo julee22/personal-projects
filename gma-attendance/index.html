@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Grand Music Academy</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <!-- <link rel="icon" type="image/x-icon" href="./images/genice-designs-logo.jpg"> -->
+    
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
+</head>
+
+<body class="body">
+    <section class="title container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h1 class="text-center">Grand Music Academy Attendance</h1>
+            </div>
+            <div class="col-12">
+                <form id="my-form"
+                    method="POST"
+                    action="https://script.google.com/macros/s/AKfycbyzPlUFxsM9M4o6v8ERVNy-z6_kZmFOyUb3ppWbUKXl-HB-H8XCQUfOD4avZZzQuU8/exec">
+                    <div class="form-group">
+                        <p>Date: <span id="currentDate"></span></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentName" class="form-label">Student:</label>
+                        <select class="form-control" id="studentName" name="Student" required>
+                            <option>- Select -</option>
+                            <option value="andre">Andֻré</option>
+                            <option value="ariya">Ariya</option>
+                            <option value="anna">Anna</option>
+                            <option value="leah">Leah</option>
+                            <option value="eira">Eira</option>
+                            <option value="louis">Louis</option>
+                            <option value="cleo">Cleo</option>
+                            <option value="casey">Casey</option>
+                            <option value="kara">Kara</option>
+                            <option value="kaylee">Kaylee</option>
+                            <option value="kyle">Kyle</option>
+                            <option value="sarina">Sarina</option>
+                            <option value="darren">Darren</option>
+                            <option value="theo">Theo</option>
+                            <option value="valentina">Valentina</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="timeslot" class="form-label">Timeslot</label>
+                        <input type="text" class="form-control" id="timeslot" name="Timeslot">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes" class="form-label">Notes</label>
+                        <input type="text" class="form-control" id="notes" name="Notes" placeholder="Any additional costs or notes">
+                    </div>
+
+                    <!-- <div class="form-group signature-group">
+                        <label class="form-label">Signature</label>
+                        <div class="signature-pad-wrap">
+                            <canvas id="signaturePad" width="500" height="180" aria-label="Signature drawing area"></canvas>
+                        </div>
+                        <div class="signature-actions">
+                            <button type="button" id="clearSignature" class="btn btn-outline-secondary btn-sm">Clear</button>
+                        </div>
+                        <input type="hidden" id="signatureData" name="signature" />
+                    </div> -->
+
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"  type="text/javascript"></script>
+    <script src="data/data.js"  type="text/javascript"></script>
+</body>
+
+</html>
