@@ -6,6 +6,10 @@
   font-size: 0.8rem;
 }
 
+#my-form {
+  margin: 1rem auto 2rem;
+}
+
 .form-group {
   margin-bottom: 1rem;
 }
@@ -28,6 +32,9 @@
   background: #fff;
   border-radius: 0.375rem;
   cursor: crosshair;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .signature-actions {

@@ -83,7 +83,7 @@ studentSelect.addEventListener("change", function () {
     let timeslot;
 
         console.log(student);
-    if (selectedStudent === "Louis") {
+    if (selectedStudent === "louis") {
         if (currentDate.getDay() == 2) {
             timeslot = student.time[0]; // Use the first time slot for Tuesdays
         } else if (currentDate.getDay() == 6) {
@@ -211,6 +211,7 @@ window.addEventListener("load", function() {
         // Apply wait text and disable the button
         if (waitText) {
           $submitButton.val(waitText).prop('disabled', true);
+          $submitButton.val("Please wait...").prop('disabled', false);
         }
         e.preventDefault();
         const data = new FormData(attendanceForm);
@@ -220,12 +221,15 @@ window.addEventListener("load", function() {
         body: data,
         })
         .then(() => {
-        this.reset();
-        clearSignature();
-        // Apply wait text and disable the button
-        if (waitText) {
-          $submitButton.val("Send Answer").prop('disabled', false);
-        }
+            // Show the alert
+            const alertElement = document.getElementById("alert");
+            alertElement.style.display = "block";
+            alertElement.scrollIntoView();
+            this.reset();
+            clearSignature();
+            setTimeout(() => {
+                window.location.reload();
+            }, 3000);
         })
     });
 });
