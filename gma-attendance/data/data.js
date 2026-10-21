@@ -25,19 +25,19 @@ const studentList = [
     },
     {
         "name": "cleo",
-        "time": "7:00 - 8:00 PM"
+        "time": "7:15 - 8:15 PM"
     },
     {
         "name": "casey",
-        "time": "8:00 - 8:30 PM"
+        "time": "8:15 - 8:45 PM"
     },
     {
         "name": "kara",
-        "time": "7:00 - 8:00 PM"
+        "time": "7:15 - 8:15 PM"
     },
     {
         "name": "kaylee",
-        "time": "8:00 - 8:30 PM"
+        "time": "8:15 - 8:45 PM"
     },
     {
         "name": "kyle",
@@ -52,11 +52,11 @@ const studentList = [
         "time": "12:30 - 1:00 PM"
     },
     {
-        "name": "Theo",
+        "name": "theo",
         "time": "12:00 - 12:15 PM"
     },
     {
-        "name": "Valentina",
+        "name": "valentina",
         "time": "12:15 - 12:30 PM"
     },
 ];
