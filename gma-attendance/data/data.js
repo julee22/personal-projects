@@ -13,15 +13,15 @@ const studentList = [
     },
     {
         "name": "leah",
-        "time": "7:00 - 7:45 PM"
+        "time": "7:15 - 8:00 PM"
     },
     {
         "name": "eira",
-        "time": "7:45 - 8:15 PM"
+        "time": "8:00 - 8:30 PM"
     },
     {
         "name": "louis",
-        "time": ["8:15 - 8:45 PM","2:00 - 2:30 PM"]
+        "time": ["8:30 - 9:00 PM","2:00 - 2:30 PM"]
     },
     {
         "name": "cleo",
@@ -52,12 +52,12 @@ const studentList = [
         "time": "12:30 - 1:00 PM"
     },
     {
-        "name": "Theo",
-        "time": "12:00 - 12:15 PM"
+        "name": "theo",
+        "time": "1:00 - 1:15 PM"
     },
     {
-        "name": "Valentina",
-        "time": "12:15 - 12:30 PM"
+        "name": "valentina",
+        "time": "1:15 - 1:30 PM"
     },
 ];
 
