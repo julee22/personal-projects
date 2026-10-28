@@ -25,19 +25,19 @@ const studentList = [
     },
     {
         "name": "cleo",
-        "time": "7:00 - 8:00 PM"
+        "time": "7:15 - 8:15 PM"
     },
     {
         "name": "casey",
-        "time": "8:00 - 8:30 PM"
+        "time": "8:15 - 8:45 PM"
     },
     {
         "name": "kara",
-        "time": "7:00 - 8:00 PM"
+        "time": "7:15 - 8:15 PM"
     },
     {
         "name": "kaylee",
-        "time": "8:00 - 8:30 PM"
+        "time": "8:15 - 8:45 PM"
     },
     {
         "name": "kyle",
@@ -211,7 +211,6 @@ window.addEventListener("load", function() {
         // Apply wait text and disable the button
         if (waitText) {
           $submitButton.val(waitText).prop('disabled', true);
-          $submitButton.val("Please wait...").prop('disabled', false);
         }
         e.preventDefault();
         const data = new FormData(attendanceForm);
