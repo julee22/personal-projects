@@ -216,7 +216,7 @@ window.addEventListener("load", function() {
         }
 
         const data = new FormData(attendanceForm);
-        const action = "https://script.google.com/macros/s/AKfycbyzPlUFxsM9M4o6v8ERVNy-z6_kZmFOyUb3ppWbUKXl-HB-H8XCQUfOD4avZZzQuU8/exec";
+        const action = e.target.action;
 
         fetch(action, {
         method: 'POST',
