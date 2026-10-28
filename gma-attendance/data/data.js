@@ -113,9 +113,9 @@ const toTitleCase = function(str) {
 const signatureCanvas = document.getElementById("signaturePad");
 const signatureInput = document.getElementById("signatureData");
 const clearSignatureButton = document.getElementById("clearSignature");
-const signatureContext = signatureCanvas.getContext("2d");
+const signatureContext = signatureCanvas ? signatureCanvas.getContext("2d") : null;
 
-if (signatureCanvas && signatureInput) {
+if (signatureCanvas && signatureInput && signatureContext) {
     let isDrawing = false;
 
     const getCanvasPoint = function(event) {
@@ -178,7 +178,7 @@ clearSignature = function() {
 }
 
 // Submit form
-const attendanceForm = document.querySelector("form");
+const attendanceForm = document.querySelector("#my-form");
 
 // attendanceForm.addEventListener("submit", function () {
     // if (!signatureInput.value) {
@@ -200,38 +200,67 @@ const attendanceForm = document.querySelector("form");
 //     }
 // });
 
-window.addEventListener("load", function() {
-    attendanceForm.addEventListener("submit", function(e) {
-        e.preventDefault(); 
-        e.stopPropagation();
+if (attendanceForm) {
+    attendanceForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-        const $submitButton = $(this).find('input[type=submit]');
-        
         // Get the data-wait value and original value
+        const $submitButton = $(this).find('input[type="submit"]');
         const waitText = $submitButton.attr('data-wait');
-        
         // Apply wait text and disable the button
+        const originalValue = $submitButton.val();
+
         if (waitText) {
-          $submitButton.val(waitText).prop('disabled', true);
+            $submitButton.val(waitText).prop('disabled', true);
         }
 
         const data = new FormData(attendanceForm);
-        const action = e.target.action;
+        const action = 'https://script.google.com/macros/s/AKfycbzyOB-OZZBv8AF1M7hDxS8P6AoLYwTJDfhaDFNm5Z2SaxQsw7eoBJwlhRF2PHqaqckF/exec';
 
         fetch(action, {
-        method: 'POST',
-        body: data,
+            method: "POST",
+            body: data,
+            headers: {
+                Accept: "application/json"
+            }
         })
-        .then(() => {
-            // Show the alert
+        .then((response) => {
+            if (response.type === 'opaqueredirect') {
+                throw new Error('Request was redirected by the server. Check the Apps Script deployment and response headers.');
+            }
+            if (!response.ok) {
+                throw new Error(`Request failed with status ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((result) => {
             const alertElement = document.getElementById("alert");
-            alertElement.style.display = "block";
-            alertElement.scrollIntoView();
-            this.reset();
-            // clearSignature();
+            if (alertElement) {
+                alertElement.style.display = "block";
+                alertElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
+            attendanceForm.reset();
+
             setTimeout(() => {
                 window.location.reload();
-            }, 3000);
+            }, 2000);
         })
+        .catch((error) => {
+            console.error('Attendance submission failed:', error);
+
+            if (waitText) {
+                $submitButton.val(originalValue).prop('disabled', false);
+            }
+
+            const alertElement = document.getElementById("alert");
+            if (alertElement) {
+                alertElement.classList.remove('alert-success');
+                alertElement.classList.add('alert-danger');
+                alertElement.textContent = 'There was a problem submitting attendance. Please try again.';
+                alertElement.style.display = 'block';
+                alertElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
     });
-});
+}
