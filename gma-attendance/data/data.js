@@ -202,19 +202,22 @@ const attendanceForm = document.querySelector("form");
 
 window.addEventListener("load", function() {
     attendanceForm.addEventListener("submit", function(e) {
+        e.preventDefault(); 
+        e.stopPropagation();
+
         const $submitButton = $(this).find('input[type=submit]');
         
         // Get the data-wait value and original value
         const waitText = $submitButton.attr('data-wait');
-        const originalText = $submitButton.attr('value');
         
         // Apply wait text and disable the button
         if (waitText) {
           $submitButton.val(waitText).prop('disabled', true);
         }
-        e.preventDefault();
+
         const data = new FormData(attendanceForm);
-        const action = e.target.action;
+        const action = "https://script.google.com/macros/s/AKfycbyzPlUFxsM9M4o6v8ERVNy-z6_kZmFOyUb3ppWbUKXl-HB-H8XCQUfOD4avZZzQuU8/exec";
+
         fetch(action, {
         method: 'POST',
         body: data,
@@ -225,7 +228,7 @@ window.addEventListener("load", function() {
             alertElement.style.display = "block";
             alertElement.scrollIntoView();
             this.reset();
-            clearSignature();
+            // clearSignature();
             setTimeout(() => {
                 window.location.reload();
             }, 3000);
